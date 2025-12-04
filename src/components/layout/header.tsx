@@ -59,10 +59,7 @@ export function Header() {
       <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[70px]">
           <Link href="/" className="flex items-center gap-2" prefetch={false}>
-            <Image src="/siriuslogo.svg" alt="Sirius Logo" width={24} height={24} className="w-6 h-6 text-white" />
-            <span className="text-lg font-bold uppercase text-white tracking-wider">
-              Sirius Semiconductors
-            </span>
+            <Image src="/siriuslogo.svg" alt="Sirius Logo" width={132} height={36} className="text-white" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
