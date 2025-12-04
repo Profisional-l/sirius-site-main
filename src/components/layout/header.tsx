@@ -61,7 +61,7 @@ export function Header() {
           <Link href="/" className="flex items-center gap-2" prefetch={false}>
             <SiriusLogo className="w-6 h-6 text-white" />
             <span className="text-lg font-bold uppercase text-white tracking-wider">
-              Sirius
+              Sirius Semiconductors
             </span>
           </Link>
 
