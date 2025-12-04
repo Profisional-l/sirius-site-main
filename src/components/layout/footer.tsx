@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { SiriusLogo } from '@/components/icons/sirius-logo';
+import Image from 'next/image';
 
 export function Footer() {
   return (
@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           <div className="md:col-span-4 space-y-4 text-white/60">
             <Link href="/" className="flex items-center gap-2 mb-4" prefetch={false}>
-              <SiriusLogo className="w-7 h-7 text-white" />
+              <Image src="/siriuslogo.svg" alt="Sirius Logo" width={28} height={28} className="w-7 h-7 text-white" />
               <span className="text-xl font-bold uppercase text-white tracking-wider">
                 Sirius
               </span>
