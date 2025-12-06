@@ -187,3 +187,12 @@
   background-size: 2rem 2rem;
   mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
 }
+
+.settingsform {
+  border: solid 1.5px #0F141C1A;
+  font-size: 18px !important;
+}
+
+.settingsform:focus-visible {
+  border: solid 1.5px #0F141C66 !important;
+}

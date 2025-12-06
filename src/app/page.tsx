@@ -166,37 +166,32 @@ export default function Home() {
                 Software & Technologies
               </AccordionTrigger>
               <AccordionContent className="px-6 py-6 text-lg text-white/70 bg-[#0c1729]">
-                Beyond hardware, we deliver complete software stacks, firmware,
-                and development tools to unlock the full potential of your
-                silicon. Our expertise spans embedded systems, drivers, and
-                application-level software.
+                {/* Industries Section */}
+                <section
+                  id="industries"
+                  className="py-28 sm:py-32 bg-background text-center relative overflow-hidden"
+                >
+                  <div className="dots-pattern"></div>
+                  <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8 relative">
+                    <h2 className="font-headline text-4xl md:text-5xl font-bold">
+                      Industries
+                    </h2>
+                    <div className="mt-12 flex flex-wrap justify-center gap-3">
+                      {industries.map((industry) => (
+                        <Badge
+                          key={industry}
+                          variant="outline"
+                          className="px-6 py-2 text-base border-primary text-primary rounded-lg cursor-pointer hover:bg-primary/10 transition-colors"
+                        >
+                          {industry}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </section>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-        </div>
-      </section>
-
-      {/* Industries Section */}
-      <section
-        id="industries"
-        className="py-28 sm:py-32 bg-background text-center relative overflow-hidden"
-      >
-        <div className="dots-pattern"></div>
-        <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8 relative">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold">
-            Industries
-          </h2>
-          <div className="mt-12 flex flex-wrap justify-center gap-3">
-            {industries.map((industry) => (
-              <Badge
-                key={industry}
-                variant="outline"
-                className="px-6 py-2 text-base border-primary text-primary rounded-lg cursor-pointer hover:bg-primary/10 transition-colors"
-              >
-                {industry}
-              </Badge>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -251,28 +246,29 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-28 sm:py-32 bg-card">
+      <section id="contact" className="py-28 sm:py-16 bg-[#FFFFFF]">
         <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
+          <h1 className="text-[45px] text-[#0F141C] font-[500]">Contact details</h1>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <div className="space-y-12">
+            <div className="space-y-12 max-w-[350px] text-[#0F141C]">
               <div>
-                <h3 className="font-headline text-2xl text-primary">
+                <h3 className="font-headline text-[20px] mt-8 font-[500]">
                   Office address
                 </h3>
-                <p className="mt-2 text-lg text-white/70">
-                  1456 Nguyen Van Linh, Mg Town 14th Ward, Tan Phong Ward,
+                <p className="mt-2 text-lg font-[400] opacity-50">
+                  1456 Nguyen Van Linh, <br /> Mg Town 14th Ward, Tan Phong Ward,
                   District 7, Ho Chi Minh City, Vietnam
                 </p>
               </div>
               <div>
-                <h3 className="font-headline text-2xl text-primary">Call us</h3>
-                <p className="mt-2 text-lg text-white/70">(+84) 0888 317 789</p>
+                <h3 className="font-headline text-[20px] font-[500]">Call us</h3>
+                <p className="mt-2 text-lg font-[400] opacity-50">(+84) 0888 317 789</p>
               </div>
               <div>
-                <h3 className="font-headline text-2xl text-primary">
+                <h3 className="font-headline text-[20px] font-[500]">
                   Email us
                 </h3>
-                <p className="mt-2 text-lg text-white/70">info@rise-hitech</p>
+                <p className="mt-2 text-lg font-[400] opacity-50">info@rise-hitech</p>
               </div>
             </div>
             <div>
