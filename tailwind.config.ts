@@ -17,9 +17,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
+        sans: ['Space Grotesk', 'sans-serif'], // Основной шрифт для всего текста
+        body: ['Space Grotesk', 'sans-serif'],
         headline: ['Space Grotesk', 'sans-serif'],
-        code: ['Source Code Pro', 'monospace'],
+        mono: ['Space Mono', 'monospace'], // Для акцентов
       },
       colors: {
         background: 'hsl(var(--background))',
