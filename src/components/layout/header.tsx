@@ -94,7 +94,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
             className="text-2xl text-white/80 transition-colors hover:text-white"
             style={{
               animation: isOpen
-                ? `fade-in-up 0.4s ease-out ${i * 100}ms forwards`
+                ? `fade-in-up 0.5s ease-out ${200 + i * 100}ms forwards`
                 : "none",
               opacity: 0,
             }}
@@ -112,7 +112,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
           English
           <Globe className="w-5 h-5 ml-auto" />
         </Button>
-        <p className="text-sm text-white/40 mt-6">
+        <p className="text-sm text-white/40 mt-6 text-balance">
           &copy; {new Date().getFullYear()} Sirius Semiconductors. All rights
           reserved.
         </p>
@@ -140,7 +140,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
             >
               <Image
                 src="/siriuslogo-white.svg"
-                alt="Sirius Logo White"
+                alt="Sirius Logo"
                 fill
                 priority
                 className={cn(
@@ -217,7 +217,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
           isOpen ? "translate-y-0" : "-translate-y-full"
         )}
       >
-        {isOpen && <MobileNavContent />}
+        <MobileNavContent />
       </div>
     </>
   );

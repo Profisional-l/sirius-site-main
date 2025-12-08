@@ -150,9 +150,13 @@
 }
 
 @layer base {
+
   * {
     @apply border-border;
-  }
+    scrollbar-width: none;
+    /* cursor: url("../components/assets/CURSOR_01.png"), auto; */
+  } 
+
 
   body {
     @apply bg-background text-foreground;
