@@ -79,29 +79,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
   );
 
   const MobileNavContent = () => (
-    <div className="flex flex-col justify-between h-full w-full max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 py-3">
-       <div className="flex items-center justify-between h-[70px]">
-         <Link
-          href="/"
-          className="flex items-center gap-2 z-50"
-          prefetch={false}
-          onClick={() => setIsOpen(false)}
-        >
-          <Image
-            src="/siriuslogo.svg"
-            alt="Sirius Logo"
-            width={132}
-            height={36}
-            className="filter brightness-0 invert"
-          />
-        </Link>
-        <button
-          onClick={() => setIsOpen(false)}
-          className="focus:outline-none text-white"
-        >
-          <X className="w-8 h-8" />
-        </button>
-      </div>
+    <div className="flex flex-col justify-between h-full w-full max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-8">
       <nav className="flex flex-col items-start gap-4">
         {navLinks.map((link, i) => (
           <a
@@ -157,7 +135,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
           <div className="flex items-center justify-between h-[70px]">
             <Link
               href="/"
-              className={cn("flex items-center gap-2 z-50 transition-opacity", isOpen && "opacity-0")}
+              className={cn("flex items-center gap-2 z-50")}
               prefetch={false}
             >
               <Image
@@ -165,6 +143,10 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
                 alt="Sirius Logo"
                 width={132}
                 height={36}
+                className={cn(
+                  "transition-all duration-300",
+                  isOpen && "filter brightness-0 invert"
+                )}
               />
             </Link>
 
