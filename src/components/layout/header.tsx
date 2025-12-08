@@ -91,7 +91,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
             key={link.href}
             href={link.href}
             onClick={(e) => handleLinkClick(e, link.href)}
-            className="text-[20px] text-[#ffffff] opacity-[.63] transition-colors hover:opacity-[1]"
+            className="text-[20px] text-[#A4A5A7]  transition-colors hover:text-[#FFFFFF]"
             style={{
               animation: isOpen
                 ? `fade-in-up 0.6s ease-out ${300 + i * 100}ms forwards`
@@ -204,7 +204,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
       <div
         className={cn(
           "fixed top-0 left-0 w-full h-full bg-black transition-opacity duration-500 ease-in-out z-30",
-          isOpen ? "opacity-50" : "opacity-0 pointer-events-none"
+          isOpen ? "opacity-60" : "opacity-0 pointer-events-none"
         )}
         onClick={() => setIsOpen(false)}
       />
