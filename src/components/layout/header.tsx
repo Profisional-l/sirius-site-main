@@ -191,7 +191,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
                 <span
                   className={cn(
                     "w-full h-[3px] bg-white transform transition duration-300 ease-in-out",
-                    isOpen ? "-rotate-45 -translate-y-[9px]" : ""
+                    isOpen ? "-rotate-45 -translate-y-[10px]" : ""
                   )}
                 />
               </button>
