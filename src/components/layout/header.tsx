@@ -82,7 +82,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
     <div
       className={cn(
         "flex flex-col justify-between h-full w-full max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8 transition-opacity duration-500 ease-in-out",
-        isOpen ? "opacity-100" : "opacity-0"
+        isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
       )}
     >
       <nav className="flex flex-col items-start gap-4 mt-24">
@@ -91,8 +91,13 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
             key={link.href}
             href={link.href}
             onClick={(e) => handleLinkClick(e, link.href)}
-            className="text-xl text-white/80 transition-colors hover:text-white animate-fade-in-up"
-            style={{ animationDelay: `${100 + i * 100}ms` }}
+            className="text-2xl text-white/80 transition-colors hover:text-white"
+            style={{
+              animation: isOpen
+                ? `fade-in-up 0.5s ease-out ${100 + i * 100}ms forwards`
+                : "none",
+              opacity: isOpen ? 0 : 1,
+            }}
           >
             {link.label}
           </a>
@@ -127,15 +132,27 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
       >
         <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-[70px]">
-            <Link href="/" className="relative z-50" prefetch={false}>
+            <Link href="/" className="relative z-50 w-[132px] h-[36px]" prefetch={false}>
               <Image
                 src="/siriuslogo.svg"
                 alt="Sirius Logo"
                 width={132}
                 height={36}
+                style={{ willChange: 'opacity' }}
                 className={cn(
-                  "transition-all duration-300",
-                  isOpen && "filter brightness-0 invert"
+                  "transition-opacity duration-300",
+                   scrolled ? "opacity-100" : (isOpen ? "opacity-0" : "opacity-100")
+                )}
+              />
+              <Image
+                src="/siriuslogo-white.svg"
+                alt="Sirius Logo White"
+                width={132}
+                height={36}
+                style={{ willChange: 'opacity' }}
+                className={cn(
+                  "absolute top-0 left-0 transition-opacity duration-300",
+                  scrolled ? "opacity-0" : (isOpen ? "opacity-100" : "opacity-0")
                 )}
               />
             </Link>
@@ -214,11 +231,6 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
             opacity: 1;
             transform: translateY(0);
           }
-        }
-
-        .animate-fade-in-up {
-          animation: fade-in-up 0.5s ease-out forwards;
-          opacity: 0;
         }
       `}</style>
     </>
