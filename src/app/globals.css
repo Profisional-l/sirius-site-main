@@ -150,12 +150,32 @@
 }
 
 @layer base {
+
   * {
     @apply border-border;
-  }
+    scrollbar-width: none;
+    /* cursor: url("../components/assets/CURSOR_01.png"), auto; */
+  } 
+
 
   body {
     @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+
+  html.modal-open {
+    overflow: hidden;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

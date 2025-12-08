@@ -132,7 +132,7 @@ export default function Home() {
       </section>
 
       {/* Services Accordion */}
-      <section className="py-28 sm:py-32 bg-card">
+      <section id="services" className="py-28 sm:py-32 bg-card">
         <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
           <Accordion
             type="single"
@@ -166,32 +166,34 @@ export default function Home() {
                 Software & Technologies
               </AccordionTrigger>
               <AccordionContent className="px-6 py-6 text-lg text-white/70 bg-[#0c1729]">
-                {/* Industries Section */}
-                <section
-                  id="industries"
-                  className="py-28 sm:py-32 bg-background text-center relative overflow-hidden"
-                >
-                  <div className="dots-pattern"></div>
-                  <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8 relative">
-                    <h2 className="font-headline text-4xl md:text-5xl font-bold">
-                      Industries
-                    </h2>
-                    <div className="mt-12 flex flex-wrap justify-center gap-3">
-                      {industries.map((industry) => (
-                        <Badge
-                          key={industry}
-                          variant="outline"
-                          className="px-6 py-2 text-base border-primary text-primary rounded-lg cursor-pointer hover:bg-primary/10 transition-colors"
-                        >
-                          {industry}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </section>
+                Beyond hardware, we deliver complete software stacks, firmware, and development tools to unlock the full potential of your silicon. Our expertise spans embedded systems, drivers, and application-level software.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+        </div>
+      </section>
+      
+      {/* Industries Section */}
+      <section
+        id="industries"
+        className="py-28 sm:py-32 bg-background text-center relative overflow-hidden"
+      >
+        <div className="dots-pattern"></div>
+        <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8 relative">
+          <h2 className="font-headline text-4xl md:text-5xl font-bold">
+            Industries
+          </h2>
+          <div className="mt-12 flex flex-wrap justify-center gap-3">
+            {industries.map((industry) => (
+              <Badge
+                key={industry}
+                variant="outline"
+                className="px-6 py-2 text-base border-primary text-primary rounded-lg cursor-pointer hover:bg-primary/10 transition-colors"
+              >
+                {industry}
+              </Badge>
+            ))}
+          </div>
         </div>
       </section>
 
