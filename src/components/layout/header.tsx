@@ -81,7 +81,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
   const MobileNavContent = () => (
     <div
       className={cn(
-        "flex flex-col justify-between h-full w-full max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8 transition-opacity duration-300",
+        "flex flex-col justify-between h-full w-full max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8 transition-opacity duration-500 ease-in-out",
         isOpen ? "opacity-100" : "opacity-0"
       )}
     >
@@ -188,7 +188,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
       {/* Overlay */}
       <div
         className={cn(
-          "fixed top-0 left-0 w-full h-full bg-black transition-opacity duration-500 z-30",
+          "fixed top-0 left-0 w-full h-full bg-black transition-opacity duration-500 ease-in-out z-30",
           isOpen ? "opacity-50" : "opacity-0 pointer-events-none"
         )}
         onClick={() => setIsOpen(false)}
