@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Globe, X } from "lucide-react";
+import { Globe } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -112,22 +112,6 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
 
   return (
     <>
-       <div
-        className={cn(
-          "fixed top-0 left-0 w-full h-full bg-black transition-opacity duration-500 z-30 pointer-events-none",
-          isOpen ? "opacity-50" : "opacity-0"
-        )}
-      />
-
-      <div
-        className={cn(
-          "fixed top-0 left-0 w-full h-[390px] bg-background/95 backdrop-blur-lg text-white transform transition-transform duration-500 ease-in-out z-40",
-          isOpen ? "translate-y-0" : "-translate-y-full"
-        )}
-      >
-        <MobileNavContent />
-      </div>
-
       <header
         className={cn(
           "fixed top-0 py-3 left-0 right-0 z-50 transition-all duration-300",
@@ -138,11 +122,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
       >
         <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-[70px]">
-            <Link
-              href="/"
-              className={cn("flex items-center gap-2 z-50")}
-              prefetch={false}
-            >
+            <Link href="/" className="relative z-50" prefetch={false}>
               <Image
                 src="/siriuslogo.svg"
                 alt="Sirius Logo"
@@ -175,30 +155,19 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
                 <span
                   className={cn(
                     "w-full h-[3px] bg-white transform transition duration-300 ease-in-out",
-                    {
-                      "rotate-45 translate-y-[9.5px]": isOpen,
-                       "bg-white": isOpen,
-                       "bg-black": !isOpen && !scrolled,
-                    }
+                    isOpen ? "rotate-45 translate-y-[9.5px]" : ""
                   )}
                 />
                 <span
                   className={cn(
                     "w-full h-[3px] bg-white transition-opacity duration-300 ease-in-out",
-                    {
-                      "opacity-0": isOpen,
-                    },
-                    !isOpen && !scrolled && "bg-black"
+                    isOpen ? "opacity-0" : ""
                   )}
                 />
                 <span
                   className={cn(
                     "w-full h-[3px] bg-white transform transition duration-300 ease-in-out",
-                    {
-                      "-rotate-45 -translate-y-[9.5px]": isOpen,
-                      "bg-white": isOpen,
-                      "bg-black": !isOpen && !scrolled,
-                    }
+                    isOpen ? "-rotate-45 -translate-y-[9.5px]" : ""
                   )}
                 />
               </button>
@@ -206,6 +175,26 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
           </div>
         </div>
       </header>
+
+      {/* Overlay */}
+      <div
+        className={cn(
+          "fixed top-0 left-0 w-full h-full bg-black transition-opacity duration-500 z-30",
+          isOpen ? "opacity-50" : "opacity-0 pointer-events-none"
+        )}
+        onClick={() => setIsOpen(false)}
+      />
+
+      {/* Mobile Menu Panel */}
+      <div
+        className={cn(
+          "fixed top-0 left-0 w-full h-[390px] bg-background/95 backdrop-blur-lg text-white transform transition-transform duration-500 ease-in-out z-40",
+          isOpen ? "translate-y-0" : "-translate-y-full"
+        )}
+      >
+        <MobileNavContent />
+      </div>
+
       <style jsx>{`
         @keyframes fade-in-up {
           0% {
