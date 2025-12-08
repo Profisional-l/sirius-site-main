@@ -92,6 +92,12 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
             href={link.href}
             onClick={(e) => handleLinkClick(e, link.href)}
             className="text-2xl text-white/80 transition-colors hover:text-white"
+            style={{
+              animation: isOpen
+                ? `fade-in-up 0.4s ease-out ${i * 100}ms forwards`
+                : "none",
+              opacity: 0,
+            }}
           >
             {link.label}
           </a>
@@ -119,19 +125,38 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
       <header
         className={cn(
           "fixed top-0 py-3 left-0 right-0 z-50 transition-all duration-300",
-          scrolled && !isOpen
+          scrolled || isOpen
             ? "bg-background/80 backdrop-blur-lg border-b border-white/10"
             : "bg-transparent"
         )}
       >
         <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-[70px]">
-            <Link href="/" className="relative z-50 w-[132px] h-[36px]" prefetch={false}>
+            <Link
+              href="/"
+              className="relative z-50 w-[132px] h-[36px]"
+              prefetch={false}
+              style={{ willChange: "opacity" }}
+            >
               <Image
                 src="/siriuslogo-white.svg"
+                alt="Sirius Logo White"
+                fill
+                priority
+                className={cn(
+                  "transition-opacity duration-300",
+                  scrolled && !isOpen ? "opacity-0" : "opacity-100"
+                )}
+              />
+              <Image
+                src="/siriuslogo.svg"
                 alt="Sirius Logo"
                 fill
                 priority
+                className={cn(
+                  "transition-opacity duration-300",
+                  scrolled && !isOpen ? "opacity-100" : "opacity-0"
+                )}
               />
             </Link>
 
@@ -155,9 +180,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
                 <span
                   className={cn(
                     "w-full h-[3px] bg-white transform transition duration-300 ease-in-out",
-                    isOpen
-                      ? "rotate-45 translate-y-[9.5px]"
-                      : ""
+                    isOpen ? "rotate-45 translate-y-[9.5px]" : ""
                   )}
                 />
                 <span
@@ -169,9 +192,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
                 <span
                   className={cn(
                     "w-full h-[3px] bg-white transform transition duration-300 ease-in-out",
-                    isOpen
-                      ? "-rotate-45 -translate-y-[9.5px]"
-                      : ""
+                    isOpen ? "-rotate-45 -translate-y-[9.5px]" : ""
                   )}
                 />
               </button>
@@ -196,7 +217,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
           isOpen ? "translate-y-0" : "-translate-y-full"
         )}
       >
-        <MobileNavContent />
+        {isOpen && <MobileNavContent />}
       </div>
     </>
   );
