@@ -79,8 +79,8 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
   );
 
   const MobileNavContent = () => (
-    <div className="flex flex-col justify-between h-full w-full max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-8">
-      <nav className="flex flex-col items-start gap-4">
+    <div className="flex flex-col justify-between h-full w-full max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8">
+      <nav className="flex flex-col items-start gap-4 mt-24">
         {navLinks.map((link, i) => (
           <a
             key={link.href}
@@ -112,16 +112,21 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
 
   return (
     <>
-      {showNav && (
-        <div
-          className={cn(
-            "fixed top-0 left-0 w-full h-[390px] bg-background/95 backdrop-blur-lg text-white transform transition-transform duration-500 ease-in-out z-40",
-            isOpen ? "translate-y-0" : "-translate-y-full"
-          )}
-        >
-          <MobileNavContent />
-        </div>
-      )}
+       <div
+        className={cn(
+          "fixed top-0 left-0 w-full h-full bg-black transition-opacity duration-500 z-30 pointer-events-none",
+          isOpen ? "opacity-50" : "opacity-0"
+        )}
+      />
+
+      <div
+        className={cn(
+          "fixed top-0 left-0 w-full h-[390px] bg-background/95 backdrop-blur-lg text-white transform transition-transform duration-500 ease-in-out z-40",
+          isOpen ? "translate-y-0" : "-translate-y-full"
+        )}
+      >
+        <MobileNavContent />
+      </div>
 
       <header
         className={cn(
@@ -172,7 +177,8 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
                     "w-full h-[3px] bg-white transform transition duration-300 ease-in-out",
                     {
                       "rotate-45 translate-y-[9.5px]": isOpen,
-                      "bg-white": isOpen,
+                       "bg-white": isOpen,
+                       "bg-black": !isOpen && !scrolled,
                     }
                   )}
                 />
@@ -181,7 +187,8 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
                     "w-full h-[3px] bg-white transition-opacity duration-300 ease-in-out",
                     {
                       "opacity-0": isOpen,
-                    }
+                    },
+                    !isOpen && !scrolled && "bg-black"
                   )}
                 />
                 <span
@@ -190,6 +197,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
                     {
                       "-rotate-45 -translate-y-[9.5px]": isOpen,
                       "bg-white": isOpen,
+                      "bg-black": !isOpen && !scrolled,
                     }
                   )}
                 />
