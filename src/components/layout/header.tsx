@@ -79,7 +79,12 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
   );
 
   const MobileNavContent = () => (
-    <div className="flex flex-col justify-between h-full w-full max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8">
+    <div
+      className={cn(
+        "flex flex-col justify-between h-full w-full max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8 transition-opacity duration-300",
+        isOpen ? "opacity-100" : "opacity-0"
+      )}
+    >
       <nav className="flex flex-col items-start gap-4 mt-24">
         {navLinks.map((link, i) => (
           <a
@@ -154,8 +159,10 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
               >
                 <span
                   className={cn(
-                    "w-full h-[3px] bg-white transform transition duration-300 ease-in-out",
-                    isOpen ? "rotate-45 translate-y-[9.5px]" : ""
+                    "w-full h-[3px] transform transition duration-300 ease-in-out",
+                    isOpen
+                      ? "rotate-45 translate-y-[9.5px] bg-white"
+                      : "bg-white"
                   )}
                 />
                 <span
@@ -166,8 +173,10 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
                 />
                 <span
                   className={cn(
-                    "w-full h-[3px] bg-white transform transition duration-300 ease-in-out",
-                    isOpen ? "-rotate-45 -translate-y-[9.5px]" : ""
+                    "w-full h-[3px] transform transition duration-300 ease-in-out",
+                    isOpen
+                      ? "-rotate-45 -translate-y-[9.5px] bg-white"
+                      : "bg-white"
                   )}
                 />
               </button>
