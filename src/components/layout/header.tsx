@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Globe } from "lucide-react";
+import { Globe, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -12,7 +12,9 @@ import { Button } from "@/components/ui/button";
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#products", label: "Products & Services" },
+  { href: "#industries", label: "Industries" },
   { href: "#team", label: "Team" },
+  { href: "#contact", label: "Careers" },
 ];
 
 export function Header({ showNav = true }: { showNav?: boolean }) {
@@ -53,9 +55,15 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
     setIsOpen(false);
   };
 
-  const NavContent = () => (
+  const desktopNavLinks = [
+    { href: "#about", label: "About" },
+    { href: "#products", label: "Products & Services" },
+    { href: "#team", label: "Team" },
+  ];
+
+  const DesktopNavContent = () => (
     <>
-      {navLinks.map((link) => (
+      {desktopNavLinks.map((link) => (
         <a
           key={link.href}
           href={link.href}
@@ -69,50 +77,68 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
   );
 
   const MobileNavContent = () => (
-    <>
-      {navLinks.map((link, i) => (
-         <a
-            key={link.href}
-            href={link.href}
-            onClick={(e) => handleLinkClick(e, link.href)}
-            className={`h-[75px] text-5xl animate-fade-in-up delay-[${i * 100}ms]`}
-          >
-            {link.label}
-          </a>
-      ))}
-       <Button
-        variant="outline"
-        size="sm"
-        className={`bg-transparent hover:bg-white/10 text-white/80 border-white/30 h-auto px-4 py-1.5 text-xl animate-fade-in-up delay-[${navLinks.length * 100}ms]`}
-      >
-         English<Globe className="w-4 h-4" />
-      </Button>
-    </>
+    <div className="flex flex-col justify-between h-full w-full max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <div className="flex items-center justify-between h-[70px]">
+             <Link href="/" className="flex items-center gap-2 z-50" prefetch={false} onClick={() => setIsOpen(false)}>
+              <Image
+                src="/siriuslogo.svg"
+                alt="Sirius Logo"
+                width={132}
+                height={36}
+                className="filter brightness-0 invert"
+              />
+            </Link>
+            <button
+                onClick={() => setIsOpen(false)}
+                className="focus:outline-none text-white"
+              >
+              <X className="w-8 h-8" />
+            </button>
+        </div>
+        <nav className="flex flex-col items-start gap-6">
+          {navLinks.map((link, i) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={(e) => handleLinkClick(e, link.href)}
+              className="text-3xl text-white/80 transition-colors hover:text-white animate-fade-in-up"
+              style={{ animationDelay: `${100 + i * 100}ms` }}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        <div className="border-t border-white/10 pt-8 pb-4">
+             <Button
+                variant="outline"
+                size="sm"
+                className="bg-transparent hover:bg-white/10 text-white/80 border-white/30 h-auto px-4 py-1.5 text-xl w-full justify-start"
+              >
+                 English<Globe className="w-5 h-5 ml-auto" />
+              </Button>
+            <p className="text-sm text-white/40 mt-6">&copy; {new Date().getFullYear()} Sirius Semiconductors. All rights reserved.</p>
+        </div>
+    </div>
   );
 
 
   return (
     <>
       {showNav && (
-        <>
-          <div
-            className={`fixed top-0 left-0 w-full h-full bg-black transition-opacity duration-500 z-30 pointer-events-none ${isOpen ? "opacity-50" : "opacity-0"
-              }`}
-          />
-          <div
-            className={`fixed top-0 left-0 w-full bg-background/95 backdrop-blur-lg text-white uppercase flex flex-col items-center justify-center gap-4 text-center transform transition-transform duration-500 ease-in-out z-40 ${isOpen ? "translate-y-0 h-full" : "-translate-y-full h-0"
-              }`}
-            style={{ willChange: "transform" }}
-          >
-            <MobileNavContent />
-          </div>
-        </>
+        <div
+          className={cn(
+            "fixed top-0 left-0 w-full h-full bg-background/95 backdrop-blur-lg text-white transform transition-transform duration-500 ease-in-out z-40",
+            isOpen ? "translate-y-0" : "-translate-y-full"
+          )}
+        >
+          <MobileNavContent />
+        </div>
       )}
 
       <header
         className={cn(
-          "absolute top-0 py-3 left-0 right-0 z-50 transition-all duration-300",
-          scrolled || isOpen
+          "fixed top-0 py-3 left-0 right-0 z-50 transition-all duration-300",
+          scrolled && !isOpen
             ? "bg-background/80 backdrop-blur-lg border-b border-white/10"
             : "bg-transparent"
         )}
@@ -125,12 +151,12 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
                 alt="Sirius Logo"
                 width={132}
                 height={36}
-                className={cn("transition-all", isOpen ? "filter-brightness-200" : "")}
+                className={cn("transition-all", isOpen ? "filter brightness-0 invert" : "")}
               />
             </Link>
 
             <nav className="hidden md:flex items-center gap-10">
-              <NavContent />
+              <DesktopNavContent />
               <Button
                 variant="outline"
                 size="sm"
@@ -146,16 +172,21 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
                 className="relative w-[30px] h-6 flex flex-col justify-between items-center focus:outline-none"
               >
                 <span
-                  className={`w-full h-[3px] transform transition duration-300 ease-in-out ${isOpen ? "rotate-45 translate-y-[9.5px] bg-white" : "bg-white"
-                    }`}
+                  className={cn("w-full h-[3px] bg-white transform transition duration-300 ease-in-out", {
+                     "rotate-45 translate-y-[9.5px]": isOpen,
+                     "bg-white": isOpen,
+                  })}
                 />
                 <span
-                  className={`w-full h-[3px] transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-0" : "opacity-100 bg-white"
-                    }`}
+                  className={cn("w-full h-[3px] bg-white transition-opacity duration-300 ease-in-out", {
+                    "opacity-0": isOpen,
+                  })}
                 />
                 <span
-                  className={`w-full h-[3px] transform transition duration-300 ease-in-out ${isOpen ? "-rotate-45 -translate-y-[9.5px] bg-white" : "bg-white"
-                    }`}
+                   className={cn("w-full h-[3px] bg-white transform transition duration-300 ease-in-out", {
+                    "-rotate-45 -translate-y-[9.5px]": isOpen,
+                    "bg-white": isOpen,
+                 })}
                 />
               </button>
             </div>
@@ -175,21 +206,8 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
         }
 
         .animate-fade-in-up {
-          animation: fade-in-up 0.4s ease-out forwards;
+          animation: fade-in-up 0.5s ease-out forwards;
           opacity: 0;
-        }
-
-        .delay-\\[0ms\\] {
-          animation-delay: 100ms;
-        }
-        .delay-\\[100ms\\] {
-          animation-delay: 200ms;
-        }
-        .delay-\\[200ms\\] {
-          animation-delay: 300ms;
-        }
-        .delay-\\[300ms\\] {
-          animation-delay: 400ms;
         }
       `}</style>
     </>
