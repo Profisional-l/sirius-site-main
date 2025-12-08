@@ -1,5 +1,4 @@
-# Firebase Studio
+# Sirius
 
-This is a NextJS starter in Firebase Studio.
+Created by Sakura.
 
-To get started, take a look at src/app/page.tsx.

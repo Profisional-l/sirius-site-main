@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { ChevronDown } from 'lucide-react';
-import { usePathname } from 'next/navigation';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Menu, Globe } from "lucide-react";
 
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#products', label: 'Products & Services' },
-  { href: '#team', label: 'Team' },
+  { href: "#about", label: "About" },
+  { href: "#products", label: "Products & Services" },
+  { href: "#team", label: "Team" },
 ];
 
 export function Header() {
@@ -22,11 +22,11 @@ export function Header() {
   const isHomePage = pathname === '/';
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // const handleScroll = () => {
+    //   setScrolled(window.scrollY > 0);
+    // };
+    // window.addEventListener("scroll", handleScroll);
+    // return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   
   useEffect(() => {
@@ -61,11 +61,18 @@ export function Header() {
           key={link.href}
           href={link.href}
           onClick={(e) => handleLinkClick(e, link.href)}
-          className="text-white/70 transition-colors hover:text-white"
+          className=" text-[18px]  transition-colors hover:text-white/70"
         >
           {link.label}
         </a>
       ))}
+      <Button
+        variant="outline"
+        size="sm"
+        className="bg-transparent hover:bg-[#ffffff00] hover:text-white/70 border-[#F0F2F787] h-auto px-4 py-1.5 text-[18px]"
+      >
+         English<Globe className="w-4 h-4" />
+      </Button>
     </>
   );
 
