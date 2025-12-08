@@ -156,6 +156,11 @@
 
   body {
     @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+
+  html.modal-open {
+    overflow: hidden;
   }
 }
 
