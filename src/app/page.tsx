@@ -75,19 +75,19 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="font-mono text-5xl md:text-6xl tracking-tighter uppercase leading-tight">
-              Microelectronics
+            <h1 className="font-mono text-[42px] md:text-[68px] tracking-tighter uppercase leading-tight text-[#F0F2F7]">
+              Micro<span className="visible sm:invisible sm:hidden ">-</span>electronics
               <br />
               Technological Hub
             </h1>
-            <p className="mt-6 max-w-3xl mx-auto text-lg md:text-[28px] text-[#F0F2F7] leading-relaxed">
+            <p className="mt-6 max-w-3xl mx-auto text-[20px] md:text-[28px] text-[#F0F2F7] leading-relaxed">
               We are{" "}
               <span className="bg-gradient-to-r from-[#0075EB] to-[#35A4FF] bg-clip-text text-transparent">
                 all about microelectronics.
               </span>{" "}
               <br />
               With time-2-market & price-2-quality competitive advantages for
-              our customers.
+              our customers
             </p>
             <div className="mt-10">
               <Button
