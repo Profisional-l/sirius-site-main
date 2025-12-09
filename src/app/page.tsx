@@ -238,7 +238,7 @@ export default function Home() {
         </section>
 
         <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
-            <Separator className="bg-black/50" />
+            <Separator className="bg-[#FFFFFF12]" />
         </div>
 
         {/* Join CTA */}
