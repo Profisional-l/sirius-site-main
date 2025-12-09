@@ -52,14 +52,12 @@ const teamMembers = [
   {
     name: "ALEX DROZDOV",
     bio: "Former Executive of one of the Intel local RnD centers, ex-vice president of Soft Machines Ltd, PhD in computer science, previously launched the microelectronics technological companies in Russia",
-    image: PlaceHolderImages.find((img) => img.id === "team-alex-drozdov")
-      ?.imageUrl,
+    image: "/face1.png",
   },
   {
     name: "VAN NGUYEN",
     bio: "Famous Vietnamese tycoon with a long story of successfully built businesses such as ..",
-    image: PlaceHolderImages.find((img) => img.id === "team-van-nguyen")
-      ?.imageUrl,
+    image: "/face2.png",
   },
 ];
 
