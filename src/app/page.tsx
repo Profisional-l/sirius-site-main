@@ -14,6 +14,7 @@ import { ProductCard } from "@/components/product-card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { CheckCircle } from "lucide-react";
 import { MotionDiv } from "@/components/motion-div";
+import { Separator } from "@/components/ui/separator";
 
 const products = [
   {
@@ -197,55 +198,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section id="team" className="py-28 sm:py-32 bg-card">
-        <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h2 className="font-headline text-4xl md:text-5xl font-medium leading-tight">
-              Lead by the ones who got something to brag on. But they don't.
-            </h2>
-          </div>
-          <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {teamMembers.map((member) => (
-              <div
-                key={member.name}
-                className="flex items-start gap-6 p-6 bg-[#0E1A2E]/50 rounded-lg"
-              >
-                <Avatar className="w-16 h-16 border-2 border-white/20">
-                  <AvatarImage
-                    src={member.image}
-                    alt={member.name}
-                    data-ai-hint="person portrait"
-                  />
-                  <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
-                </Avatar>
-                <div className="space-y-2">
-                  <h3 className="font-headline text-xl font-bold uppercase">
-                    {member.name}
-                  </h3>
-                  <p className="text-white/70">{member.bio}</p>
+      {/* Team & Join CTA */}
+      <div className="bg-[#182434]">
+        {/* Team Section */}
+        <section id="team" className="py-28 sm:py-32">
+          <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div className="lg:max-w-md">
+              <h3 className="text-sm font-code uppercase tracking-[0.25em] text-primary/70">
+                Team
+              </h3>
+              <h2 className="mt-4 font-headline text-4xl md:text-5xl font-medium leading-tight">
+                Lead by the ones who <span className="text-primary">got something to brag on.</span> But they don&apos;t.
+              </h2>
+            </div>
+            <div className="space-y-12">
+              {teamMembers.map((member) => (
+                <div
+                  key={member.name}
+                  className="flex items-start gap-6"
+                >
+                  <Avatar className="w-16 h-16 border-2 border-white/20 shrink-0">
+                    <AvatarImage
+                      src={member.image}
+                      alt={member.name}
+                      data-ai-hint="person portrait"
+                    />
+                    <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
+                  </Avatar>
+                  <div className="space-y-2">
+                    <h3 className="font-headline text-xl font-bold uppercase">
+                      {member.name}
+                    </h3>
+                    <p className="text-white/70">{member.bio}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Join CTA */}
-      <section className="py-28 sm:py-32 bg-background text-center">
         <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
-          <h2 className="font-headline text-4xl md:text-5xl font-medium">
-            Wanna join the team?
-          </h2>
-          <p className="mt-6 max-w-2xl mx-auto text-lg text-white/70">
-            We are always looking for talented people who find their joy and
-            inspiration in hi-tech. Feel free to reach us and tell your story.
-          </p>
-          <div className="mt-10">
-            <Button size="lg">Contact Us</Button>
-          </div>
+            <Separator className="bg-[#FFFFFF12]" />
         </div>
-      </section>
+
+        {/* Join CTA */}
+        <section className="py-28 sm:py-32 text-center">
+          <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
+            <h2 className="font-headline text-4xl md:text-5xl font-medium">
+              Wanna join the team?
+            </h2>
+            <p className="mt-6 max-w-2xl mx-auto text-lg text-white/70">
+              We are always looking for talented people who find their joy and
+              inspiration in hi-tech. Feel free to reach us and tell your story.
+            </p>
+            <div className="mt-10">
+              <Button size="lg">Contact Us</Button>
+            </div>
+          </div>
+        </section>
+      </div>
+
 
       {/* Contact Section */}
       <section id="contact" className="py-28 sm:py-16 bg-[#FFFFFF]">
