@@ -51,13 +51,13 @@ const industries = [
 const teamMembers = [
   {
     name: "ALEX DROZDOV",
-    bio: "Former Executive of one of the Intel local RnD centers, ex-vice president of Saft Batteries Ltd, PhD in computer science, previously launched the microelectronics technological companies in Russia",
+    bio: "Former Executive of one of the Intel local RnD centers, ex-vice president of Soft Machines Ltd, PhD in computer science, previously launched the microelectronics technological companies in Russia",
     image: PlaceHolderImages.find((img) => img.id === "team-alex-drozdov")
       ?.imageUrl,
   },
   {
     name: "VAN NGUYEN",
-    bio: "Famous Vietnamese tycoon with a long story of successfully built businesses in technology, manufacturing, and real estate, bringing strategic investment and local market expertise.",
+    bio: "Famous Vietnamese tycoon with a long story of successfully built businesses such as ..",
     image: PlaceHolderImages.find((img) => img.id === "team-van-nguyen")
       ?.imageUrl,
   },
@@ -199,25 +199,25 @@ export default function Home() {
       </section>
 
       {/* Team & Join CTA */}
-      <div className="bg-[#182434]">
+      <div className="teamblock">
         {/* Team Section */}
-        <section id="team" className="py-28 sm:py-32">
+        <section id="team" className="py-28 sm:py-26">
           <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div className="lg:max-w-md">
-              <h3 className="text-sm font-code uppercase tracking-[0.25em] text-primary/70">
+            <div className="lg:max-w-md -mt-14">
+              <h3 className="text-[14px] md:text-[18px] font-code uppercase  text-[#F0F2F7] opacity-40">
                 Team
               </h3>
-              <h2 className="mt-4 font-headline text-4xl md:text-5xl font-medium leading-tight">
-                Lead by the ones who <span className="text-primary">got something to brag on.</span> But they don&apos;t.
+              <h2 className="mt-8 font-headline text-[28px] md:text-[45px] font-medium leading-tight">
+                Lead by the ones who <span className="text-primary">got something to brag on.</span><br className="hidden md:block"/> But they don&apos;t.
               </h2>
             </div>
-            <div className="space-y-12">
+            <div className="space-y-12 mw-[515px] pr-4">
               {teamMembers.map((member) => (
                 <div
                   key={member.name}
                   className="flex items-start gap-6"
                 >
-                  <Avatar className="w-16 h-16 border-2 border-white/20 shrink-0">
+                  <Avatar className="w-[88px] md:w-[110px] h-[88px] md:h-[110px] border-2 border-white/20 shrink-0">
                     <AvatarImage
                       src={member.image}
                       alt={member.name}
@@ -226,10 +226,10 @@ export default function Home() {
                     <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
                   </Avatar>
                   <div className="space-y-2">
-                    <h3 className="font-headline text-xl font-bold uppercase">
+                    <h3 className="font-headline text-[20px] md:text-[28px] font-bold uppercase text-[#F2F2F2]">
                       {member.name}
                     </h3>
-                    <p className="text-white/70">{member.bio}</p>
+                    <p className="text-[14px] md:text-[20px] text-[#B8BECF] opacity-70">{member.bio}</p>
                   </div>
                 </div>
               ))}
@@ -237,22 +237,22 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8 -mt-16">
             <Separator className="bg-[#FFFFFF12]" />
         </div>
 
         {/* Join CTA */}
-        <section className="py-28 sm:py-32 text-center">
+        <section className="py-[75px] sm:py-20 text-center">
           <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
-            <h2 className="font-headline text-4xl md:text-5xl font-medium">
+            <h2 className="font-headline text-[28px] md:text-[45px] font-medium">
               Wanna join the team?
             </h2>
-            <p className="mt-6 max-w-2xl mx-auto text-lg text-white/70">
+            <p className="mt-6 max-w-[740 px] mx-auto text-[16px] md:text-[22px] text-[#B8BECF] px-6 md:py-0">
               We are always looking for talented people who find their joy and
               inspiration in hi-tech. Feel free to reach us and tell your story.
             </p>
             <div className="mt-10">
-              <Button size="lg">Contact Us</Button>
+              <Button size="lg" className="bg-[#F0F2F7] border-white/30 hover:bg-white/20 text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-0 w-[186px] h-[55px] rounded-[9px]">Contact Us</Button>
             </div>
           </div>
         </section>

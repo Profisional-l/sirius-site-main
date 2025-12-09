@@ -216,3 +216,7 @@
 .settingsform:focus-visible {
   border: solid 1.5px #0F141C66 !important;
 }
+
+.teamblock {
+  background-image: url("../../public/teambg.svg");
+}
