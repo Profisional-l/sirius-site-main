@@ -258,11 +258,11 @@ export default function Home() {
 
 
       {/* Contact Section */}
-      <section id="contact" className="py-28 sm:py-16 bg-[#FFFFFF]">
+      <section id="contact" className="py-10 sm:py-16 bg-[#FFFFFF]">
         <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
-          <h1 className="text-[45px] text-[#0F141C] font-[500]">Contact details</h1>
+          <h1 className="text-[28px] md:text-[45px] text-[#0F141C] font-[500]">Contact details</h1>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <div className="space-y-12 max-w-[350px] text-[#0F141C]">
+            <div className="hidden md:block space-y-12 max-w-[350px] text-[#0F141C]">
               <div>
                 <h3 className="font-headline text-[20px] mt-8 font-[500]">
                   Office address
@@ -283,7 +283,7 @@ export default function Home() {
                 <p className="mt-2 text-lg font-[400] opacity-50">info@rise-hitech</p>
               </div>
             </div>
-            <div>
+            <div className="mt-10 md:mt-0">
               <ContactForm />
             </div>
           </div>
