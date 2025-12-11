@@ -220,3 +220,12 @@
 .teamblock {
   background-image: url("../../public/teambg.svg");
 }
+
+footer {
+  background-image: url("../../public/footerbg.svg");
+}
+
+.navigateList li:hover {
+  color: #ffffff99;
+  transition: color .33s;
+}
