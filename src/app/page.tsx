@@ -12,6 +12,7 @@ import { ContactForm } from "@/components/contact-form";
 import { ProductCard } from "@/components/product-card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { MotionDiv } from "@/components/motion-div";
+import { Separator } from "@/components/ui/separator";
 
 // Добавляем ссылки на фоновые изображения
 const products = [
@@ -41,15 +42,13 @@ const products = [
 const teamMembers = [
   {
     name: "ALEX DROZDOV",
-    bio: "Former Executive of one of the Intel local RnD centers, ex-vice president of Saft Batteries Ltd, PhD in computer science, previously launched the microelectronics technological companies in Russia",
-    image: PlaceHolderImages.find((img) => img.id === "team-alex-drozdov")
-      ?.imageUrl,
+    bio: "Former Executive of one of the Intel local RnD centers, ex-vice president of Soft Machines Ltd, PhD in computer science, previously launched the microelectronics technological companies in Russia",
+    image: "/face1.png",
   },
   {
     name: "VAN NGUYEN",
-    bio: "Famous Vietnamese tycoon with a long story of successfully built businesses in technology, manufacturing, and real estate, bringing strategic investment and local market expertise.",
-    image: PlaceHolderImages.find((img) => img.id === "team-van-nguyen")
-      ?.imageUrl,
+    bio: "Famous Vietnamese tycoon with a long story of successfully built businesses such as ..",
+    image: "/face2.png",
   },
 ];
 
@@ -66,19 +65,19 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="font-mono text-5xl md:text-6xl tracking-tighter uppercase leading-tight">
-              Microelectronics
+            <h1 className="font-mono text-[42px] md:text-[68px] tracking-tighter uppercase leading-tight text-[#F0F2F7]">
+              Micro<span className="visible sm:invisible sm:hidden ">-</span>electronics
               <br />
               Technological Hub
             </h1>
-            <p className="mt-6 max-w-3xl mx-auto text-lg md:text-[28px] text-[#F0F2F7] leading-relaxed">
+            <p className="mt-6 max-w-3xl mx-auto text-[20px] md:text-[28px] text-[#F0F2F7] leading-relaxed">
               We are{" "}
               <span className="bg-gradient-to-r from-[#0075EB] to-[#35A4FF] bg-clip-text text-transparent">
                 all about microelectronics.
               </span>{" "}
               <br />
               With time-2-market & price-2-quality competitive advantages for
-              our customers.
+              our customers
             </p>
             <div className="mt-10">
               <Button
@@ -129,7 +128,7 @@ export default function Home() {
       </section>
 
       {/* Services Accordion */}
-      <section className="pt-[52px] sm:pt-[82px] bg-[#090D12]"> 
+      <section id="services" className="pt-[52px] sm:pt-[82px] bg-[#090D12]">
         <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
           <h2 className="text-lg uppercase text-white/60 mb-8">
             Products & Services

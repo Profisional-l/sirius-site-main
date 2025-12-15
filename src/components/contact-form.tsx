@@ -149,7 +149,7 @@ export function ContactForm() {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="w-[110px] h-[55px] rounded-[9px] bg-[#2B95FF] text-white "
+          className="w-full md:w-[110px] h-[55px] rounded-[9px] bg-[#2B95FF] text-white "
         >
           {isSubmitting ? (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />

@@ -150,12 +150,32 @@
 }
 
 @layer base {
+
   * {
     @apply border-border;
-  }
+    scrollbar-width: none;
+    /* cursor: url("../components/assets/CURSOR_01.png"), auto; */
+  } 
+
 
   body {
     @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+
+  html.modal-open {
+    overflow: hidden;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -216,4 +236,16 @@
 
 .group:hover .inner-shadow {
   box-shadow: inset 0 0 10px rgba(25, 171, 255, 0.7);
+}
+.teamblock {
+  background-image: url("../../public/teambg.svg");
+}
+
+footer {
+  background-image: url("../../public/footerbg.svg");
+}
+
+.navigateList li:hover {
+  color: #ffffff99;
+  transition: color .33s;
 }
