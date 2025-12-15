@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import {
   Accordion,
@@ -37,17 +36,6 @@ const products = [
       "Partner with us for cutting-edge Research and Development. Our experienced team pioneers novel solutions in digital, analog, and RF design to solve tomorrow's challenges.",
     backgroundImage: "/icons/tripple-3.svg",
   },
-];
-
-const industries = [
-  "Telecom",
-  "Cloud-service",
-  "Engineering",
-  "IoT",
-  "Security systems",
-  "Blockchain",
-  "Robotics",
-  "AI",
 ];
 
 const teamMembers = [
@@ -241,21 +229,29 @@ export default function Home() {
         id="industries"
         className="py-28 sm:py-32 bg-[#090D12] text-center relative overflow-hidden"
       >
-        <div className="dots-pattern"></div>
-        <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8 relative">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold text-white">
-            Industries
-          </h2>
-          <div className="mt-12 flex flex-wrap justify-center gap-3">
-            {industries.map((industry) => (
-              <Badge
-                key={industry}
-                variant="outline"
-                className="px-6 py-2 text-base border-primary text-primary rounded-lg cursor-pointer hover:bg-primary/10 transition-colors"
-              >
-                {industry}
-              </Badge>
-            ))}
+        <div className="absolute inset-0 z-0">
+          {/* Removed Image component and reverted to dots-pattern div */}
+          <div className="dots-pattern"></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="relative flex justify-center items-center h-[400px]">
+            <h2 className="absolute font-mono text-5xl font-bold text-white uppercase tracking-widest">
+              Industries
+            </h2>
+
+            <div className="absolute w-full h-full">
+              <Badge className="absolute top-[10%] left-[35%]" variant="blue">Telecom</Badge>
+              <Badge className="absolute top-[45%] left-[15%]" variant="blue">AI</Badge>
+              <Badge className="absolute top-[65%] left-[10%]" variant="blue">Robotics</Badge>
+              <Badge className="absolute top-[85%] left-[20%]" variant="blue">Blockchain</Badge>
+              
+              <Badge className="absolute top-[15%] left-[55%]" variant="blue">Cloud-service</Badge>
+              
+              <Badge className="absolute top-[85%] left-[58%]" variant="blue">Security systems</Badge>
+
+              <Badge className="absolute top-[45%] right-[15%]" variant="blue">Engineering</Badge>
+              <Badge className="absolute top-[65%] right-[20%]" variant="blue">IoT</Badge>
+            </div>
           </div>
         </div>
       </section>

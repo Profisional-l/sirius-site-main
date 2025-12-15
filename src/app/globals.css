@@ -183,7 +183,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: radial-gradient(circle at 1px 1px, rgba(60, 163, 255, 0.25) 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, rgba(128, 128, 128, 0.25) 1px, transparent 0);
   background-size: 2rem 2rem;
   mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
 }
@@ -195,4 +195,25 @@
 
 .settingsform:focus-visible {
   border: solid 1.5px #0F141C66 !important;
+}
+
+.line {
+  position: absolute;
+  background-color: #0075EB;
+  height: 1px;
+  transform-origin: left;
+}
+
+.group:hover .line-left {
+  width: 50%;
+  left: -50%;
+}
+
+.group:hover .line-right {
+  width: 50%;
+  right: -50%;
+}
+
+.group:hover .inner-shadow {
+  box-shadow: inset 0 0 10px rgba(25, 171, 255, 0.7);
 }
