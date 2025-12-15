@@ -15,63 +15,77 @@ type ProductCardProps = {
   title: string;
   description: string;
   details: string;
+  backgroundImage?: string;
 };
 
-function TechPattern() {
-  return (
-    <svg
-      className="absolute inset-0 h-full w-full stroke-primary/20 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
-      aria-hidden="true"
-    >
-      <defs>
-        <pattern
-          id="product-pattern"
-          width="40"
-          height="40"
-          patternUnits="userSpaceOnUse"
-          x="50%"
-          y="100%"
-          patternTransform="translate(0 -1)"
-        >
-          <path d="M0 40V.5H40" fill="none" />
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" stroke="none" fill="url(#product-pattern)" />
-    </svg>
-  );
-}
-
-export function ProductCard({ title, description, details }: ProductCardProps) {
+export function ProductCard({
+  title,
+  description,
+  details,
+  backgroundImage,
+}: ProductCardProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       <motion.div
-        whileHover={{ y: -5, scale: 1.02 }}
-        transition={{ type: 'spring', stiffness: 300 }}
-        className="relative w-full h-[360px] cursor-pointer"
+        className="relative w-full h-[420px] cursor-pointer"
         onClick={() => setIsOpen(true)}
       >
-        <div className="h-full rounded-2xl bg-card/50 border border-white/10 p-6 flex flex-col justify-end overflow-hidden shadow-lg backdrop-blur-sm">
-          <TechPattern />
-          <div className="relative z-10">
-            <h3 className="text-2xl font-bold font-headline text-white">{title}</h3>
-            <p className="mt-2 text-white/70">{description}</p>
+        {/* Обёртка карточки */}
+        <div className="relative h-full flex flex-col justify-end overflow-hidden rounded-[24px] border border-white/10 bg-[#101823] shadow-[0_10px_40px_rgba(0,0,0,0.45),0_0_25px_rgba(0,170,255,0.2),inset_0px_0px_35.5px_0px_rgba(255,255,255,0.25),inset_0px_0px_162.1px_0px_rgba(4,117,208,0.6)] backdrop-blur-[4px] transition-all duration-300">
+
+          {/* Фон / изображение */}
+          {backgroundImage && (
+            <div className="inset-0 z-0 pointer-events-none overflow-hidden rounded-[24px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={backgroundImage}
+                alt=""
+                className="w-full h-full object-cover object-center opacity-80 transition-opacity duration-500"
+                fetchPriority="high"
+                loading="eager"
+              />
+            </div>
+          )}
+
+          {/* Градиент-оверлей */}
+          <div className="absolute inset-0 z-[1]" />
+
+          {/* Контент */}
+          <div className="relative z-[2] px-8 pb-[28px]">
+            <h3 className="text-[28px] mt-[34px] text-center leading-[1.2] font-bold font-headline text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+              {title}
+            </h3>
+            <p className="mt-3 text-[22px] text-center leading-[1.5] text-white/70">
+              {description}
+            </p>
           </div>
         </div>
       </motion.div>
 
+      {/* Диалог */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="bg-card border-primary/50 text-white max-w-lg">
+        <DialogContent className="bg-[#0C1C3E] border border-primary/50 text-white max-w-lg rounded-2xl shadow-2xl">
           <DialogHeader>
-            <DialogTitle className="font-headline text-2xl text-primary">{title}</DialogTitle>
-            <DialogDescription className="text-white/80 pt-4">
+            <DialogTitle className="font-headline text-2xl text-primary">
+              {title}
+            </DialogTitle>
+            <DialogDescription className="text-white/80 pt-4 text-[17px] leading-relaxed">
               {details}
             </DialogDescription>
           </DialogHeader>
-          <div className="flex justify-end gap-2 mt-4">
-             <Button onClick={() => setIsOpen(false)} variant="outline" className="border-primary/50 text-primary hover:bg-primary/10 hover:text-primary">Close</Button>
-            <Button>Contact Sales</Button>
+          <div className="flex justify-end gap-3 mt-6">
+            <Button
+              onClick={() => setIsOpen(false)}
+              variant="outline"
+              className="border-primary/40 text-primary hover:bg-primary/10 hover:text-primary transition-colors"
+            >
+              Close
+            </Button>
+            <Button className="bg-primary text-white hover:bg-primary/80 transition-all">
+              Contact Sales
+            </Button>
           </div>
         </DialogContent>
       </Dialog>

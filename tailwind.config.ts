@@ -21,6 +21,7 @@ export default {
         body: ['Space Grotesk', 'sans-serif'],
         headline: ['Space Grotesk', 'sans-serif'],
         mono: ['Space Mono', 'monospace'], // Для акцентов
+        'space-grotesk': ['Space Grotesk', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',
