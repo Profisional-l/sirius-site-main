@@ -95,7 +95,7 @@ export default function Home() {
       {/* Products & Services */}
       <section id="products" className="py-28 sm:py-[98px] bg-[#090D12]">
         <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {products.map((product, index) => (
               <ProductCard key={index} {...product} />
             ))}
@@ -103,25 +103,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Остальные секции без изменений */}
       {/* Mission Section */}
       <section
         id="about"
-        className="py-28 sm:pt-[166px] sm:pb-[192px] bg-[#090D12] text-center relative overflow-hidden"
+        className="py-28 sm:pt-[166px] sm:pb-[192px] bg-[#090D12] text-center relative overflow-hidden h-[100vh]"
       >
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/icons/mission-background.svg')",
-          }}
+          className="absolute inset-0 bg-cover bg-center missionSection"
         />
         <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8 relative">
-          <h2 className="font-mono uppercase text-[#F0F2F7] opacity-40 text-[18px] leading-[1.47] tracking-normal font-normal">
+          <h2 className="font-mono uppercase text-[#F0F2F7] opacity-40 text-[18px] leading-[1.47] tracking-normal font-[400]">
             Mission
           </h2>
-          <p className="mt-8 font-headline font-medium text-[56px] max-w-4xl mx-auto leading-[1.26] tracking-tight">
-            Sirius Semiconductors was established to{" "}
-            <span className="text-primary">reach an ambitious target</span> to
+          <p className="mt-8 font-headline font-medium text-[28px] md:text-[56px] max-w-[330px] md:max-w-4xl mx-auto leading-[1.26] tracking-tight">
+            Sirius Semiconductors was established{" "}
+            <span className="text-primary">to <br className="md:hidden" />reach an ambitious target</span> to
             turn Vietnam into a technological powerhouse.
           </p>
         </div>
@@ -255,8 +251,100 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Team Section и далее — без изменений */}
-      {/* ... */}
+
+      {/* Team & Join CTA */}
+      <div className="teamblock">
+        {/* Team Section */}
+        <section id="team" className="py-28 sm:py-26">
+          <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div className="lg:max-w-md -mt-14">
+              <h3 className="text-[14px] md:text-[18px] font-code uppercase  text-[#F0F2F7] opacity-40">
+                Team
+              </h3>
+              <h2 className="mt-8 font-headline text-[28px] md:text-[45px] font-medium leading-tight">
+                Lead by the ones who <span className="text-primary">got something to brag on.</span><br className="hidden md:block"/> But they don&apos;t.
+              </h2>
+            </div>
+            <div className="space-y-12 mw-[515px] pr-4">
+              {teamMembers.map((member) => (
+                <div
+                  key={member.name}
+                  className="flex items-start gap-6"
+                >
+                  <Avatar className="w-[88px] md:w-[110px] h-[88px] md:h-[110px] border-2 border-white/20 shrink-0">
+                    <AvatarImage
+                      src={member.image}
+                      alt={member.name}
+                      data-ai-hint="person portrait"
+                    />
+                    <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
+                  </Avatar>
+                  <div className="space-y-2">
+                    <h3 className="font-headline text-[20px] md:text-[28px] font-bold uppercase text-[#F2F2F2]">
+                      {member.name}
+                    </h3>
+                    <p className="text-[14px] md:text-[20px] text-[#B8BECF] opacity-70">{member.bio}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8 -mt-16">
+            <Separator className="bg-[#FFFFFF12]" />
+        </div>
+
+        {/* Join CTA */}
+        <section className="py-[75px] sm:py-20 text-center">
+          <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
+            <h2 className="font-headline text-[28px] md:text-[45px] font-medium">
+              Wanna join the team?
+            </h2>
+            <p className="mt-6 max-w-[740px] mx-auto text-[16px] md:text-[22px] text-[#B8BECF] px-6 md:py-0">
+              We are always looking for talented people who find their joy and
+              inspiration in hi-tech. Feel free to reach us and tell your story.
+            </p>
+            <div className="mt-10">
+              <Button size="lg" className="bg-[#F0F2F7] border-white/30 hover:bg-white/20 text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-0 w-[186px] h-[55px] rounded-[9px]">Contact Us</Button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+      {/* Contact Section */}
+      <section id="contact" className="py-10 sm:py-16 bg-[#FFFFFF]">
+        <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
+          <h1 className="text-[28px] md:text-[45px] text-[#0F141C] font-[500]">Contact details</h1>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div className="hidden md:block space-y-12 max-w-[350px] text-[#0F141C]">
+              <div>
+                <h3 className="font-headline text-[20px] mt-8 font-[500]">
+                  Office address
+                </h3>
+                <p className="mt-2 text-lg font-[400] opacity-50">
+                  1456 Nguyen Van Linh, <br /> Mg Town 14th Ward, Tan Phong Ward,
+                  District 7, Ho Chi Minh City, Vietnam
+                </p>
+              </div>
+              <div>
+                <h3 className="font-headline text-[20px] font-[500]">Call us</h3>
+                <p className="mt-2 text-lg font-[400] opacity-50">(+84) 0888 317 789</p>
+              </div>
+              <div>
+                <h3 className="font-headline text-[20px] font-[500]">
+                  Email us
+                </h3>
+                <p className="mt-2 text-lg font-[400] opacity-50">info@rise-hitech</p>
+              </div>
+            </div>
+            <div className="mt-10 md:mt-0">
+              <ContactForm />
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
