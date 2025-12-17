@@ -20,7 +20,7 @@ export function Footer() {
 
   return (
     <footer className="bg-[#020612] border-t border-white/10">
-      <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8 py-4 md:pt-12 pb-3 md:pb-6">
+      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 py-4 md:pt-12 pb-3 md:pb-6">
         <div className="grid grid-cols-1 mt-3 md:mt-0 md:grid-cols-12 md:gap-8">
           {/* Лого и адрес - слева */}
           <div className="md:col-span-4 space-y-4 w-[311px]">

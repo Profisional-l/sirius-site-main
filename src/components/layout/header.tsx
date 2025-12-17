@@ -81,7 +81,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
   const MobileNavContent = () => (
     <div
       className={cn(
-        "flex flex-col justify-between h-full w-full max-w-[1180px] mx-auto px-6 sm:px-6 lg:px-8 pt-0  transition-opacity duration-500 ease-in-out",
+        "flex flex-col justify-between h-full w-full max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8 pt-0  transition-opacity duration-500 ease-in-out",
         isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
       )}
     >
@@ -129,7 +129,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
             : "bg-transparent"
         )}
       >
-        <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-[70px]">
             <Link
               href="/"

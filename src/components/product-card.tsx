@@ -1,14 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 
 type ProductCardProps = {
@@ -24,13 +15,10 @@ export function ProductCard({
   details,
   backgroundImage,
 }: ProductCardProps) {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <>
       <motion.div
-        className="relative w-full h-[420px] cursor-pointer"
-        onClick={() => setIsOpen(true)}
+        className="relative w-[388px] h-[503px] cursor-pointer flex-shrink-0"
       >
         {/* Обёртка карточки */}
         <div className="relative h-full flex flex-col justify-end overflow-hidden rounded-[24px] border border-white/10 bg-[#101823] shadow-[0_10px_40px_rgba(0,0,0,0.45),0_0_25px_rgba(0,170,255,0.2),inset_0px_0px_35.5px_0px_rgba(255,255,255,0.25),inset_0px_0px_162.1px_0px_rgba(4,117,208,0.6)] backdrop-blur-[4px] transition-all duration-300">
@@ -63,32 +51,6 @@ export function ProductCard({
           </div>
         </div>
       </motion.div>
-
-      {/* Диалог */}
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="bg-[#0C1C3E] border border-primary/50 text-white max-w-lg rounded-2xl shadow-2xl">
-          <DialogHeader>
-            <DialogTitle className="font-headline text-2xl text-primary">
-              {title}
-            </DialogTitle>
-            <DialogDescription className="text-white/80 pt-4 text-[17px] leading-relaxed">
-              {details}
-            </DialogDescription>
-          </DialogHeader>
-          <div className="flex justify-end gap-3 mt-6">
-            <Button
-              onClick={() => setIsOpen(false)}
-              variant="outline"
-              className="border-primary/40 text-primary hover:bg-primary/10 hover:text-primary transition-colors"
-            >
-              Close
-            </Button>
-            <Button className="bg-primary text-white hover:bg-primary/80 transition-all">
-              Contact Sales
-            </Button>
-          </div>
-        </DialogContent>
-      </Dialog>
     </>
   );
 }
