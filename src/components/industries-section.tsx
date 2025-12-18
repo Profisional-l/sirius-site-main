@@ -69,43 +69,43 @@ export function IndustriesSection() {
         <div className="dots-pattern"></div>
       </div>
       <div className="container mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="relative flex justify-center items-center h-[500px] sm:h-[400px]">
+        <div className="relative flex justify-center items-center h-[600px] sm:h-[400px]">
           <h2 className="absolute font-mono text-4xl md:text-5xl font-bold text-white uppercase tracking-widest">
             Industries
           </h2>
 
           <div className="absolute w-full h-full">
             {/* Telecom */}
-            <ParallaxBox className="absolute top-[18%] left-[18%] sm:top-[10%] sm:left-[35%]">
-              <Badge variant="blue" className="text-lg sm:text-base transition-all duration-300">Telecom</Badge>
+            <ParallaxBox className="absolute top-[0%] left-[10%] sm:top-[10%] sm:left-[35%] md:left-[25%]">
+              <Badge variant="blue" className="text-[18px] sm:text-2xl transition-all duration-300">Telecom</Badge>
             </ParallaxBox>
             {/* Cloud-service */}
-            <ParallaxBox className="absolute top-[28%] right-[25%] sm:top-[15%] sm:left-[55%] sm:right-auto">
-              <Badge variant="blue" className="text-lg sm:text-base transition-all duration-300">Cloud-service</Badge>
+            <ParallaxBox className="absolute top-[14%] left-[47%] sm:top-[15%] sm:left-[55%] sm:right-auto md:left-[65%]">
+              <Badge variant="blue" className="text-[18px] sm:text-2xl transition-all duration-300">Cloud-service</Badge>
             </ParallaxBox>
             {/* AI */}
-            <ParallaxBox className="absolute top-[38%] left-[10%] sm:top-[45%] sm:left-[15%]">
-              <Badge variant="blue" className="text-lg sm:text-base transition-all duration-300">AI</Badge>
+            <ParallaxBox className="absolute top-[29%] left-[20%] sm:top-[45%] sm:left-[15%] md:left-[10%]">
+              <Badge variant="blue" className="text-[18px] sm:text-2xl transition-all duration-300">AI</Badge>
             </ParallaxBox>
             {/* Engineering */}
-            <ParallaxBox className="absolute top-[48%] right-[15%] sm:top-[45%] sm:right-[15%] sm:left-auto">
-              <Badge variant="blue" className="text-lg sm:text-base transition-all duration-300">Engineering</Badge>
+            <ParallaxBox className="absolute top-[34%] left-[60%] sm:top-[45%] sm:right-[15%] sm:left-auto md:right-[0%]">
+              <Badge variant="blue" className="text-[18px] sm:text-2xl transition-all duration-300">Engineering</Badge>
             </ParallaxBox>
             {/* Robotics */}
-            <ParallaxBox className="absolute top-[58%] left-[18%] sm:top-[65%] sm:left-[10%]">
-              <Badge variant="blue" className="text-lg sm:text-base transition-all duration-300">Robotics</Badge>
+            <ParallaxBox className="absolute top-[60%] left-[10%] sm:top-[65%] sm:left-[10%] md:left-[5%]">
+              <Badge variant="blue" className="text-[18px] sm:text-2xl transition-all duration-300">Robotics</Badge>
             </ParallaxBox>
             {/* Blockchain */}
-            <ParallaxBox className="absolute top-[68%] right-[25%] sm:top-[85%] sm:left-[20%] sm:right-auto">
-              <Badge variant="blue" className="text-lg sm:text-base transition-all duration-300">Blockchain</Badge>
+            <ParallaxBox className="absolute top-[75%] left-[45%] sm:top-[85%] sm:left-[20%] sm:right-auto md:left-[10%]">
+              <Badge variant="blue" className="text-[18px] sm:text-2xl transition-all duration-300">Blockchain</Badge>
             </ParallaxBox>
             {/* IoT */}
-            <ParallaxBox className="absolute top-[78%] left-[28%] sm:top-[65%] sm:right-[20%] sm:left-auto">
-              <Badge variant="blue" className="text-lg sm:text-base transition-all duration-300">IoT</Badge>
+            <ParallaxBox className="absolute top-[88%] left-[22%] sm:top-[65%] sm:right-[20%] sm:left-auto md:right-[0%]">
+              <Badge variant="blue" className="text-[18px] sm:text-2xl transition-all duration-300">IoT</Badge>
             </ParallaxBox>
             {/* Security systems */}
-            <ParallaxBox className="absolute top-[88%] left-1/2 -translate-x-1/2 sm:top-[85%] sm:left-[58%] sm:translate-x-0">
-              <Badge variant="blue" className="text-lg sm:text-base transition-all duration-300">Security systems</Badge>
+            <ParallaxBox className="absolute top-[100%] left-[16%] -translate-x-1/2 sm:top-[85%] sm:left-[58%] sm:translate-x-0 md:left-[65%]">
+              <Badge variant="blue" className="text-[18px] sm:text-2xl transition-all duration-300">Security systems</Badge>
             </ParallaxBox>
           </div>
         </div>

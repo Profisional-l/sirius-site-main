@@ -4,6 +4,53 @@ import { useState, useRef, useEffect } from 'react';
 import { useScroll } from 'framer-motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
+const ipBlocks = [
+  {
+    title: "RISC-V core.",
+    description: "Open standard instruction set architecture with full dev toolkit and debug printed circuit"
+  },
+  {
+    title: "DMA-controller.",
+    description: "AMBA APB interface for control/ status register access and 2 AXI4 master interfaces: for data transfers and for scatter gather tasks access"
+  },
+  {
+    title: "SRAM.",
+    description: "AXI4 to memory bridge with SECDEC and exclusive access support"
+  },
+  {
+    title: "GPIO with APB/AXI interface.",
+    description: "GPIO controller with AXI4/ APB interfaces"
+  },
+  {
+    title: "AXI interconnect.",
+    description: "System Interconnect with support of AXI3/ AXI4/ AHB/ APB interfaces"
+  },
+  {
+    title: "SPI master interface.",
+    description: "SPI master controller with AXI4 interface"
+  },
+  {
+    title: "I2C master interface.",
+    description: "I2C master controller with AXI4 interface"
+  },
+  {
+    title: "UART interface.",
+    description: "UART controller with AXI4/APB interfaces"
+  },
+  {
+    title: "GPT.",
+    description: "General purpose timer with AXI4/ APB interfaces"
+  },
+  {
+    title: "Analog PLL.",
+    description: "PLL with frequency up to 5 GHz (TSMC 28 HPC+)"
+  },
+  {
+    title: "LVDS RX.",
+    description: "LVDS RX up to 600MT/s (TSMC 28 HPC+)"
+  }
+];
+
 export function ServicesAccordion() {
   const scrollRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: scrollRef, offset: ['start start', 'end end'] });
@@ -59,42 +106,12 @@ export function ServicesAccordion() {
                         <AccordionContent className='text-lg bg-[#182434]'>
                             <div className='mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 py-6 text-left'>
                                 <div className='rounded-[17px] border border-white/[.15] text-[20px] text-[#B8BECF]'>
-                                    <div className='grid grid-cols-2'>
-                                        <div className='p-4 border-r border-b border-white/[.15] flex items-center min-h-[117px]'>
-                                            <p><strong className='text-[#FBFBFB]'>RISC-V core.</strong> Open standard instruction set architecture with full dev toolkit and debug printed circuit</p>
-                                        </div>
-                                        <div className='p-4 border-b border-white/[.15] flex items-center min-h-[117px]'>
-                                            <p><strong className='text-[#FBFBFB]'>I2C master interface.</strong> I2C master controller with AXI4 interface</p>
-                                        </div>
-                                        <div className='p-4 border-r border-b border-white/[.15] flex items-center min-h-[117px]'>
-                                            <p><strong className='text-[#FBFBFB]'>DMA-controller</strong></p>
-                                        </div>
-                                        <div className='p-4 border-b border-white/[.15] flex items-center min-h-[117px]'>
-                                            <p><strong className='text-[#FBFBFB]'>UART interface.</strong> UART controller with AXI4/APB interfaces</p>
-                                        </div>
-                                        <div className='p-4 border-r border-b border-white/[.15] flex items-center min-h-[117px]'>
-                                            <p><strong className='text-[#FBFBFB]'>SRAM.</strong> AXI4 to memory bridge with SECDEC and exclusive access support</p>
-                                        </div>
-                                        <div className='p-4 border-b border-white/[.15] flex items-center min-h-[117px]'>
-                                            <p><strong className='text-[#FBFBFB]'>GPT.</strong> General purpose timer with AXI4/APB interfaces</p>
-                                        </div>
-                                        <div className='p-4 border-r border-b border-white/[.15] flex items-center min-h-[117px]'>
-                                            <p><strong className='text-[#FBFBFB]'>GPIO with APB/AXI interface.</strong> GPIO controller with AXI4/APB interfaces</p>
-                                        </div>
-                                        <div className='p-4 border-b border-white/[.15] flex items-center min-h-[117px]'>
-                                            <p><strong className='text-[#FBFBFB]'>Analog PLL.</strong> PLL with frequency up to 5 GHz (TSMC 28 HPC+)</p>
-                                        </div>
-                                        <div className='p-4 border-r border-b border-white/[.15] flex items-center min-h-[117px]'>
-                                            <p><strong className='text-[#FBFBFB]'>AXI interconnect.</strong> System Interconnect with support of AXI3/AXI4/AHB/APB interfaces</p>
-                                        </div>
-                                        <div className='p-4 border-b border-white/[.15] flex items-center min-h-[117px]'>
-                                            <p><strong className='text-[#FBFBFB]'>LVDS RX.</strong> LVDS RX up to 600MT/s (TSMC 28 HPC+)</p>
-                                        </div>
-                                        <div className='p-4 border-r border-white/[.15] flex items-center min-h-[117px]'>
-                                            <p><strong className='text-[#FBFBFB]'>SPI master interface.</strong> SPI master controller with AXI4 interface</p>
-                                        </div>
-                                        <div className='p-4 flex items-center min-h-[117px]'>
-                                        </div>
+                                    <div className='grid grid-cols-1 md:grid-cols-2'>
+                                        {ipBlocks.map((block, index) => (
+                                            <div key={index} className={`p-4 flex items-center min-h-[117px] ${index % 2 === 0 ? 'md:border-r' : ''} ${index < ipBlocks.length - (ipBlocks.length % 2 === 0 ? 2:1) ? 'border-b' : ''} border-white/[.15]`}>
+                                                <p><strong className='text-[#FBFBFB]'>{block.title}</strong> {block.description}</p>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
