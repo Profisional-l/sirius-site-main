@@ -43,15 +43,13 @@ export function MissionAnimation() {
           style={{ opacity: opacity2 }}
           className="absolute font-headline font-medium text-[28px] md:text-[56px] max-w-[330px] md:max-w-[60rem] mx-auto leading-[1.26] tracking-tight text-center"
         >
-          We are here to provide{' '}
-          <span className="text-primary">
-            expertise,
-            <br />
-            technologies, service and products
-          </span>
-          <br />
-          in microelectronics for partners in a<br />
-          Vietnamese market and way beyond
+          We are here to <span className="text-primary"> provide <br className="md:hidden" />
+            expertise, technologies, <br className="md:hidden" />
+            service and products in <br className="md:hidden" />
+            microelectronics  </span> for <br className="md:hidden" />
+            partners in a Vietnamese
+          <br className="md:hidden" />
+          market and way beyond
         </motion.p>
       </div>
     </div>
