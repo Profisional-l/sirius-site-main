@@ -69,7 +69,7 @@ export function MissionAnimation() {
   return (
     <div ref={container} className="relative h-[550vh] pb-40"> {/* Увеличенная высота для более плавного скролла */}
       <div className="sticky top-0 h-screen flex items-center justify-center">
-        <h2 className="space-mono-regular uppercase text-[#F0F2F7] opacity-40 text-[18px] leading-[1.47] tracking-normal mb-[340px]">
+        <h2 className="space-mono-regular uppercase text-[#F0F2F7] opacity-40 text-[18px] leading-[1.47] tracking-normal mb-[340px] md:mb-[360px]">
           Mission
         </h2>
         
