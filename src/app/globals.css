@@ -203,8 +203,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: radial-gradient(circle at 1px 1px, rgba(128, 128, 128, 0.25) 1px, transparent 0);
-  background-size: 2rem 2rem;
+  background-image: radial-gradient(circle at 1px 1px, rgba(128, 128, 128, 0.25) 2px, transparent 0);
+  background-size: .71rem .71rem;
   mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
 }
 
