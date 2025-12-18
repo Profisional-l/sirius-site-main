@@ -39,7 +39,7 @@ function Badge({ className, variant, children, ...props }: BadgeProps) {
         ></span>
         
         {/* The visible badge part with background and text, on top of the line */}
-        <div className="relative z-10 flex h-[55px] items-center justify-center rounded-[9px] border border-[#2B95FF] bg-[#101823] px-5 py-2.5 font-headline text-2xl font-normal leading-[1.47] tracking-[-0.02em] transition-shadow duration-300 group-hover:shadow-[inset_0_0_10px_rgba(25,171,255,0.7)]">
+        <div className={cn("relative z-10 flex h-[55px] items-center justify-center rounded-[9px] border border-[#2B95FF] bg-[#101823] px-5 py-2.5 font-headline font-normal leading-[1.47] tracking-[-0.02em] transition-shadow duration-300 group-hover:shadow-[inset_0_0_10px_rgba(25,171,255,0.7)]", className)}>
           <span className="bg-gradient-to-r from-[#19ABFF] to-[#2B95FF] bg-clip-text text-transparent">
             {children}
           </span>
