@@ -88,9 +88,9 @@ export default function Home() {
       </section>
 
       {/* Products & Services */}
-      <section id="products" className="py-28 sm:py-[98px] bg-[#090D12]">
-        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
-          <div className="flex overflow-x-auto gap-5">
+      <section id="products" className="py-12 sm:py-[98px] bg-[#090D12]">
+        <div className="mx-auto max-w-[1280px] px-0 lg:px-8">
+          <div className="flex overflow-x-auto gap-2 lg:gap-5 px-4 md:px-0 md:justify-center">
             {products.map((product, index) => (
               <ProductCard key={index} {...product} />
             ))}
