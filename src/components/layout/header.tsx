@@ -81,7 +81,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
   const MobileNavContent = () => (
     <div
       className={cn(
-        "flex flex-col justify-between h-full w-full max-w-[1180px] mx-auto px-6 sm:px-6 lg:px-8 pt-0  transition-opacity duration-500 ease-in-out",
+        "flex flex-col justify-between h-full w-full max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8 pt-0  transition-opacity duration-500 ease-in-out",
         isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
       )}
     >
@@ -105,9 +105,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
       </nav>
       <div className="border-t border-white/10 pt-3 pb-4 text-center">
         <Button
-          variant="outline"
-          size="sm"
-          className="bg-transparent hover:bg-transparent hover:text-[#ffffff] text-[#F0F2F7] opacity-[.28] h-auto px-4 py-1.5 text-xl w-[100px] border-none justify-center"
+          className="bg-transparent hover:bg-transparent hover:text-[#ffffff] text-[#ffffff] opacity-[.28] h-auto px-4 py-1.5 text-xl w-[100px] border-none justify-center"
         >
           English
           <Globe className="w-[20px] h-[20px] ml-auto" />
@@ -129,7 +127,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
             : "bg-transparent"
         )}
       >
-        <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-[70px]">
             <Link
               href="/"

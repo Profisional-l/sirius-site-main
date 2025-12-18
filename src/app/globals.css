@@ -203,8 +203,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: radial-gradient(circle at 1px 1px, rgba(60, 163, 255, 0.25) 1px, transparent 0);
-  background-size: 2rem 2rem;
+  background-image: radial-gradient(circle at 1px 1px, rgba(128, 128, 128, 0.25) 2px, transparent 0);
+  background-size: .71rem .71rem;
   mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
 }
 
@@ -217,6 +217,62 @@
   border: solid 1.5px #0F141C66 !important;
 }
 
+.line {
+  position: absolute;
+  background-color: #0075EB;
+  height: 1px;
+  transform-origin: left;
+}
+
+.group:hover .line-left {
+  width: 50%;
+  left: -50%;
+}
+
+.group:hover .line-right {
+  width: 50%;
+  right: -50%;
+}
+
+.group:hover .inner-shadow {
+  box-shadow: inset 0 0 10px rgba(25, 171, 255, 0.7);
+}
 .teamblock {
   background-image: url("../../public/teambg.svg");
+}
+
+footer {
+  background-image: url("../../public/footerbg.svg");
+}
+
+.navigateList li:hover {
+  color: #ffffff99;
+  transition: color .33s;
+}
+.missionSection {
+  background-image: url("../../public/icons/mission-background.svg");
+  background-position: center center; /* Центрируем */
+  background-repeat: no-repeat; /* Запрещаем повторение */
+  background-size: cover; /* Растягиваем на весь экран */
+  background-attachment: fixed; /* Фиксируем фон при скролле */
+}
+
+/* Убираем медиа-запросы или адаптируем их */
+@media (min-width: 500px) {
+  .missionSection {
+    background-size: cover; /* Всегда cover */
+    background-position: center center; /* Всегда по центру */
+  }
+}
+/* .missionSection {
+  z-index: 0;
+}
+#products {
+  z-index: 1;
+} */
+
+
+#about, #products, #services {
+    background-image: url("../../public/missionbg.svg");
+
 }

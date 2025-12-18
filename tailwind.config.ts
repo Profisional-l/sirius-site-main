@@ -21,6 +21,7 @@ export default {
         body: ['Space Grotesk', 'sans-serif'],
         headline: ['Space Grotesk', 'sans-serif'],
         mono: ['Space Mono', 'monospace'], // Для акцентов
+        'space-grotesk': ['Space Grotesk', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -81,8 +82,8 @@ export default {
         },
       },
       animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
+        'accordion-down': 'accordion-down 0.5s ease-out',
+        'accordion-up': 'accordion-up 0.5s ease-out',
       },
     },
   },

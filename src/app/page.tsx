@@ -1,65 +1,49 @@
 import Image from "next/image";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ContactForm } from "@/components/contact-form";
 import { ProductCard } from "@/components/product-card";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { CheckCircle } from "lucide-react";
 import { MotionDiv } from "@/components/motion-div";
 import { Separator } from "@/components/ui/separator";
+import { MissionAnimation } from "@/components/mission-animation";
+import { IndustriesSection } from "@/components/industries-section";
+import { ServicesAccordion } from "@/components/services-accordion";
 
+// Добавляем ссылки на фоновые изображения
 const products = [
   {
     title: "TURNKEY SOLUTIONS",
     description: "Ready-made IP blocks and IC blueprints",
     details:
       "Leverage our portfolio of pre-verified, silicon-proven IP cores to accelerate your design cycle. Our turnkey solutions reduce risk and time-to-market for complex SoCs.",
+    backgroundImage: "/icons/tripple-1.svg",
   },
   {
     title: "CUSTOMIZATION",
     description: "Proven remedies adjusted to your application",
     details:
       "We adapt our robust, field-tested semiconductor solutions to meet your unique application requirements, ensuring optimal performance and seamless integration.",
+    backgroundImage: "/icons/tripple-2.svg",
   },
   {
     title: "R&D",
     description: "Unique keys based on years of experience",
     details:
       "Partner with us for cutting-edge Research and Development. Our experienced team pioneers novel solutions in digital, analog, and RF design to solve tomorrow's challenges.",
+    backgroundImage: "/icons/tripple-3.svg",
   },
-];
-
-const industries = [
-  "Telecom",
-  "Cloud-service",
-  "Engineering",
-  "IoT",
-  "Security systems",
-  "Blockchain",
-  "Robotics",
-  "AI",
 ];
 
 const teamMembers = [
   {
     name: "ALEX DROZDOV",
     bio: "Former Executive of one of the Intel local RnD centers, ex-vice president of Soft Machines Ltd, PhD in computer science, previously launched the microelectronics technological companies in Russia",
-    image: PlaceHolderImages.find((img) => img.id === "team-alex-drozdov")
-      ?.imageUrl,
+    image: "/face1.png",
   },
   {
     name: "VAN NGUYEN",
     bio: "Famous Vietnamese tycoon with a long story of successfully built businesses such as ..",
-    image: PlaceHolderImages.find((img) => img.id === "team-van-nguyen")
-      ?.imageUrl,
+    image: "/face2.png",
   },
 ];
 
@@ -67,7 +51,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[100vh] flex items-center justify-center text-center text-white overflow-hidden ">
+      <section className="relative h-[100vh] flex items-center justify-center text-center text-white overflow-hidden">
         <div className="absolute inset-0 mainsection z-10"></div>
         <div className="absolute inset-0 bg-black z-0"></div>
         <div className="relative z-10 px-4 mt-12">
@@ -76,8 +60,8 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="font-mono text-[42px] md:text-[68px] tracking-tighter uppercase leading-tight text-[#F0F2F7]">
-              Micro<span className="visible sm:invisible sm:hidden ">-</span>electronics
+            <h1 className="font-mono text-[42px] md:text-[68px] tracking-tighter uppercase leading-[1.05] text-[#F0F2F7]">
+              Micro<span className="visible sm:invisible sm:hidden">-</span>electronics
               <br />
               Technological Hub
             </h1>
@@ -94,7 +78,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-[#F0F2F7] border-white/30 hover:bg-white/20 text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-0 w-[186px] h-[55px] rounded-[9px]"
+                className="bg-[#F0F2F7] border-white/30 hover:opacity-50 hover:bg-[#F0F2F7] text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-0 w-[186px] h-[55px] rounded-[9px] transition-opacity"
               >
                 Contact Sales
               </Button>
@@ -104,9 +88,9 @@ export default function Home() {
       </section>
 
       {/* Products & Services */}
-      <section id="products" className="py-28 sm:py-32 bg-background">
-        <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section id="products" className="py-12 sm:py-[98px] bg-[#090D12]">
+        <div className="mx-auto max-w-[1280px] px-0 lg:px-8">
+          <div className="flex overflow-x-auto gap-2 lg:gap-5 px-4 md:px-0 md:justify-center">
             {products.map((product, index) => (
               <ProductCard key={index} {...product} />
             ))}
@@ -117,92 +101,31 @@ export default function Home() {
       {/* Mission Section */}
       <section
         id="about"
-        className="py-28 sm:py-32 bg-background text-center relative overflow-hidden"
+        className="bg-[#090D12] text-center relative"
       >
-        <div className="tech-pattern opacity-50"></div>
-        <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8 relative">
-          <h2 className="text-sm font-code uppercase tracking-[0.25em] text-primary">
-            Mission
-          </h2>
-          <p className="mt-8 font-headline text-3xl md:text-5xl max-w-4xl mx-auto leading-tight">
-            Sirius Semiconductors was established to{" "}
-            <span className="text-primary">reach an ambitious target</span> to
-            turn Vietnam into a technological powerhouse.
-          </p>
-        </div>
-      </section>
-
-      {/* Services Accordion */}
-      <section id="services" className="py-28 sm:py-32 bg-card">
-        <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
-          <Accordion
-            type="single"
-            defaultValue="item-1"
-            collapsible
-            className="w-full"
-          >
-            <AccordionItem value="item-1">
-              <AccordionTrigger className="bg-[#0E1A2E] px-6 py-5 text-xl h-[70px] hover:no-underline hover:bg-white/5 transition-colors">
-                IC Design
-              </AccordionTrigger>
-              <AccordionContent className="px-6 py-6 text-lg text-white/70 bg-[#0c1729]">
-                We provide a full stack of Semiconductors Design & Programming
-                services for FPGAs, ASIC. Structures ASIC solutions for Digital,
-                Analogue, Radio Frequency (RF) & Photonic applications.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger className="bg-[#0E1A2E] px-6 py-5 text-xl h-[70px] hover:no-underline hover:bg-white/5 transition-colors">
-                IP-Blocks
-              </AccordionTrigger>
-              <AccordionContent className="px-6 py-6 text-lg text-white/70 bg-[#0c1729]">
-                Our extensive library of silicon-proven IP-Blocks helps you
-                reduce development time and costs. From standard interfaces to
-                complex subsystems, we provide reliable and customizable IP
-                solutions.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger className="bg-[#0E1A2E] px-6 py-5 text-xl h-[70px] hover:no-underline hover:bg-white/5 transition-colors">
-                Software & Technologies
-              </AccordionTrigger>
-              <AccordionContent className="px-6 py-6 text-lg text-white/70 bg-[#0c1729]">
-                Beyond hardware, we deliver complete software stacks, firmware, and development tools to unlock the full potential of your silicon. Our expertise spans embedded systems, drivers, and application-level software.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </section>
-      
-      {/* Industries Section */}
-      <section
-        id="industries"
-        className="py-28 sm:py-32 bg-background text-center relative overflow-hidden"
-      >
-        <div className="dots-pattern"></div>
-        <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8 relative">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold">
-            Industries
-          </h2>
-          <div className="mt-12 flex flex-wrap justify-center gap-3">
-            {industries.map((industry) => (
-              <Badge
-                key={industry}
-                variant="outline"
-                className="px-6 py-2 text-base border-primary text-primary rounded-lg cursor-pointer hover:bg-primary/10 transition-colors"
-              >
-                {industry}
-              </Badge>
-            ))}
+        {/* Фон на весь экран с абсолютным позиционированием */}
+        <div
+          className="absolute inset-0 bg-cover bg-center missionSection"
+        ></div>
+        
+        {/* Контент поверх фона */}
+        <div className="relative z-10 h-[550vh]"> {/* Такая же высота как у MissionAnimation */}
+          <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 h-full">
+            <MissionAnimation />
           </div>
         </div>
       </section>
+      {/* Services Accordion */}
+      <ServicesAccordion />
+
+      {/* Industries Section */}
+      <IndustriesSection />
 
       {/* Team & Join CTA */}
       <div className="teamblock">
         {/* Team Section */}
         <section id="team" className="py-28 sm:py-26">
-          <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div className="lg:max-w-md -mt-14">
               <h3 className="text-[14px] md:text-[18px] font-code uppercase  text-[#F0F2F7] opacity-40">
                 Team
@@ -237,17 +160,17 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8 -mt-16">
-            <Separator className="bg-[#FFFFFF12]" />
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 -mt-16">
+            <Separator className="bg-[#FFFFFF12]"/>
         </div>
 
         {/* Join CTA */}
         <section className="py-[75px] sm:py-20 text-center">
-          <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
             <h2 className="font-headline text-[28px] md:text-[45px] font-medium">
               Wanna join the team?
             </h2>
-            <p className="mt-6 max-w-[740 px] mx-auto text-[16px] md:text-[22px] text-[#B8BECF] px-6 md:py-0">
+            <p className="mt-6 max-w-[740px] mx-auto text-[16px] md:text-[22px] text-[#B8BECF] px-6 md:py-0">
               We are always looking for talented people who find their joy and
               inspiration in hi-tech. Feel free to reach us and tell your story.
             </p>
@@ -260,11 +183,11 @@ export default function Home() {
 
 
       {/* Contact Section */}
-      <section id="contact" className="py-28 sm:py-16 bg-[#FFFFFF]">
-        <div className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
-          <h1 className="text-[45px] text-[#0F141C] font-[500]">Contact details</h1>
+      <section id="contact" className="py-10 sm:py-16 bg-[#FFFFFF]">
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+          <h1 className="text-[28px] md:text-[45px] text-[#0F141C] font-[500]">Contact details</h1>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <div className="space-y-12 max-w-[350px] text-[#0F141C]">
+            <div className="hidden md:block space-y-12 max-w-[350px] text-[#0F141C]">
               <div>
                 <h3 className="font-headline text-[20px] mt-8 font-[500]">
                   Office address
@@ -285,7 +208,7 @@ export default function Home() {
                 <p className="mt-2 text-lg font-[400] opacity-50">info@rise-hitech</p>
               </div>
             </div>
-            <div>
+            <div className="mt-10 md:mt-0">
               <ContactForm />
             </div>
           </div>
