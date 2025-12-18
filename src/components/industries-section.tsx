@@ -63,14 +63,14 @@ export function IndustriesSection() {
   return (
     <section
       id="industries"
-      className="py-28 sm:py-32 bg-[#090D12] text-center relative overflow-hidden"
+      className="py-28 sm:py-32 bg-[#101823] text-center relative overflow-hidden"
     >
       <div className="absolute inset-0 z-0">
         <div className="dots-pattern"></div>
       </div>
       <div className="container mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="relative flex justify-center items-center h-[500px] sm:h-[400px]">
-          <h2 className="absolute font-mono text-4xl md:text-5xl font-bold text-white uppercase tracking-widest">
+          <h2 className="absolute font-mono text-[42px] md:text-[68px] font-bold text-white uppercase">
             Industries
           </h2>
 
