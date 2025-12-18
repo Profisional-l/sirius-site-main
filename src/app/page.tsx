@@ -60,7 +60,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="font-mono text-[42px] md:text-[68px] tracking-tighter uppercase leading-tight text-[#F0F2F7]">
+            <h1 className="font-mono text-[42px] md:text-[68px] tracking-tighter uppercase leading-[1.05] text-[#F0F2F7]">
               Micro<span className="visible sm:invisible sm:hidden">-</span>electronics
               <br />
               Technological Hub
@@ -78,7 +78,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-[#F0F2F7] border-white/30 hover:bg-white/20 text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-0 w-[186px] h-[55px] rounded-[9px]"
+                className="bg-[#F0F2F7] border-white/30 hover:opacity-50 hover:bg-[#F0F2F7] text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-0 w-[186px] h-[55px] rounded-[9px] transition-opacity"
               >
                 Contact Sales
               </Button>
@@ -103,17 +103,18 @@ export default function Home() {
         id="about"
         className="bg-[#090D12] text-center relative"
       >
+        {/* Фон на весь экран с абсолютным позиционированием */}
         <div
           className="absolute inset-0 bg-cover bg-center missionSection"
-        />
-        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 relative">
-          <h2 className="font-mono uppercase text-[#F0F2F7] opacity-40 text-[18px] leading-[1.47] tracking-normal font-[400] pt-28 sm:pt-[166px]">
-            Mission
-          </h2>
-          <MissionAnimation />
+        ></div>
+        
+        {/* Контент поверх фона */}
+        <div className="relative z-10 h-[550vh]"> {/* Такая же высота как у MissionAnimation */}
+          <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 h-full">
+            <MissionAnimation />
+          </div>
         </div>
       </section>
-
       {/* Services Accordion */}
       <ServicesAccordion />
 

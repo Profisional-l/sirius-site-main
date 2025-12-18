@@ -105,9 +105,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
       </nav>
       <div className="border-t border-white/10 pt-3 pb-4 text-center">
         <Button
-          variant="outline"
-          size="sm"
-          className="bg-transparent hover:bg-transparent hover:text-[#ffffff] text-[#F0F2F7] opacity-[.28] h-auto px-4 py-1.5 text-xl w-[100px] border-none justify-center"
+          className="bg-transparent hover:bg-transparent hover:text-[#ffffff] text-[#ffffff] opacity-[.28] h-auto px-4 py-1.5 text-xl w-[100px] border-none justify-center"
         >
           English
           <Globe className="w-[20px] h-[20px] ml-auto" />
