@@ -60,7 +60,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="font-mono text-[42px] md:text-[68px] tracking-tighter uppercase leading-[1.05] text-[#F0F2F7]">
+            <h1 className="space-mono-bold text-[42px] md:text-[68px] tracking-tighter uppercase leading-[1.05] text-[#F0F2F7]">
               Micro<span className="visible sm:invisible sm:hidden">-</span>electronics
               <br />
               Technological Hub
