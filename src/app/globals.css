@@ -155,7 +155,7 @@
     @apply border-border;
     scrollbar-width: none;
     /* cursor: url("../components/assets/CURSOR_01.png"), auto; */
-  } 
+  }
 
 
   body {
@@ -275,4 +275,22 @@ footer {
 #about, #products, #services {
     background-image: url("../../public/missionbg.svg");
 
+}
+
+.service-content-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.service-content-scroll::-webkit-scrollbar-track {
+  background: #182434;
+  border-radius: 10px;
+}
+
+.service-content-scroll::-webkit-scrollbar-thumb {
+  background: #3CA3FF;
+  border-radius: 10px;
+}
+
+.service-content-scroll::-webkit-scrollbar-thumb:hover {
+  background: #0075EB;
 }
