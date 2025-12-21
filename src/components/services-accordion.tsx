@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, ReactNode, useState } from 'react';
-import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence, useMotionValueEvent } from 'framer-motion';
 
 const ipBlocks = [
     { title: "RISC-V core.", description: "Open standard instruction set architecture with full dev toolkit and debug printed circuit" },
@@ -29,7 +29,7 @@ const services: Service[] = [
         title: "IC Design",
         id: "ic-design",
         bgColor: "bg-[#24364E]",
-        content: <p>We provide a full stack of Semiconductors Design & Programming services for FPGAs, ASIC. Structures ASIC solutions for Digital, Analogue, Radio Frequency (RF) & Photonic applications.</p>,
+        content: <p>We provide a full stack of Semiconductors Design & Programming <br /> services for FPGAs, ASIC. Structures ASIC solutions for Digital, <br /> Analogue, Radio Frequency (RF) & Photonic applications.</p>,
     },
     {
         title: "IP-Blocks",
@@ -70,7 +70,7 @@ const ServiceContent = ({ service }: { service: Service }) => {
             transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
             className={`w-full ${service.bgColor} overflow-hidden`}
         >
-             <div className="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8">
+             <div className="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8 mb-[45px]">
                 <div
                     className={`py-6 text-left text-lg text-white/70 ${isIpBlocks ? 'overflow-y-auto max-h-[45vh]' : ''}`}
                 >
@@ -84,20 +84,18 @@ const ServiceContent = ({ service }: { service: Service }) => {
 
 export function ServicesAccordion() {
     const scrollRef = useRef(null);
+    const [activeService, setActiveService] = useState(services[0].id);
     const { scrollYProgress } = useScroll({
         target: scrollRef,
         offset: ['start start', 'end end'],
     });
 
-    const [activeService, setActiveService] = useState(services[0].id);
+    const serviceScroll = useTransform(scrollYProgress, [0, 1], [0, services.length]);
 
-    useMotionValueEvent(scrollYProgress, "change", (latest) => {
-        if (latest > 0.66) {
-            setActiveService(services[2].id);
-        } else if (latest > 0.33) {
-            setActiveService(services[1].id);
-        } else {
-            setActiveService(services[0].id);
+    useMotionValueEvent(serviceScroll, "change", (latest) => {
+        const activeIndex = Math.floor(latest);
+        if (services[activeIndex] && services[activeIndex].id !== activeService) {
+            setActiveService(services[activeIndex].id);
         }
     });
 
@@ -110,13 +108,20 @@ export function ServicesAccordion() {
                     </h2>
                 </div>
                 <div className="w-full">
-                    {services.map((service) => {
+                    {services.map((service, index) => {
                         const isActive = activeService === service.id;
                         return (
-                            <div key={service.id} className='overflow-hidden'>
+                            <motion.div
+                                key={service.id}
+                                className='overflow-hidden'
+                                style={{
+                                    marginTop: index > 0 ? "-15px" : 0,
+                                    zIndex: index,
+                                }}
+                            >
                                 <motion.div
-                                    className={`w-full ${service.bgColor} cursor-pointer`}
-                                    animate={{ opacity: isActive ? 1 : 0.7 }}
+                                    className={`w-full ${service.bgColor} cursor-pointer rounded-t-[15px]`}
+                                    onClick={() => setActiveService(service.id)}
                                 >
                                     <div className='max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8'>
                                         <div className='py-5 text-xl h-[95px] flex items-center'>
@@ -128,11 +133,11 @@ export function ServicesAccordion() {
                                 <AnimatePresence initial={false}>
                                     {isActive && <ServiceContent service={service} />}
                                 </AnimatePresence>
-                            </div>
+                            </motion.div>
                         );
                     })}
                 </div>
             </div>
         </section>
     );
-}
+} 
