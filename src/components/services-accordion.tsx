@@ -139,7 +139,9 @@ const ContentPanel = ({ service }: { service: Service }) => (
 export function ServicesAccordion() {
   const [openedServices, setOpenedServices] = useState<string[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
+  const wrapperRefs = useRef<(HTMLDivElement | null)[]>([]);
   const { scrollY } = useScroll();
+  const TOP_OFFSET = 100; // цель — на 100px ниже верхнего края
 
   useMotionValueEvent(scrollY, "change", () => {
     if (!sectionRef.current) return;
@@ -156,8 +158,10 @@ export function ServicesAccordion() {
       const rect = el.getBoundingClientRect();
       const serviceId = services[idx].id;
 
+      // открываем, когда верх карточки достиг верхнего края (с небольшим запасом)
       if (
-        rect.top < window.innerHeight * 0.8 &&
+        rect.top - TOP_OFFSET <= 1 &&
+        rect.bottom - TOP_OFFSET > 0 &&
         !openedServices.includes(serviceId)
       ) {
         setOpenedServices((prev) => [...prev, serviceId]);
@@ -184,17 +188,31 @@ export function ServicesAccordion() {
           return (
             <div
               key={service.id}
+              ref={(el) => {
+                wrapperRefs.current[index] = el;
+              }}
               className="tab-wrapper w-full relative"
               style={{
                 zIndex: index + 1,
-                // Наезд на следующую вкладку за счет отрицательного маржина сверху (кроме первой)
                 marginTop: index > 0 ? "-15px" : "0px",
+                scrollMarginTop: TOP_OFFSET,
               }}
             >
               <div className="w-full">
                 <button
                   type="button"
-                  className={`w-full ${service.bgColor} cursor-default rounded-t-[15px] text-left border-none outline-none relative z-20`}
+                  className={`w-full ${service.bgColor} cursor-pointer rounded-t-[15px] text-left border-none outline-none relative z-20`}
+                  onClick={() => {
+                    const el = wrapperRefs.current[index];
+                    if (!el) return;
+                    window.scrollTo({
+                      top: el.offsetTop - TOP_OFFSET,
+                      behavior: "smooth",
+                    });
+                    if (!openedServices.includes(service.id)) {
+                      setOpenedServices((prev) => [...prev, service.id]);
+                    }
+                  }}
                 >
                   <div className="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="py-5 text-xl h-[95px] flex items-center">
@@ -219,7 +237,6 @@ export function ServicesAccordion() {
                       animate={{ height: "auto", opacity: 1 }}
                       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
-                      // Отрицательный отступ снизу, чтобы следующая вкладка наезжала на контент текущей
                       style={{
                         marginBottom:
                           index < services.length - 1 ? "-15px" : "0px",
