@@ -148,7 +148,9 @@ export function ServicesAccordion() {
   const activeElRef = useRef<HTMLElement | null>(null);
   const resizeObsRef = useRef<ResizeObserver | null>(null);
   const isAdjustingRef = useRef(false);
-  const prevScrollYRef = useRef<number>(window.scrollY);
+  const prevScrollYRef = useRef<number>(
+    typeof window !== "undefined" ? window.scrollY : 0
+  );
   const TOLERANCE_PX = 24; // окно захвата якоря (чтобы не проскальзывала 2-я при быстром скролле)
   const ANIM_MS = 820;
   const SCROLL_MS = 500;
