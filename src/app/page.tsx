@@ -109,7 +109,7 @@ export default function Home() {
         ></div>
         
         {/* Контент поверх фона */}
-        <div className="relative z-10 h-[550vh]"> {/* Такая же высота как у MissionAnimation */}
+        <div className="relative z-10 h-[400vh]"> {/* Такая же высота как у MissionAnimation */}
           <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 h-full">
             <MissionAnimation />
           </div>
