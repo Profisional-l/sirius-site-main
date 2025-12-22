@@ -19,16 +19,34 @@ const navLinks = [
 export function Header({ showNav = true }: { showNav?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      setScrolled(currentScrollY > 50);
+      
+      // Показываем хедер в самом верху или при скролле вверх
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+      } else if (currentScrollY < lastScrollY) {
+        // Скролл вверх
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Скролл вниз (только после 100px)
+        setIsVisible(false);
+      }
+      
+      setLastScrollY(currentScrollY);
     };
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   useEffect(() => {
     if (isOpen) {
@@ -124,7 +142,8 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
           "fixed top-0 py-1 left-0 right-0 z-50 transition-all duration-300",
           scrolled || isOpen
             ? "bg-transparent backdrop-blur-lg border-none"
-            : "bg-transparent"
+            : "bg-transparent",
+          !isVisible && !isOpen ? "-translate-y-full" : "translate-y-0"
         )}
       >
         <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
