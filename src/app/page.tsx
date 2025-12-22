@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/contact-form";
@@ -78,17 +79,17 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-[#F0F2F7] border-white/30 hover:opacity-50 hover:bg-[#F0F2F7] text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-0 w-[186px] h-[55px] rounded-[9px] transition-opacity"
+                className="bg-[#F0F2F7] border-white/30 hover:opacity-50 hover:bg[#F0F2F7] text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-0 w-[186px] h-[55px] rounded-[9px] transition-opacity"
+                asChild
               >
-                Contact Sales
+                <Link href="#contact">Contact Sales</Link>
               </Button>
             </div>
           </MotionDiv>
         </div>
       </section>
-
       {/* Products & Services */}
-      <section id="products" className="py-12 sm:py-[98px] bg-[#090D12]">
+      <section id="prodCards" className="py-12 sm:py-[98px] bg-[#090D12]">
         <div className="mx-auto max-w-[1280px] px-0 lg:px-8">
           <div className="flex overflow-x-auto gap-2 lg:gap-5 px-4 md:px-0 md:justify-center">
             {products.map((product, index) => (
@@ -115,6 +116,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
       {/* Services Accordion */}
       <ServicesAccordion />
 
@@ -122,7 +124,7 @@ export default function Home() {
       <IndustriesSection />
 
       {/* Team & Join CTA */}
-      <div className="teamblock">
+      <div className="team">
         {/* Team Section */}
         <section id="team" className="py-28 sm:py-26">
           <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -175,15 +177,15 @@ export default function Home() {
               inspiration in hi-tech. Feel free to reach us and tell your story.
             </p>
             <div className="mt-10">
-              <Button size="lg" className="bg-[#F0F2F7] border-white/30 hover:bg-white/20 text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-0 w-[186px] h-[55px] rounded-[9px]">Contact Us</Button>
+              <Button size="lg" className="bg-[#F0F2F7] border-white/30 hover:bg-white/20 text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-0 w-[186px] h-[55px] rounded-[9px]"><Link href="#contact" >Contact Us</Link></Button>
             </div>
           </div>
+           <span id="contact" ></span>
         </section>
       </div>
 
-
       {/* Contact Section */}
-      <section id="contact" className="py-10 sm:py-16 bg-[#FFFFFF]">
+      <section className="py-10 sm:py-16 bg-[#FFFFFF]">
         <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
           <h1 className="text-[28px] md:text-[45px] text-[#0F141C] font-[500]">Contact details</h1>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
