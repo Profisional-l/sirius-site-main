@@ -158,10 +158,10 @@ export function ServicesAccordion() {
       const rect = el.getBoundingClientRect();
       const serviceId = services[idx].id;
 
-      // открываем, когда верх карточки достиг верхнего края (с небольшим запасом)
+      // открываем, когда карточка появляется в области просмотра
       if (
-        rect.top - TOP_OFFSET <= 1 &&
-        rect.bottom - TOP_OFFSET > 0 &&
+        rect.top < window.innerHeight * 0.75 && // Открывать, когда элемент поднялся на 25% экрана
+        rect.bottom > 0 &&
         !openedServices.includes(serviceId)
       ) {
         setOpenedServices((prev) => [...prev, serviceId]);
