@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ReactNode, useEffect, useRef, useState } from "react";
+import React, { ReactNode, useRef, useState } from "react";
 import {
   AnimatePresence,
   motion,
@@ -137,105 +137,33 @@ const ContentPanel = ({ service }: { service: Service }) => (
 );
 
 export function ServicesAccordion() {
-  const [openedService, setOpenedService] = useState<string | null>(
-    null // не открываем ничего на загрузке — исключаем автоскролл к секции
-  );
+  const [openedServices, setOpenedServices] = useState<string[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollY } = useScroll();
-  const TOP_OFFSET = 140;
 
-  // Рефы для фиксации верха активной карточки
-  const activeElRef = useRef<HTMLElement | null>(null);
-  const resizeObsRef = useRef<ResizeObserver | null>(null);
-  const isAdjustingRef = useRef(false);
-  const prevScrollYRef = useRef<number>(
-    typeof window !== "undefined" ? window.scrollY : 0
-  );
-  const TOLERANCE_PX = 24; // окно захвата якоря (чтобы не проскальзывала 2-я при быстром скролле)
-  const ANIM_MS = 820;
-  const SCROLL_MS = 500;
-
-  const pinActiveTop = () => {
-    const el = activeElRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const delta = rect.top - TOP_OFFSET;
-    if (delta !== 0) {
-      isAdjustingRef.current = true;
-      window.scrollBy({ top: delta, left: 0, behavior: "auto" });
-      // держим блокировку, пока идёт анимация высоты
-      setTimeout(() => (isAdjustingRef.current = false), ANIM_MS);
-    }
-  };
-
-  // Определяем активную карточку: ближайшая к якорю по направлению скролла, и только в зоне якоря
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (isAdjustingRef.current) return;
+  useMotionValueEvent(scrollY, "change", () => {
     if (!sectionRef.current) return;
-
-    const dir = latest - prevScrollYRef.current;
-    prevScrollYRef.current = latest;
 
     const sectionRect = sectionRef.current.getBoundingClientRect();
-    const wrappers = sectionRef.current.querySelectorAll(
-      ".tab-wrapper"
-    ) as NodeListOf<HTMLElement>;
+    const wrappers = sectionRef.current.querySelectorAll(".tab-wrapper");
 
-    // Вне видимости — ничего не открываем
-    if (sectionRect.bottom < 0 || sectionRect.top > window.innerHeight) {
-      setOpenedService(null);
+    if (sectionRect.top > window.innerHeight) {
+      if (openedServices.length > 0) setOpenedServices([]);
       return;
     }
-    if (!wrappers.length) return;
 
-    let candidateIdx: number | null = null;
-    let best = dir >= 0 ? -Infinity : Infinity;
-    wrappers.forEach((el, i) => {
-      const top = el.getBoundingClientRect().top;
-      // Берём ближайшую к TOP_OFFSET карточку ПО НАПРАВЛЕНИЮ скролла
-      if (dir >= 0) {
-        if (top <= TOP_OFFSET && top > best) {
-          best = top;
-          candidateIdx = i;
-        }
-      } else {
-        if (top >= TOP_OFFSET && top < best) {
-          best = top;
-          candidateIdx = i;
-        }
+    wrappers.forEach((el, idx) => {
+      const rect = el.getBoundingClientRect();
+      const serviceId = services[idx].id;
+
+      if (
+        rect.top < window.innerHeight * 0.8 &&
+        !openedServices.includes(serviceId)
+      ) {
+        setOpenedServices((prev) => [...prev, serviceId]);
       }
     });
-    if (candidateIdx == null) return;
-    const candidateTop = wrappers[candidateIdx].getBoundingClientRect().top;
-    if (Math.abs(candidateTop - TOP_OFFSET) <= TOLERANCE_PX) {
-      const id = services[candidateIdx].id;
-      if (id !== openedService) setOpenedService(id);
-    }
   });
-
-  // Следим за изменением высоты активной карточки и держим её верх прибитым к якорю
-  useEffect(() => {
-    if (!sectionRef.current) return;
-    const wrappers = sectionRef.current.querySelectorAll(
-      ".tab-wrapper"
-    ) as NodeListOf<HTMLElement>;
-    const idx = services.findIndex((s) => s.id === openedService);
-    const el = idx >= 0 ? wrappers[idx] : null;
-
-    resizeObsRef.current?.disconnect();
-    activeElRef.current = el ?? null;
-    if (!el) return;
-
-    // начальное выравнивание верха
-    pinActiveTop();
-
-    const ro = new ResizeObserver(() => {
-      pinActiveTop();
-    });
-    ro.observe(el);
-    resizeObsRef.current = ro;
-    return () => ro.disconnect();
-  }, [openedService]);
 
   return (
     <section
@@ -251,43 +179,22 @@ export function ServicesAccordion() {
 
       <div className="w-full flex flex-col">
         {services.map((service, index) => {
-          const isOpen = openedService === service.id;
+          const isOpen = openedServices.includes(service.id);
 
           return (
             <div
               key={service.id}
               className="tab-wrapper w-full relative"
-              data-id={service.id}
               style={{
                 zIndex: index + 1,
                 // Наезд на следующую вкладку за счет отрицательного маржина сверху (кроме первой)
                 marginTop: index > 0 ? "-15px" : "0px",
-                // Вспомогательный отступ для якоря (если используешь scrollIntoView вручную)
-                scrollMarginTop: TOP_OFFSET,
               }}
             >
               <div className="w-full">
                 <button
                   type="button"
-                  className={`w-full ${service.bgColor} cursor-pointer rounded-t-[15px] text-left border-none outline-none relative z-20`}
-                  onClick={() => {
-                    if (!sectionRef.current) return;
-                    const wrappers = sectionRef.current.querySelectorAll(
-                      ".tab-wrapper"
-                    ) as NodeListOf<HTMLElement>;
-                    const el = wrappers[index];
-                    if (!el) return;
-                    const targetTop =
-                      el.getBoundingClientRect().top +
-                      window.scrollY -
-                      TOP_OFFSET;
-                    isAdjustingRef.current = true;
-                    window.scrollTo({ top: targetTop, behavior: "smooth" });
-                    setTimeout(() => {
-                      setOpenedService(service.id);
-                      isAdjustingRef.current = false;
-                    }, SCROLL_MS);
-                  }}
+                  className={`w-full ${service.bgColor} cursor-default rounded-t-[15px] text-left border-none outline-none relative z-20`}
                 >
                   <div className="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="py-5 text-xl h-[95px] flex items-center">
@@ -310,7 +217,6 @@ export function ServicesAccordion() {
                       key={`content-${service.id}`}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                       // Отрицательный отступ снизу, чтобы следующая вкладка наезжала на контент текущей
