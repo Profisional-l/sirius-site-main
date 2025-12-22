@@ -141,7 +141,7 @@ export function ServicesAccordion() {
   const sectionRef = useRef<HTMLElement>(null);
   const wrapperRefs = useRef<(HTMLDivElement | null)[]>([]);
   const { scrollY } = useScroll();
-  const TOP_OFFSET = 100; // цель — на 100px ниже верхнего края
+  const TOP_OFFSET = 130; // цель — на 100px ниже верхнего края
 
   useMotionValueEvent(scrollY, "change", () => {
     if (!sectionRef.current) return;
