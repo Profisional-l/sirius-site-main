@@ -166,6 +166,9 @@
   html.modal-open {
     overflow: hidden;
   }
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @keyframes fade-in-up {
@@ -237,7 +240,7 @@
 .group:hover .inner-shadow {
   box-shadow: inset 0 0 10px rgba(25, 171, 255, 0.7);
 }
-.teamblock {
+.team {
   background-image: url("../../public/teambg.svg");
 }
 
@@ -272,7 +275,7 @@ footer {
 } */
 
 
-#about, #products, #services {
+#about, #products, #services, #prodCards {
     background-image: url("../../public/missionbg.svg");
 
 }

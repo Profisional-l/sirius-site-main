@@ -26,13 +26,9 @@ export const metadata: Metadata = {
   description: 'A Microelectronics Technological Hub',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="scroll-smooth">
       <body
         className={cn(
           'min-h-screen bg-background font-body text-foreground antialiased',

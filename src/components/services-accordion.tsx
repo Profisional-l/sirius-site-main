@@ -177,7 +177,7 @@ export function ServicesAccordion() {
   return (
     <section
       ref={sectionRef}
-      id="services"
+      id="products"
       className="relative bg-[#090D12] py-24 pb-0 overflow-hidden"
     >
       <div className="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8 mb-12">
