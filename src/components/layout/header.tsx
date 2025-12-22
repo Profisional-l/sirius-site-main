@@ -27,9 +27,9 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       setScrolled(currentScrollY > 50);
-      
+
       // Показываем хедер в самом верху или при скролле вверх
       if (currentScrollY < 10) {
         setIsVisible(true);
@@ -40,10 +40,10 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
         // Скролл вниз (только после 100px)
         setIsVisible(false);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
@@ -122,9 +122,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
         ))}
       </nav>
       <div className="border-t border-white/10 pt-3 pb-4 text-center">
-        <Button
-          className="bg-transparent hover:bg-transparent hover:text-[#ffffff] text-[#ffffff] opacity-[.28] h-auto px-4 py-1.5 text-xl w-[100px] border-none justify-center"
-        >
+        <Button className="bg-transparent hover:bg-transparent hover:text-[#ffffff] text-[#ffffff] opacity-[.28] h-auto px-4 py-1.5 text-xl w-[100px] border-none justify-center">
           English
           <Globe className="w-[20px] h-[20px] ml-auto" />
         </Button>
