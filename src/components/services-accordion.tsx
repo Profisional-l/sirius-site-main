@@ -1,60 +1,61 @@
-"use client";
+'use client';
 
-import React, { ReactNode, useRef, useState } from "react";
+import React, { ReactNode, useRef, useState } from 'react';
 import {
   AnimatePresence,
   motion,
   useScroll,
   useMotionValueEvent,
-} from "framer-motion";
+} from 'framer-motion';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 // --- Данные ---
 const ipBlocks = [
   {
-    title: "RISC-V core.",
+    title: 'RISC-V core.',
     description:
-      "Open standard instruction set architecture with full dev toolkit and debug printed circuit",
+      'Open standard instruction set architecture with full dev toolkit and debug printed circuit',
   },
   {
-    title: "DMA-controller.",
+    title: 'DMA-controller.',
     description:
-      "AMBA APB interface for control/ status register access and 2 AXI4 master interfaces",
+      'AMBA APB interface for control/ status register access and 2 AXI4 master interfaces',
   },
   {
-    title: "SRAM.",
+    title: 'SRAM.',
     description:
-      "AXI4 to memory bridge with SECDEC and exclusive access support",
+      'AXI4 to memory bridge with SECDEC and exclusive access support',
   },
   {
-    title: "GPIO with APB/AXI interface.",
-    description: "GPIO controller with AXI4/ APB interfaces",
+    title: 'GPIO with APB/AXI interface.',
+    description: 'GPIO controller with AXI4/ APB interfaces',
   },
   {
-    title: "AXI interconnect.",
+    title: 'AXI interconnect.',
     description:
-      "System Interconnect with support of AXI3/ AXI4/ AHB/ APB interfaces",
+      'System Interconnect with support of AXI3/ AXI4/ AHB/ APB interfaces',
   },
   {
-    title: "SPI master interface.",
-    description: "SPI master controller with AXI4 interface",
+    title: 'SPI master interface.',
+    description: 'SPI master controller with AXI4 interface',
   },
   {
-    title: "I2C master interface.",
-    description: "I2C master controller with AXI4 interface",
+    title: 'I2C master interface.',
+    description: 'I2C master controller with AXI4 interface',
   },
   {
-    title: "UART interface.",
-    description: "UART controller with AXI4/APB interfaces",
+    title: 'UART interface.',
+    description: 'UART controller with AXI4/APB interfaces',
   },
   {
-    title: "GPT.",
-    description: "General purpose timer with AXI4/ APB interfaces",
+    title: 'GPT.',
+    description: 'General purpose timer with AXI4/ APB interfaces',
   },
   {
-    title: "Analog PLL.",
-    description: "PLL with frequency up to 5 GHz (TSMC 28 HPC+)",
+    title: 'Analog PLL.',
+    description: 'PLL with frequency up to 5 GHz (TSMC 28 HPC+)',
   },
-  { title: "LVDS RX.", description: "LVDS RX up to 600MT/s (TSMC 28 HPC+)" },
+  { title: 'LVDS RX.', description: 'LVDS RX up to 600MT/s (TSMC 28 HPC+)' },
 ];
 
 interface Service {
@@ -66,9 +67,9 @@ interface Service {
 
 const services: Service[] = [
   {
-    title: "IC Design",
-    id: "ic-design",
-    bgColor: "bg-[#24364E]",
+    title: 'IC Design',
+    id: 'ic-design',
+    bgColor: 'bg-[#24364E]',
     content: (
       <p>
         We provide a full stack of Semiconductors Design & Programming <br />
@@ -78,9 +79,9 @@ const services: Service[] = [
     ),
   },
   {
-    title: "IP-Blocks",
-    id: "ip-blocks",
-    bgColor: "bg-[#182434]",
+    title: 'IP-Blocks',
+    id: 'ip-blocks',
+    bgColor: 'bg-[#182434]',
     content: (
       <div className="rounded-[17px] border border-white/[.15] text-[20px] text-[#B8BECF]">
         <div className="grid grid-cols-1 md:grid-cols-2">
@@ -88,15 +89,15 @@ const services: Service[] = [
             <div
               key={index}
               className={`p-4 flex items-center min-h-[117px] ${
-                index % 2 === 0 ? "md:border-r" : ""
+                index % 2 === 0 ? 'md:border-r' : ''
               } ${
                 index < ipBlocks.length - (ipBlocks.length % 2 === 0 ? 2 : 1)
-                  ? "border-b"
-                  : ""
+                  ? 'border-b'
+                  : ''
               } border-white/[.15]`}
             >
               <p>
-                <strong className="text-[#FBFBFB]">{block.title}</strong>{" "}
+                <strong className="text-[#FBFBFB]">{block.title}</strong>{' '}
                 {block.description}
               </p>
             </div>
@@ -106,13 +107,13 @@ const services: Service[] = [
     ),
   },
   {
-    title: "Software & Technologies",
-    id: "software",
-    bgColor: "bg-[#101823]",
+    title: 'Software & Technologies',
+    id: 'software',
+    bgColor: 'bg-[#101823]',
     content: (
       <p>
         Sirius also develops a stack of Microelectronics design <br />
-        technologies, including{" "}
+        technologies, including{' '}
         <strong>Electronics Design Automation (EDA)</strong> <br />
         software which secures time-2-market & price-2-quality competitive
         advantages.
@@ -141,13 +142,14 @@ export function ServicesAccordion() {
   const sectionRef = useRef<HTMLElement>(null);
   const wrapperRefs = useRef<(HTMLDivElement | null)[]>([]);
   const { scrollY } = useScroll();
+  const isMobile = useIsMobile();
   const TOP_OFFSET = 130; // цель — на 100px ниже верхнего края
 
-  useMotionValueEvent(scrollY, "change", () => {
+  useMotionValueEvent(scrollY, 'change', () => {
     if (!sectionRef.current) return;
 
     const sectionRect = sectionRef.current.getBoundingClientRect();
-    const wrappers = sectionRef.current.querySelectorAll(".tab-wrapper");
+    const wrappers = sectionRef.current.querySelectorAll('.tab-wrapper');
 
     if (sectionRect.top > window.innerHeight) {
       if (openedServices.length > 0) setOpenedServices([]);
@@ -157,10 +159,13 @@ export function ServicesAccordion() {
     wrappers.forEach((el, idx) => {
       const rect = el.getBoundingClientRect();
       const serviceId = services[idx].id;
+      const triggerPoint = isMobile
+        ? window.innerHeight * 0.6
+        : window.innerHeight * 0.75;
 
       // открываем, когда карточка появляется в области просмотра
       if (
-        rect.top < window.innerHeight * 0.75 && // Открывать, когда элемент поднялся на 25% экрана
+        rect.top < triggerPoint &&
         rect.bottom > 0 &&
         !openedServices.includes(serviceId)
       ) {
@@ -194,7 +199,7 @@ export function ServicesAccordion() {
               className="tab-wrapper w-full relative"
               style={{
                 zIndex: index + 1,
-                marginTop: index > 0 ? "-15px" : "0px",
+                marginTop: index > 0 ? '-15px' : '0px',
                 scrollMarginTop: TOP_OFFSET,
               }}
             >
@@ -207,7 +212,7 @@ export function ServicesAccordion() {
                     if (!el) return;
                     window.scrollTo({
                       top: el.offsetTop - TOP_OFFSET,
-                      behavior: "smooth",
+                      behavior: 'smooth',
                     });
                     if (!openedServices.includes(service.id)) {
                       setOpenedServices((prev) => [...prev, service.id]);
@@ -218,7 +223,7 @@ export function ServicesAccordion() {
                     <div className="py-5 text-xl h-[95px] flex items-center">
                       <h3
                         className={`transition-all duration-500 ${
-                          isOpen ? "text-white" : "text-white/30"
+                          isOpen ? 'text-white' : 'text-white/30'
                         }`}
                       >
                         {service.title}
@@ -234,12 +239,12 @@ export function ServicesAccordion() {
                     <motion.div
                       key={`content-${service.id}`}
                       initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
+                      animate={{ height: 'auto', opacity: 1 }}
                       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                       style={{
                         marginBottom:
-                          index < services.length - 1 ? "-15px" : "0px",
+                          index < services.length - 1 ? '-15px' : '0px',
                       }}
                     >
                       <ContentPanel service={service} />
