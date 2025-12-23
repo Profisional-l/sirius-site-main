@@ -1,5 +1,9 @@
+
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation, Trans } from 'react-i18next';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/components/contact-form";
@@ -10,45 +14,44 @@ import { MissionAnimation } from "@/components/mission-animation";
 import { IndustriesSection } from "@/components/industries-section";
 import { ServicesAccordion } from "@/components/services-accordion";
 
-// Добавляем ссылки на фоновые изображения
-const products = [
-  {
-    title: "TURNKEY SOLUTIONS",
-    description: "Ready-made IP blocks and IC blueprints",
-    details:
-      "Leverage our portfolio of pre-verified, silicon-proven IP cores to accelerate your design cycle. Our turnkey solutions reduce risk and time-to-market for complex SoCs.",
-    backgroundImage: "/icons/tripple-1.svg",
-  },
-  {
-    title: "CUSTOMIZATION",
-    description: "Proven remedies adjusted to your application",
-    details:
-      "We adapt our robust, field-tested semiconductor solutions to meet your unique application requirements, ensuring optimal performance and seamless integration.",
-    backgroundImage: "/icons/tripple-2.svg",
-  },
-  {
-    title: "R&D",
-    description: "Unique keys based on years of experience",
-    details:
-      "Partner with us for cutting-edge Research and Development. Our experienced team pioneers novel solutions in digital, analog, and RF design to solve tomorrow's challenges.",
-    backgroundImage: "/icons/tripple-3.svg",
-  },
-];
-
-const teamMembers = [
-  {
-    name: "ALEX DROZDOV",
-    bio: "Former Executive of one of the Intel local RnD centers, ex-vice president of Soft Machines Ltd, PhD in computer science, previously launched the microelectronics technological companies in Russia",
-    image: "/face1.png",
-  },
-  {
-    name: "VAN NGUYEN",
-    bio: "Famous Vietnamese tycoon with a long story of successfully built businesses such as ..",
-    image: "/face2.png",
-  },
-];
 
 export default function Home() {
+  const { t } = useTranslation();
+
+  const products = [
+    {
+      title: t('products.turnkey.title'),
+      description: t('products.turnkey.description'),
+      details: t('products.turnkey.details'),
+      backgroundImage: "/icons/tripple-1.svg",
+    },
+    {
+      title: t('products.customization.title'),
+      description: t('products.customization.description'),
+      details: t('products.customization.details'),
+      backgroundImage: "/icons/tripple-2.svg",
+    },
+    {
+      title: t('products.rd.title'),
+      description: t('products.rd.description'),
+      details: t('products.rd.details'),
+      backgroundImage: "/icons/tripple-3.svg",
+    },
+  ];
+
+  const teamMembers = [
+    {
+      name: t('team.alex.name'),
+      bio: t('team.alex.bio'),
+      image: "/alex-drozdov.png",
+    },
+    {
+      name: t('team.van.name'),
+      bio: t('team.van.bio'),
+      image: "/van-nguyen.png",
+    },
+  ];
+
   return (
     <>
       {/* Hero Section */}
@@ -61,19 +64,18 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="space-mono-bold text-[42px] md:text-[68px] tracking-tighter uppercase leading-[1.05] text-[#F0F2F7]">
-              Micro<span className="visible sm:invisible sm:hidden">-</span>electronics
-              <br />
-              Technological Hub
-            </h1>
+            <h1 className="space-mono-bold text-[42px] md:text-[68px] tracking-tighter uppercase leading-[1.05] text-[#F0F2F7]"
+                dangerouslySetInnerHTML={{ __html: t('hero.title') }} />
             <p className="mt-6 max-w-3xl mx-auto text-[20px] md:text-[28px] text-[#F0F2F7] leading-relaxed">
-              We are{" "}
-              <span className="bg-gradient-to-r from-[#0075EB] to-[#35A4FF] bg-clip-text text-transparent">
-                all about microelectronics.
-              </span>{" "}
-              <br />
-              With time-2-market & price-2-quality competitive advantages for
-              our customers
+              <Trans i18nKey="hero.subtitle">
+                We are{" "}
+                <span className="bg-gradient-to-r from-[#0075EB] to-[#35A4FF] bg-clip-text text-transparent">
+                  all about microelectronics.
+                </span>{" "}
+                <br />
+                With time-2-market & price-2-quality competitive advantages for
+                our customers
+              </Trans>
             </p>
             <div className="mt-10">
               <Button
@@ -82,7 +84,7 @@ export default function Home() {
                 className="bg-[#F0F2F7] border-white/30 hover:opacity-50 hover:bg[#F0F2F7] text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-0 w-[186px] h-[55px] rounded-[9px] transition-opacity"
                 asChild
               >
-                <Link href="#contact">Contact Sales</Link>
+                <Link href="#contact">{t('hero.contactSales')}</Link>
               </Button>
             </div>
           </MotionDiv>
@@ -124,16 +126,18 @@ export default function Home() {
       <IndustriesSection />
 
       {/* Team & Join CTA */}
-      <div className="team">
+      <div className="team bg-[#182434]">
         {/* Team Section */}
         <section id="team" className="py-28 sm:py-26">
           <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div className="lg:max-w-md -mt-14">
               <h3 className="text-[14px] md:text-[18px] font-code uppercase  text-[#F0F2F7] opacity-40">
-                Team
+                {t('team.subheading')}
               </h3>
               <h2 className="mt-8 font-headline text-[28px] md:text-[45px] font-medium leading-tight">
-                Lead by the ones who <span className="text-primary">got something to brag on.</span><br className="hidden md:block"/> But they don&apos;t.
+                <Trans i18nKey="team.headline">
+                  Lead by the ones who <span className="text-primary">got something to brag on.</span><br className="hidden md:block"/> But they don&apos;t.
+                </Trans>
               </h2>
             </div>
             <div className="space-y-12 mw-[515px] pr-4">
@@ -170,14 +174,13 @@ export default function Home() {
         <section className="py-[75px] sm:py-20 text-center">
           <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
             <h2 className="font-headline text-[28px] md:text-[45px] font-medium">
-              Wanna join the team?
+              {t('join.headline')}
             </h2>
             <p className="mt-6 max-w-[740px] mx-auto text-[16px] md:text-[22px] text-[#B8BECF] px-6 md:py-0">
-              We are always looking for talented people who find their joy and
-              inspiration in hi-tech. Feel free to reach us and tell your story.
+              {t('join.text')}
             </p>
             <div className="mt-10">
-              <Button size="lg" className="bg-[#F0F2F7] border-white/30 hover:bg-white/20 text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-0 w-[186px] h-[55px] rounded-[9px]"><Link href="#contact" >Contact Us</Link></Button>
+              <Button size="lg" className="bg-[#F0F2F7] border-white/30 hover:bg-white/20 text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-0 w-[186px] h-[55px] rounded-[9px]"><Link href="#contact" >{t('join.button')}</Link></Button>
             </div>
           </div>
            <span id="contact" ></span>
@@ -187,27 +190,24 @@ export default function Home() {
       {/* Contact Section */}
       <section className="py-10 sm:py-16 bg-[#FFFFFF]">
         <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
-          <h1 className="text-[28px] md:text-[45px] text-[#0F141C] font-[500]">Contact details</h1>
+          <h1 className="text-[28px] md:text-[45px] text-[#0F141C] font-[500]">{t('contact.title')}</h1>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div className="hidden md:block space-y-12 max-w-[350px] text-[#0F141C]">
               <div>
                 <h3 className="font-headline text-[20px] mt-8 font-[500]">
-                  Office address
+                  {t('contact.office')}
                 </h3>
-                <p className="mt-2 text-lg font-[400] opacity-50">
-                  1456 Nguyen Van Linh, <br /> Mg Town 14th Ward, Tan Phong Ward,
-                  District 7, Ho Chi Minh City, Vietnam
-                </p>
+                <p className="mt-2 text-lg font-[400] opacity-50" dangerouslySetInnerHTML={{ __html: t('contact.address') }} />
               </div>
               <div>
-                <h3 className="font-headline text-[20px] font-[500]">Call us</h3>
-                <p className="mt-2 text-lg font-[400] opacity-50">(+84) 0888 317 789</p>
+                <h3 className="font-headline text-[20px] font-[500]">{t('contact.call')}</h3>
+                <p className="mt-2 text-lg font-[400] opacity-50">{t('contact.phone')}</p>
               </div>
               <div>
                 <h3 className="font-headline text-[20px] font-[500]">
-                  Email us
+                  {t('contact.email')}
                 </h3>
-                <p className="mt-2 text-lg font-[400] opacity-50">info@rise-hitech</p>
+                <p className="mt-2 text-lg font-[400] opacity-50">{t('contact.emailAddress')}</p>
               </div>
             </div>
             <div className="mt-10 md:mt-0">

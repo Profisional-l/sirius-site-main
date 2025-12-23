@@ -1,0 +1,167 @@
+{
+    "header": {
+        "about": "Về chúng tôi",
+        "productsServices": "Sản phẩm & Dịch vụ",
+        "team": "Đội ngũ",
+        "careers": "Tuyển dụng",
+        "english": "English",
+        "vietnamese": "Tiếng Việt"
+    },
+    "hero": {
+        "title": "Trung tâm Công nghệ<br/>Vi điện tử",
+        "subtitle": "Chúng tôi là <1>tất cả về vi điện tử.</1> <br/>Với lợi thế cạnh tranh về thời gian đưa ra thị trường và chất lượng so với giá cả cho khách hàng của chúng tôi",
+        "contactSales": "Liên hệ Kinh doanh"
+    },
+    "products": {
+        "turnkey": {
+            "title": "GIẢI PHÁP CHÌA KHÓA TRAO TAY",
+            "description": "Các khối IP và bản thiết kế IC có sẵn",
+            "details": "Tận dụng danh mục các lõi IP đã được xác minh trước, đã được chứng minh bằng silicon của chúng tôi để tăng tốc chu kỳ thiết kế của bạn. Các giải pháp chìa khóa trao tay của chúng tôi giúp giảm thiểu rủi ro và thời gian đưa ra thị trường cho các SoC phức tạp."
+        },
+        "customization": {
+            "title": "TÙY CHỈNH",
+            "description": "Các biện pháp đã được chứng minh được điều chỉnh cho ứng dụng của bạn",
+            "details": "Chúng tôi điều chỉnh các giải pháp bán dẫn mạnh mẽ, đã được thử nghiệm thực địa của mình để đáp ứng các yêu cầu ứng dụng độc đáo của bạn, đảm bảo hiệu suất tối ưu và tích hợp liền mạch."
+        },
+        "rd": {
+            "title": "R&D",
+            "description": "Các phím độc đáo dựa trên nhiều năm kinh nghiệm",
+            "details": "Hợp tác với chúng tôi để Nghiên cứu và Phát triển tiên tiến. Đội ngũ giàu kinh nghiệm của chúng tôi tiên phong trong các giải pháp mới trong thiết kế kỹ thuật số, analog và RF để giải quyết các thách thức của ngày mai."
+        }
+    },
+    "mission": {
+        "title": "Sứ mệnh",
+        "text1": "Sirius Semiconductors được thành lập <1>để đạt được một mục tiêu đầy tham vọng</1> là biến Việt Nam thành một cường quốc công nghệ.",
+        "text2": "Chúng tôi ở đây <1>để cung cấp chuyên môn, công nghệ, dịch vụ và sản phẩm trong lĩnh vực vi điện tử</1> cho các đối tác tại thị trường Việt Nam và xa hơn nữa"
+    },
+    "services": {
+        "title": "Sản phẩm & Dịch vụ",
+        "icDesign": {
+            "title": "Thiết kế IC",
+            "content": "Chúng tôi cung cấp đầy đủ các dịch vụ Thiết kế & Lập trình Bán dẫn <br /> cho FPGA, ASIC. Các giải pháp ASIC có cấu trúc cho các ứng dụng Kỹ thuật số, <br /> Tương tự, Tần số vô tuyến (RF) & Quang tử."
+        },
+        "ipBlocks": {
+            "title": "Khối IP",
+            "riscV": {
+                "title": "Lõi RISC-V.",
+                "description": "Kiến trúc tập lệnh tiêu chuẩn mở với bộ công cụ phát triển đầy đủ và mạch in gỡ lỗi"
+            },
+            "dma": {
+                "title": "Bộ điều khiển DMA.",
+                "description": "Giao diện AMBA APB để truy cập thanh ghi điều khiển/trạng thái và 2 giao diện chính AXI4"
+            },
+            "sram": {
+                "title": "SRAM.",
+                "description": "Cầu nối AXI4 với bộ nhớ có hỗ trợ SECDEC và truy cập độc quyền"
+            },
+            "gpio": {
+                "title": "GPIO với giao diện APB/AXI.",
+                "description": "Bộ điều khiển GPIO với giao diện AXI4/APB"
+            },
+            "axi": {
+                "title": "Kết nối AXI.",
+                "description": "Kết nối hệ thống với sự hỗ trợ của các giao diện AXI3/AXI4/AHB/APB"
+            },
+            "spi": {
+                "title": "Giao diện chính SPI.",
+                "description": "Bộ điều khiển chính SPI với giao diện AXI4"
+            },
+            "i2c": {
+                "title": "Giao diện chính I2C.",
+                "description": "Bộ điều khiển chính I2C với giao diện AXI4"
+            },
+            "uart": {
+                "title": "Giao diện UART.",
+                "description": "Bộ điều khiển UART với giao diện AXI4/APB"
+            },
+            "gpt": {
+                "title": "GPT.",
+                "description": "Bộ định thời đa năng với giao diện AXI4/APB"
+            },
+            "analogPll": {
+                "title": "PLL tương tự.",
+                "description": "PLL với tần số lên đến 5 GHz (TSMC 28 HPC+)"
+            },
+            "lvdsRx": {
+                "title": "LVDS RX.",
+                "description": "LVDS RX lên đến 600MT/s (TSMC 28 HPC+)"
+            }
+        },
+        "software": {
+            "title": "Phần mềm & Công nghệ",
+            "content": "Sirius cũng phát triển một loạt các công nghệ thiết kế Vi điện tử, <br /> bao gồm phần mềm <strong>Tự động hóa Thiết kế Điện tử (EDA)</strong> <br /> giúp đảm bảo lợi thế cạnh tranh về thời gian đưa ra thị trường và chất lượng so với giá cả."
+        }
+    },
+    "industries": {
+        "title": "Các ngành công nghiệp",
+        "telecom": "Viễn thông",
+        "cloud": "Dịch vụ đám mây",
+        "ai": "AI",
+        "engineering": "Kỹ thuật",
+        "robotics": "Người máy",
+        "blockchain": "Blockchain",
+        "iot": "IoT",
+        "security": "Hệ thống an ninh"
+    },
+    "team": {
+        "subheading": "Đội ngũ",
+        "headline": "Được dẫn dắt bởi những người <1>có điều gì đó để khoe khoang.</1><br/> Nhưng họ không làm vậy.",
+        "alex": {
+            "name": "ALEX DROZDOV",
+            "bio": "Cựu Giám đốc điều hành của một trong những trung tâm RnD địa phương của Intel, cựu phó chủ tịch của Soft Machines Ltd, Tiến sĩ khoa học máy tính, trước đây đã thành lập các công ty công nghệ vi điện tử tại Nga"
+        },
+        "van": {
+            "name": "VAN NGUYEN",
+            "bio": "Ông trùm nổi tiếng Việt Nam với một câu chuyện dài về các doanh nghiệp được xây dựng thành công như .."
+        }
+    },
+    "join": {
+        "headline": "Muốn tham gia nhóm?",
+        "text": "Chúng tôi luôn tìm kiếm những người tài năng tìm thấy niềm vui và cảm hứng trong công nghệ cao. Hãy liên hệ với chúng tôi và kể câu chuyện của bạn.",
+        "button": "Liên hệ chúng tôi"
+    },
+    "contact": {
+        "title": "Chi tiết liên hệ",
+        "office": "Địa chỉ văn phòng",
+        "address": "1456 Nguyễn Văn Linh, <br /> Phường Tân Phong, Quận 7, Thành phố Hồ Chí Minh, Việt Nam",
+        "call": "Gọi cho chúng tôi",
+        "phone": "(+84) 0888 317 789",
+        "email": "Email cho chúng tôi",
+        "emailAddress": "info@rise-hitech",
+        "form": {
+            "name": "Tên",
+            "nameError": "Tên phải có ít nhất 2 ký tự.",
+            "email": "Email",
+            "emailError": "Vui lòng nhập một địa chỉ email hợp lệ.",
+            "message": "Tin nhắn",
+            "messageError": "Tin nhắn phải có ít nhất 10 ký tự.",
+            "send": "Gửi",
+            "submitting": "Đang gửi...",
+            "submitSuccessTitle": "Đã gửi tin nhắn!",
+            "submitSuccessDescription": "Cảm ơn đã liên hệ. Chúng tôi sẽ sớm liên lạc lại với bạn.",
+            "aiAssistTooShortTitle": "Tin nhắn quá ngắn",
+            "aiAssistTooShortDescription": "Vui lòng viết một tin nhắn ít nhất 10 ký tự để AI hỗ trợ.",
+            "aiAssistSuccessTitle": "Tin nhắn đã được cải thiện!",
+            "aiAssistSuccessDescription": "AI đã cải thiện tin nhắn của bạn để rõ ràng hơn.",
+            "aiAssistErrorTitle": "Hỗ trợ AI không thành công",
+            "aiAssistErrorDescription": "Không thể cải thiện tin nhắn vào lúc này. Vui lòng thử lại."
+        }
+    },
+    "footer": {
+        "address": "1456 Nguyễn Văn Linh, <br /> Phường Tân Phong, Quận 7, Thành phố Hồ Chí Minh, Việt Nam",
+        "phone": "(+84) 0888 317 789",
+        "email": "info@rise-hitech",
+        "navigation": "Điều hướng",
+        "about": "Về chúng tôi",
+        "productsServices": "Sản phẩm & Dịch vụ",
+        "industries": "Các ngành công nghiệp",
+        "team": "Đội ngũ",
+        "careers": "Tuyển dụng",
+        "legal": "Pháp lý",
+        "terms": "Điều khoản & Điều kiện",
+        "privacy": "Chính sách bảo mật",
+        "cookies": "Cookies",
+        "copyright": "© {{year}} Sirius Semiconductors. Mọi quyền được bảo lưu."
+    },
+    "copyright": "© {{year}} Sirius Semiconductors. Mọi quyền được bảo lưu."
+}

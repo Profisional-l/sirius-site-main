@@ -4,7 +4,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Loader2, Wand2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 import {
   Form,
@@ -20,15 +21,17 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { contactFormAssistance } from "@/ai/flows/contact-form-assistance";
 
-const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  message: z
-    .string()
-    .min(10, { message: "Message must be at least 10 characters." }),
-});
-
 export function ContactForm() {
+  const { t } = useTranslation();
+  
+  const formSchema = z.object({
+    name: z.string().min(2, { message: t('contact.form.nameError') }),
+    email: z.string().email({ message: t('contact.form.emailError') }),
+    message: z
+      .string()
+      .min(10, { message: t('contact.form.messageError') }),
+  });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isAiLoading, setIsAiLoading] = useState(false);
   const { toast } = useToast();
@@ -46,9 +49,8 @@ export function ContactForm() {
     const message = form.getValues("message");
     if (!message || message.length < 10) {
       toast({
-        title: "Message too short",
-        description:
-          "Please write a message of at least 10 characters for the AI to assist.",
+        title: t('contact.form.aiAssistTooShortTitle'),
+        description: t('contact.form.aiAssistTooShortDescription'),
         variant: "destructive",
       });
       return;
@@ -60,15 +62,14 @@ export function ContactForm() {
       if (result.improvedMessage) {
         form.setValue("message", result.improvedMessage);
         toast({
-          title: "Message Improved!",
-          description: "The AI has enhanced your message for clarity.",
+          title: t('contact.form.aiAssistSuccessTitle'),
+          description: t('contact.form.aiAssistSuccessDescription'),
         });
       }
     } catch (error) {
       toast({
-        title: "AI Assistance Failed",
-        description:
-          "Could not improve the message at this time. Please try again.",
+        title: t('contact.form.aiAssistErrorTitle'),
+        description: t('contact.form.aiAssistErrorDescription'),
         variant: "destructive",
       });
     } finally {
@@ -83,8 +84,8 @@ export function ContactForm() {
     setIsSubmitting(false);
 
     toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. We'll get back to you soon.",
+      title: t('contact.form.submitSuccessTitle'),
+      description: t('contact.form.submitSuccessDescription'),
     });
     form.reset();
   }
@@ -97,7 +98,7 @@ export function ContactForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[#0F141C] text-[20px]">Name</FormLabel>
+              <FormLabel className="text-[#0F141C] text-[20px]">{t('contact.form.name')}</FormLabel>
               <FormControl>
                 <Input
                   {...field}
@@ -114,7 +115,7 @@ export function ContactForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-[#0F141C] text-[20px]">
-                Email
+                {t('contact.form.email')}
               </FormLabel>
               <FormControl>
                 <Input
@@ -132,7 +133,7 @@ export function ContactForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-[#0F141C] text-[20px]">
-                Message
+                {t('contact.form.message')}
               </FormLabel>
               <div className="relative">
                 <FormControl>
@@ -154,7 +155,7 @@ export function ContactForm() {
           {isSubmitting ? (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
           ) : null}
-          <span className="text-[22px]">Send</span>
+          <span className="text-[22px]">{t('contact.form.send')}</span>
         </Button>
       </form>
     </Form>

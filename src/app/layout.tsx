@@ -1,5 +1,7 @@
+import './i18n'; // Import i18n configuration
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk, Source_Code_Pro } from 'next/font/google';
+import { Suspense } from 'react';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
@@ -37,10 +39,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           fontCode.variable
         )}
       >
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <Toaster />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <Toaster />
+        </Suspense>
       </body>
     </html>
   );

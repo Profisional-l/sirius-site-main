@@ -8,136 +8,116 @@ import {
   useMotionValueEvent,
 } from 'framer-motion';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useTranslation, Trans } from 'react-i18next';
 
 // --- Данные ---
-const ipBlocks = [
-  {
-    title: 'RISC-V core.',
-    description:
-      'Open standard instruction set architecture with full dev toolkit and debug printed circuit',
-  },
-  {
-    title: 'DMA-controller.',
-    description:
-      'AMBA APB interface for control/ status register access and 2 AXI4 master interfaces',
-  },
-  {
-    title: 'SRAM.',
-    description:
-      'AXI4 to memory bridge with SECDEC and exclusive access support',
-  },
-  {
-    title: 'GPIO with APB/AXI interface.',
-    description: 'GPIO controller with AXI4/ APB interfaces',
-  },
-  {
-    title: 'AXI interconnect.',
-    description:
-      'System Interconnect with support of AXI3/ AXI4/ AHB/ APB interfaces',
-  },
-  {
-    title: 'SPI master interface.',
-    description: 'SPI master controller with AXI4 interface',
-  },
-  {
-    title: 'I2C master interface.',
-    description: 'I2C master controller with AXI4 interface',
-  },
-  {
-    title: 'UART interface.',
-    description: 'UART controller with AXI4/APB interfaces',
-  },
-  {
-    title: 'GPT.',
-    description: 'General purpose timer with AXI4/ APB interfaces',
-  },
-  {
-    title: 'Analog PLL.',
-    description: 'PLL with frequency up to 5 GHz (TSMC 28 HPC+)',
-  },
-  { title: 'LVDS RX.', description: 'LVDS RX up to 600MT/s (TSMC 28 HPC+)' },
-];
-
-interface Service {
-  title: string;
-  id: string;
-  bgColor: string;
-  content: ReactNode;
-}
-
-const services: Service[] = [
-  {
-    title: 'IC Design',
-    id: 'ic-design',
-    bgColor: 'bg-[#24364E]',
-    content: (
-      <p>
-        We provide a full stack of Semiconductors Design & Programming <br />
-        services for FPGAs, ASIC. Structures ASIC solutions for Digital, <br />
-        Analogue, Radio Frequency (RF) & Photonic applications.
-      </p>
-    ),
-  },
-  {
-    title: 'IP-Blocks',
-    id: 'ip-blocks',
-    bgColor: 'bg-[#182434]',
-    content: (
-      <div className="rounded-[17px] border border-white/[.15] text-[20px] text-[#B8BECF]">
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          {ipBlocks.map((block, index) => (
-            <div
-              key={index}
-              className={`p-4 flex items-center min-h-[117px] ${
-                index % 2 === 0 ? 'md:border-r' : ''
-              } ${
-                index < ipBlocks.length - (ipBlocks.length % 2 === 0 ? 2 : 1)
-                  ? 'border-b'
-                  : ''
-              } border-white/[.15]`}
-            >
-              <p>
-                <strong className="text-[#FBFBFB]">{block.title}</strong>{' '}
-                {block.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    ),
-  },
-  {
-    title: 'Software & Technologies',
-    id: 'software',
-    bgColor: 'bg-[#101823]',
-    content: (
-      <p>
-        Sirius also develops a stack of Microelectronics design <br />
-        technologies, including{' '}
-        <strong>Electronics Design Automation (EDA)</strong> <br />
-        software which secures time-2-market & price-2-quality competitive
-        advantages.
-      </p>
-    ),
-  },
-];
-
-const ContentPanel = ({ service }: { service: Service }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }} // Начальная позиция ниже для эффекта подплывания
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-    className="w-full"
-  >
-    <div className="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-      <div className="pt-2 text-left text-lg text-white/70 leading-relaxed">
-        {service.content}
-      </div>
-    </div>
-  </motion.div>
-);
 
 export function ServicesAccordion() {
+  const { t } = useTranslation();
+
+  const ipBlocks = [
+    {
+      title: t('services.ipBlocks.riscV.title'),
+      description: t('services.ipBlocks.riscV.description'),
+    },
+    {
+      title: t('services.ipBlocks.dma.title'),
+      description: t('services.ipBlocks.dma.description'),
+    },
+    {
+      title: t('services.ipBlocks.sram.title'),
+      description: t('services.ipBlocks.sram.description'),
+    },
+    {
+      title: t('services.ipBlocks.gpio.title'),
+      description: t('services.ipBlocks.gpio.description'),
+    },
+    {
+      title: t('services.ipBlocks.axi.title'),
+      description: t('services.ipBlocks.axi.description'),
+    },
+    {
+      title: t('services.ipBlocks.spi.title'),
+      description: t('services.ipBlocks.spi.description'),
+    },
+    {
+      title: t('services.ipBlocks.i2c.title'),
+      description: t('services.ipBlocks.i2c.description'),
+    },
+    {
+      title: t('services.ipBlocks.uart.title'),
+      description: t('services.ipBlocks.uart.description'),
+    },
+    {
+      title: t('services.ipBlocks.gpt.title'),
+      description: t('services.ipBlocks.gpt.description'),
+    },
+    {
+      title: t('services.ipBlocks.analogPll.title'),
+      description: t('services.ipBlocks.analogPll.description'),
+    },
+    { 
+      title: t('services.ipBlocks.lvdsRx.title'), 
+      description: t('services.ipBlocks.lvdsRx.description') 
+    },
+  ];
+  
+  interface Service {
+    title: string;
+    id: string;
+    bgColor: string;
+    content: ReactNode;
+  }
+  
+  const services: Service[] = [
+    {
+      title: t('services.icDesign.title'),
+      id: 'ic-design',
+      bgColor: 'bg-[#24364E]',
+      content: (
+        <p dangerouslySetInnerHTML={{ __html: t('services.icDesign.content')}} />
+      ),
+    },
+    {
+      title: t('services.ipBlocks.title'),
+      id: 'ip-blocks',
+      bgColor: 'bg-[#182434]',
+      content: (
+        <div className="rounded-[17px] border border-white/[.15] text-[20px] text-[#B8BECF]">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {ipBlocks.map((block, index) => (
+              <div
+                key={index}
+                className={`p-4 flex items-center min-h-[117px] ${
+                  index % 2 === 0 ? 'md:border-r' : ''
+                } ${
+                  index < ipBlocks.length - (ipBlocks.length % 2 === 0 ? 2 : 1)
+                    ? 'border-b'
+                    : ''
+                } border-white/[.15]`}
+              >
+                <p>
+                  <strong className="text-[#FBFBFB]">{block.title}</strong>{' '}
+                  {block.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: t('services.software.title'),
+      id: 'software',
+      bgColor: 'bg-[#101823]',
+      content: (
+        <p>
+            <Trans i18nKey="services.software.content" components={{ strong: <strong /> }} />
+        </p>
+      ),
+    },
+  ];
+
   const [openedServices, setOpenedServices] = useState<string[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
   const wrapperRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -174,6 +154,21 @@ export function ServicesAccordion() {
     });
   });
 
+  const ContentPanel = ({ service }: { service: Service }) => (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }} // Начальная позиция ниже для эффекта подплывания
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="w-full"
+    >
+      <div className="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="pt-2 text-left text-lg text-white/70 leading-relaxed">
+          {service.content}
+        </div>
+      </div>
+    </motion.div>
+  );
+
   return (
     <section
       ref={sectionRef}
@@ -182,7 +177,7 @@ export function ServicesAccordion() {
     >
       <div className="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <h2 className="text-lg uppercase text-white/60 tracking-wider">
-          Products & Services
+          {t('services.title')}
         </h2>
       </div>
 
