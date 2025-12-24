@@ -10,87 +10,87 @@
   "copyright": "© {{year}} Sirius Semiconductors. All rights reserved.",
   "hero": {
     "title": "Micro-electronics<br />Technological Hub",
-    "subtitle": "We are <1>all about microelectronics.</1> <2/> With time-2-market & price-2-quality competitive advantages for our customers",
-    "contactSales": "Contact Sales"
+    "subtitle": "We are <blue>all about microelectronics.</blue> <br/>With time-2-market & price-2-quality competitive advantages for our customers",
+    "contactSales": "Contact sales"
   },
   "products": {
     "turnkey": {
-      "title": "Turnkey ASIC development",
-      "description": "Full cycle of ASIC development: from an idea to a final product in a box",
-      "details": ""
+      "title": "Turnkey IC Design Projects",
+      "description": "Full cycle of IC development from specification to qualified silicon prototypes. We assemble a dedicated team for a project with an option of team transfer upon the project completion",
+      "details": "Turnkey IC Design Projects: Full cycle of IC development from specification to qualified silicon prototypes. We assemble a dedicated team for a project with an option of team transfer upon the project completion"
     },
     "customization": {
-      "title": "SoC/ASIC customization",
-      "description": "We take an existing SoC/ASIC and customize it to suit your needs",
-      "details": ""
+      "title": "Customization of own IPs and 3rd party IPs",
+      "description": "We customize our own IPs and third-party IPs under the client's needs. We also provide support and maintenance for the customized IPs",
+      "details": "Customization of own IPs and 3rd party IPs: We customize our own IPs and third-party IPs under the client's needs. We also provide support and maintenance for the customized IPs"
     },
     "rd": {
-      "title": "R&D as a service",
-      "description": "We can act as your outsourced R&D center, covering all aspects of microelectronics development",
-      "details": ""
+      "title": "R&D center setup assistance",
+      "description": "We help our clients to setup their own R&D centers in Vietnam. We provide consultations, help with hiring and training of engineers",
+      "details": "R&D center setup assistance: We help our clients to setup their own R&D centers in Vietnam. We provide consultations, help with hiring and training of engineers"
     }
   },
   "mission": {
     "title": "Mission",
-    "text1": "Sirius Semiconductors was established <1>to reach an ambitious target</1> to turn Vietnam into a technological powerhouse.",
-    "text2": "We are here <1>to provide expertise, technologies, service and products in microelectronics</1> for partners in a Vietnamese market and way beyond"
+    "text1": "Sirius Semiconductors was established <blue>to <br/>reach an ambitious target</blue> to turn Vietnam into a technological powerhouse.",
+    "text2": "We are here <blue>to provide expertise, technologies, service and products in microelectronics</blue> for partners in a Vietnamese market and way beyond"
   },
   "services": {
-    "title": "Our Services",
+    "title": "Products & Services",
     "icDesign": {
-      "title": "IC Design Services",
-      "content": "Full-cycle IC design services, from specification to GDSII. We offer both digital and analog design, verification, and physical design services. Our expertise spans across various technology nodes, from mature 180nm to cutting-edge 28nm and below."
+      "title": "IC Design",
+      "content": "Sirius Semiconductors IC design team consists of world-class engineers with a proven track record of delivering complex ICs for a variety of applications. We have a wide range of expertise in analog, digital and mixed-signal design. We also have an experience of working with a variety of technologies from 180nm to 28nm."
     },
     "ipBlocks": {
-      "title": "IP-blocks and interconnects",
+      "title": "IP-blocks",
       "riscV": {
-        "title": "RISC-V CPU cores:",
-        "description": "a range of 32-bit and 64-bit cores for different applications"
+        "title": "RISC-V based MCUs -",
+        "description": "32-bit and 64-bit MCUs with a variety of peripherals"
       },
       "dma": {
-        "title": "DMA controllers:",
-        "description": "high-performance, configurable DMA for various use-cases"
+        "title": "DMA controller -",
+        "description": "up to 32 channels with a variety of transfer modes"
       },
       "sram": {
-        "title": "SRAM/DRAM controllers:",
-        "description": "efficient memory controllers for on-chip and off-chip memory"
+        "title": "SRAM controller -",
+        "description": "up to 1MB of SRAM with a variety of access modes"
       },
       "gpio": {
-        "title": "GPIO:",
-        "description": "general-purpose I/O blocks"
+        "title": "GPIO -",
+        "description": "up to 32 configurable I/O pins"
       },
       "axi": {
-        "title": "AMBA AXI interconnect:",
-        "description": "configurable, high-performance interconnect"
+        "title": "AXI-to-AHB bridge -",
+        "description": "with a variety of configurable parameters"
       },
       "spi": {
-        "title": "SPI:",
-        "description": "master and slave SPI controllers"
+        "title": "SPI controller -",
+        "description": "with a variety of configurable parameters"
       },
       "i2c": {
-        "title": "I2C:",
-        "description": "master and slave I2C controllers"
+        "title": "I2C controller -",
+        "description": "with a variety of configurable parameters"
       },
       "uart": {
-        "title": "UART:",
-        "description": "universal asynchronous receiver-transmitter"
+        "title": "UART controller -",
+        "description": "with a variety of configurable parameters"
       },
       "gpt": {
-        "title": "General-purpose timers",
-        "description": ""
+        "title": "General purpose timers -",
+        "description": "up to 4 timers with a variety of modes"
       },
       "analogPll": {
-        "title": "Analog PLL",
-        "description": ""
+        "title": "Analog PLL -",
+        "description": "with a variety of configurable parameters"
       },
       "lvdsRx": {
-        "title": "LVDS RX/TX",
-        "description": ""
+        "title": "LVDS RX/TX -",
+        "description": "with a variety of configurable parameters"
       }
     },
     "software": {
-      "title": "Software development",
-      "content": "<0>Firmware and drivers:</0> we develop low-level software for our SoCs, including bootloaders, firmware, and drivers for various operating systems (Linux, RTOS). <1>SDK and BSP:</1> we provide comprehensive Software Development Kits (SDKs) and Board Support Packages (BSPs) to enable our customers to start developing their applications right away. <2>AI/ML software:</2> we have expertise in developing and optimizing AI/ML software for our AI-accelerated SoCs, including model porting, quantization, and performance tuning."
+      "title": "Software Development",
+      "content": "We provide a full cycle of software development from scratch to a market-ready solution. Our team consists of experienced engineers with a wide range of expertise in different technologies and platforms. <strong>We have a strong background in embedded software development, but we are not limited to it.</strong> We also have experience in web and mobile development, as well as in creating complex cloud solutions."
     }
   },
   "industries": {
@@ -106,51 +106,51 @@
   },
   "team": {
     "subheading": "Team",
-    "headline": "Lead by the ones who <1>got something to brag on.</1><2/> But they don't.",
+    "headline": "Lead by the ones who <blue>got something to brag on.</blue><br/> But they don't.",
     "alex": {
       "name": "Alex Drozdov",
-      "bio": "Expert in IC design with 20+ years of experience in the industry. Previously worked at Intel, Synopsis, and Samsung."
+      "bio": "Expert in IC design with 20 years of experience in the industry. Managed a number of successful projects for major international companies. Author of 10+ patents and 20+ publications."
     },
     "van": {
       "name": "Van Nguyen",
-      "bio": "Lead software engineer with a focus on embedded systems and AI. Previously at Vinfast and FPT Software."
+      "bio": "PhD in CS from the University of Tokyo. Expert in AI and machine learning. Co-founder of a number of successful startups. Author of 5 patents and 10+ publications."
     }
   },
   "join": {
     "headline": "Wanna join the team?",
-    "text": "Are you passionate about microelectronics and want to make a difference? We are always looking for talented people to join our team. Check out our open positions and apply now.",
-    "button": "Contact us"
+    "text": "We are always looking for talented people to join our team. If you are passionate about microelectronics and want to make a difference, we would love to hear from you.",
+    "button": "Join us"
   },
   "contact": {
-    "title": "Get in Touch",
-    "office": "Main Office",
-    "address": "Sirius Building, District 7,<br/> Ho Chi Minh City, Vietnam",
+    "title": "Leave a request",
+    "office": "Our office",
+    "address": "Sirius Microelectronics, Saritasa bld, <br>6th floor, 244-246, Luu Huu Phuoc, <br>My Dinh 1, Nam Tu Liem, Hanoi, Vietnam",
     "call": "Call us",
-    "phone": "+84 123 456 789",
+    "phone": "+84 96 333 4689",
     "email": "Email us",
-    "emailAddress": "info@siriussemi.com",
+    "emailAddress": "sales@sirius-semi.com",
     "form": {
-      "name": "Your Name",
+      "name": "Name",
       "nameError": "Name must be at least 2 characters.",
-      "email": "Your email address",
-      "emailError": "Please enter a valid email.",
+      "email": "Email address",
+      "emailError": "Invalid email address.",
       "message": "Message",
       "messageError": "Message must be at least 10 characters.",
-      "send": "Send",
       "aiAssistTooShortTitle": "Message is too short",
-      "aiAssistTooShortDescription": "Please enter at least 10 characters for the AI to assist you.",
+      "aiAssistTooShortDescription": "Please enter a message of at least 10 characters to use AI assistance.",
       "aiAssistSuccessTitle": "Message Improved!",
       "aiAssistSuccessDescription": "Your message has been updated with AI suggestions.",
-      "aiAssistErrorTitle": "AI Assistant Error",
-      "aiAssistErrorDescription": "Could not get suggestions from AI. Please try again.",
-      "submitSuccessTitle": "Message Sent!",
-      "submitSuccessDescription": "Thank you for contacting us. We will get back to you shortly."
+      "aiAssistErrorTitle": "AI Assistance Failed",
+      "aiAssistErrorDescription": "Could not get AI suggestions. Please try again.",
+      "send": "Send",
+      "submitSuccessTitle": "Your message has been sent!",
+      "submitSuccessDescription": "We'll get back to you as soon as possible."
     }
   },
   "footer": {
-    "address": "Sirius Building, District 7,<br/> Ho Chi Minh City, Vietnam",
-    "phone": "+84 123 456 789",
-    "email": "info@siriussemi.com",
+    "address": "Sirius Microelectronics, Saritasa bld, 6th floor, 244-246, Luu Huu Phuoc, My Dinh 1, Nam Tu Liem, Hanoi, Vietnam",
+    "phone": "+84 96 333 4689",
+    "email": "sales@sirius-semi.com",
     "navigation": "Navigation",
     "about": "About",
     "productsServices": "Products & Services",
@@ -164,3 +164,4 @@
     "copyright": "© {{year}} Sirius Semiconductors. All rights reserved."
   }
 }
+    

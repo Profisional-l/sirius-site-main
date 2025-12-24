@@ -67,15 +67,13 @@ export default function Home() {
             <h1 className="space-mono-bold text-[42px] md:text-[68px] tracking-tighter uppercase leading-[1.05] text-[#F0F2F7]"
                 dangerouslySetInnerHTML={{ __html: t('hero.title') }} />
             <p className="mt-6 max-w-3xl mx-auto text-[20px] md:text-[28px] text-[#F0F2F7] leading-relaxed">
-              <Trans i18nKey="hero.subtitle">
-                We are{" "}
-                <span className="bg-gradient-to-r from-[#0075EB] to-[#35A4FF] bg-clip-text text-transparent">
-                  all about microelectronics.
-                </span>{" "}
-                <br />
-                With time-2-market & price-2-quality competitive advantages for
-                our customers
-              </Trans>
+              <Trans
+                i18nKey="hero.subtitle"
+                components={{
+                  blue: <span className="bg-gradient-to-r from-[#0075EB] to-[#35A4FF] bg-clip-text text-transparent" />,
+                  br: <br />,
+                }}
+              />
             </p>
             <div className="mt-10">
               <Button
@@ -135,9 +133,13 @@ export default function Home() {
                 {t('team.subheading')}
               </h3>
               <h2 className="mt-8 font-headline text-[28px] md:text-[45px] font-medium leading-tight">
-                <Trans i18nKey="team.headline">
-                  Lead by the ones who <span className="text-primary">got something to brag on.</span><br className="hidden md:block"/> But they don&apos;t.
-                </Trans>
+                 <Trans
+                  i18nKey="team.headline"
+                  components={{
+                    blue: <span className="text-primary" />,
+                    br: <br className="hidden md:block" />,
+                  }}
+                />
               </h2>
             </div>
             <div className="space-y-12 mw-[515px] pr-4">
@@ -219,3 +221,5 @@ export default function Home() {
     </>
   );
 }
+
+    

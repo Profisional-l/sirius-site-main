@@ -86,14 +86,13 @@ export function MissionAnimation() {
           }}
           className="absolute font-headline font-medium text-[28px] lg:text-[56px] max-w-[330px] md:max-w-4xl mx-auto leading-[1.26] tracking-tight text-center transform-gpu"
         >
-          <Trans i18nKey="mission.text1">
-            Sirius Semiconductors was established{" "}
-            <span className="text-primary">
-              to <br className="md:hidden" />
-              reach an ambitious target
-            </span>{" "}
-            to turn Vietnam into a technological powerhouse.
-          </Trans>
+          <Trans
+            i18nKey="mission.text1"
+            components={{
+              blue: <span className="text-primary" />,
+              br: <br className="md:hidden" />,
+            }}
+          />
         </motion.div>
         
         {/* Второй текст */}
@@ -107,16 +106,16 @@ export function MissionAnimation() {
           }}
           className="absolute font-headline font-medium text-[28px] lg:text-[56px] max-w-[330px] md:max-w-[60rem] mx-auto leading-[1.26] tracking-tight text-center transform-gpu"
         >
-          <Trans i18nKey="mission.text2">
-            We are here{" "}
-            <span className="text-primary">
-              to provide expertise,
-              technologies, service and products in microelectronics
-            </span>{" "}
-            for partners in a Vietnamese market and way beyond
-          </Trans>
+          <Trans
+            i18nKey="mission.text2"
+            components={{
+              blue: <span className="text-primary" />,
+            }}
+          />
         </motion.div>
       </div>
     </div>
   );
 }
+
+    
