@@ -1,168 +1,166 @@
 {
-  "translation": {
-    "header": {
-      "about": "Về chúng tôi",
-      "productsServices": "Sản phẩm & Dịch vụ",
-      "team": "Đội ngũ",
-      "careers": "Tuyển dụng",
-      "english": "English",
-      "vietnamese": "Tiếng Việt"
+  "header": {
+    "about": "Về chúng tôi",
+    "productsServices": "Sản phẩm & Dịch vụ",
+    "team": "Đội ngũ",
+    "careers": "Tuyển dụng",
+    "english": "English",
+    "vietnamese": "Tiếng Việt"
+  },
+  "copyright": "© {{year}} Sirius Semiconductors. Mọi quyền được bảo lưu.",
+  "hero": {
+    "title": "Trung tâm Công nghệ<br />Vi điện tử",
+    "subtitle": "Chúng tôi <1>là tất cả về vi điện tử.</1> <2/> Với lợi thế cạnh tranh về thời gian đưa sản phẩm ra thị trường và chất lượng so với giá cả cho khách hàng của chúng tôi",
+    "contactSales": "Liên hệ Kinh doanh"
+  },
+  "products": {
+    "turnkey": {
+      "title": "Phát triển ASIC trọn gói",
+      "description": "Chu trình đầy đủ của phát triển ASIC: từ ý tưởng đến sản phẩm cuối cùng trong hộp",
+      "details": ""
     },
-    "hero": {
-      "title": "Trung tâm Công nghệ<br/>Vi điện tử",
-      "subtitle": "Chúng tôi <1>hoàn toàn tập trung vào vi điện tử.</1> <br/>Với lợi thế cạnh tranh về thời gian đưa ra thị trường và chất lượng so với giá cả cho khách hàng của chúng tôi",
-      "contactSales": "Liên hệ"
+    "customization": {
+      "title": "Tùy chỉnh SoC/ASIC",
+      "description": "Chúng tôi lấy một SoC/ASIC hiện có và tùy chỉnh nó để phù hợp với nhu cầu của bạn",
+      "details": ""
     },
-    "products": {
-      "turnkey": {
-        "title": "Giải pháp chìa khóa trao tay",
-        "description": "Cung cấp các giải pháp chip hoàn chỉnh, sẵn sàng tích hợp để đẩy nhanh quá trình phát triển sản phẩm của bạn.",
-        "details": "Chi tiết về giải pháp chìa khóa trao tay"
+    "rd": {
+      "title": "R&D như một dịch vụ",
+      "description": "Chúng tôi có thể hoạt động như trung tâm R&D thuê ngoài của bạn, bao gồm tất cả các khía cạnh của phát triển vi điện tử",
+      "details": ""
+    }
+  },
+  "mission": {
+    "title": "Sứ mệnh",
+    "text1": "Sirius Semiconductors được thành lập <1>nhằm đạt được mục tiêu đầy tham vọng</1> là biến Việt Nam thành một cường quốc công nghệ.",
+    "text2": "Chúng tôi ở đây để <1>cung cấp chuyên môn, công nghệ, dịch vụ và sản phẩm trong vi điện tử</1> cho các đối tác trong một thị trường Việt Nam và cách xa hơn nữa"
+  },
+  "services": {
+    "title": "Dịch vụ của chúng tôi",
+    "icDesign": {
+      "title": "Dịch vụ thiết kế IC",
+      "content": "Dịch vụ thiết kế IC chu trình đầy đủ, từ đặc tả đến GDSII. Chúng tôi cung cấp cả dịch vụ thiết kế số và analog, xác minh và thiết kế vật lý. Chuyên môn của chúng tôi trải dài trên nhiều nút công nghệ khác nhau, từ 180nm trưởng thành đến 28nm tiên tiến và thấp hơn."
+    },
+    "ipBlocks": {
+      "title": "Khối IP và kết nối liên thông",
+      "riscV": {
+        "title": "Lõi CPU RISC-V:",
+        "description": "một loạt các lõi 32-bit và 64-bit cho các ứng dụng khác nhau"
       },
-      "customization": {
-        "title": "Tùy chỉnh & Tích hợp",
-        "description": "Điều chỉnh các thiết kế vi mạch của chúng tôi để đáp ứng các yêu cầu riêng của bạn và tích hợp chúng một cách liền mạch vào hệ thống của bạn.",
-        "details": "Chi tiết về tùy chỉnh & tích hợp"
+      "dma": {
+        "title": "Bộ điều khiển DMA:",
+        "description": "DMA hiệu suất cao, có thể cấu hình cho các trường hợp sử dụng khác nhau"
       },
-      "rd": {
-        "title": "Dịch vụ R&D",
-        "description": "Hợp tác với các chuyên gia của chúng tôi về các dự án nghiên cứu và phát triển tiên tiến để thúc đẩy sự đổi mới.",
-        "details": "Chi tiết về dịch vụ R&D"
+      "sram": {
+        "title": "Bộ điều khiển SRAM/DRAM:",
+        "description": "bộ điều khiển bộ nhớ hiệu quả cho bộ nhớ trên chip và ngoài chip"
+      },
+      "gpio": {
+        "title": "GPIO:",
+        "description": "các khối I/O đa dụng"
+      },
+      "axi": {
+        "title": "Kết nối liên thông AMBA AXI:",
+        "description": "kết nối liên thông hiệu suất cao, có thể cấu hình"
+      },
+      "spi": {
+        "title": "SPI:",
+        "description": "bộ điều khiển SPI chủ và tớ"
+      },
+      "i2c": {
+        "title": "I2C:",
+        "description": "bộ điều khiển I2C chủ và tớ"
+      },
+      "uart": {
+        "title": "UART:",
+        "description": "bộ thu phát không đồng bộ phổ quát"
+      },
+      "gpt": {
+        "title": "Bộ định thời đa dụng",
+        "description": ""
+      },
+      "analogPll": {
+        "title": "PLL analog",
+        "description": ""
+      },
+      "lvdsRx": {
+        "title": "LVDS RX/TX",
+        "description": ""
       }
     },
-    "mission": {
-      "title": "Sứ mệnh",
-      "text1": "Sirius Semiconductors được thành lập <1>nhằm đạt được mục tiêu đầy tham vọng là</1> biến Việt Nam thành một cường quốc công nghệ.",
-      "text2": "Chúng tôi ở đây để <1>cung cấp chuyên môn, công nghệ, dịch vụ và sản phẩm trong vi điện tử</1> cho các đối tác tại thị trường Việt Nam và vươn xa hơn nữa"
+    "software": {
+      "title": "Phát triển phần mềm",
+      "content": "<0>Firmware và trình điều khiển:</0> chúng tôi phát triển phần mềm cấp thấp cho các SoC của mình, bao gồm bộ nạp khởi động, firmware và trình điều khiển cho các hệ điều hành khác nhau (Linux, RTOS). <1>SDK và BSP:</1> chúng tôi cung cấp các Bộ công cụ phát triển phần mềm (SDK) và Gói hỗ trợ bo mạch (BSP) toàn diện để cho phép khách hàng của chúng tôi bắt đầu phát triển ứng dụng của họ ngay lập tức. <2>Phần mềm AI/ML:</2> chúng tôi có chuyên môn trong việc phát triển và tối ưu hóa phần mềm AI/ML cho các SoC tăng tốc AI của mình, bao gồm porting mô hình, lượng tử hóa và điều chỉnh hiệu suất."
+    }
+  },
+  "industries": {
+    "title": "Các ngành công nghiệp",
+    "telecom": "Viễn thông",
+    "cloud": "Dịch vụ đám mây",
+    "ai": "Trí tuệ nhân tạo",
+    "engineering": "Kỹ thuật",
+    "robotics": "Người máy",
+    "blockchain": "Chuỗi khối",
+    "iot": "IoT",
+    "security": "Hệ thống an ninh"
+  },
+  "team": {
+    "subheading": "Đội ngũ",
+    "headline": "Dẫn dắt bởi những người <1>có điều gì đó để khoe khoang.</1><2/> Nhưng họ không làm vậy.",
+    "alex": {
+      "name": "Alex Drozdov",
+      "bio": "Chuyên gia thiết kế IC với hơn 20 năm kinh nghiệm trong ngành. Từng làm việc tại Intel, Synopsis và Samsung."
     },
-    "services": {
-      "title": "Dịch vụ & Sản phẩm",
-      "icDesign": {
-        "title": "Thiết kế vi mạch (IC)",
-        "content": "Chúng tôi chuyên về <strong>thiết kế vi mạch kỹ thuật số và tín hiệu hỗn hợp</strong>, cung cấp các dịch vụ từ RTL đến GDSII. Đội ngũ của chúng tôi có kinh nghiệm trong việc tạo ra các thiết kế tùy chỉnh đáp ứng các yêu cầu cụ thể của bạn, đảm bảo hiệu suất và hiệu quả tối ưu. Chúng tôi cũng xử lý vercat, tổng hợp, APR và các thủ tục ký kết vật lý."
-      },
-      "ipBlocks": {
-        "title": "Khối sở hữu trí tuệ (IP)",
-        "riscV": {
-          "title": "Lõi CPU RISC-V",
-          "description": "(RV32IM) cho các ứng dụng nhúng hiệu quả."
-        },
-        "dma": {
-          "title": "Bộ điều khiển DMA",
-          "description": "để truyền dữ liệu tốc độ cao."
-        },
-        "sram": {
-          "title": "Bộ điều khiển SRAM/Flash",
-          "description": "để quản lý bộ nhớ đáng tin cậy."
-        },
-        "gpio": {
-          "title": "GPIO",
-          "description": "cho các giao diện I/O linh hoạt."
-        },
-        "axi": {
-          "title": "Giao diện AXI/AHB/APB",
-          "description": "cho kết nối hệ thống liền mạch."
-        },
-        "spi": {
-          "title": "Giao diện Master/Slave SPI",
-          "description": "cho giao tiếp nối tiếp."
-        },
-        "i2c": {
-          "title": "Giao diện Master/Slave I2C",
-          "description": "cho giao tiếp nối tiếp."
-        },
-        "uart": {
-          "title": "Giao diện UART",
-          "description": "cho giao tiếp không đồng bộ."
-        },
-        "gpt": {
-          "title": "Bộ định thời đa năng",
-          "description": "cho các hoạt động định thời chính xác."
-        },
-        "analogPll": {
-          "title": "Analog PLL",
-          "description": "lên đến 1.5GHz để tạo xung nhịp."
-        },
-        "lvdsRx": {
-          "title": "Bộ thu phát LVDS (Rx/Tx)",
-          "description": "cho truyền dữ liệu tốc độ cao."
-        }
-      },
-      "software": {
-        "title": "Phần mềm",
-        "content": "Chúng tôi cung cấp các dịch vụ phát triển <strong>phần mềm nhúng</strong>, bao gồm hệ điều hành thời gian thực (RTOS), trình điều khiển, phần mềm trung gian và các ứng dụng tùy chỉnh cho phần cứng của chúng tôi, đảm bảo tích hợp và hiệu suất liền mạch."
-      }
-    },
-    "industries": {
-      "title": "Các ngành công nghiệp",
-      "telecom": "Viễn thông",
-      "cloud": "Dịch vụ đám mây",
-      "ai": "Trí tuệ nhân tạo",
-      "engineering": "Kỹ thuật",
-      "robotics": "Robot",
-      "blockchain": "Blockchain",
-      "iot": "IoT",
-      "security": "Hệ thống an ninh"
-    },
-    "team": {
-      "subheading": "Đội ngũ",
-      "headline": "Dẫn dắt bởi những người <1>có điều gì đó để khoe khoang.</1><br/> Nhưng họ không làm vậy.",
-      "alex": {
-        "name": "Alex Drozdov",
-        "bio": "Hơn 25 năm kinh nghiệm trong ngành vi điện tử. Chuyên gia về thiết kế ASIC/FPGA và các phương pháp thiết kế."
-      },
-      "van": {
-        "name": "Van Nguyen",
-        "bio": "Hơn 12 năm kinh nghiệm trong ngành bán dẫn. Chuyên gia về thiết kế tương tự/hỗn hợp tín hiệu và IP."
-      }
-    },
-    "join": {
-      "headline": "Bạn muốn tham gia đội ngũ?",
-      "text": "Chúng tôi luôn tìm kiếm những tài năng đam mê để tham gia sứ mệnh của chúng tôi là định hình tương lai của công nghệ. Nếu bạn có động lực, sáng tạo và sẵn sàng tạo ra ảnh hưởng, chúng tôi muốn nghe từ bạn.",
-      "button": "Liên hệ ngay"
-    },
-    "contact": {
-      "title": "Hãy giữ liên lạc",
-      "office": "Văn phòng",
-      "address": "Tầng 16, Toà nhà TNR, 54A<br/> Nguyễn Chí Thanh, Hà Nội",
-      "call": "Gọi cho chúng tôi",
-      "phone": "+84 96 343-22-07",
-      "email": "Gửi email cho chúng tôi",
-      "emailAddress": "alex.d@siriussemi.vn",
-      "form": {
-        "name": "Tên",
-        "nameError": "Tên phải có ít nhất 2 ký tự.",
-        "email": "Email",
-        "emailError": "Địa chỉ email không hợp lệ.",
-        "message": "Tin nhắn",
-        "messageError": "Tin nhắn phải có ít nhất 10 ký tự.",
-        "send": "Gửi",
-        "aiAssistTooShortTitle": "Tin nhắn quá ngắn",
-        "aiAssistTooShortDescription": "Vui lòng nhập ít nhất 10 ký tự để AI hỗ trợ.",
-        "aiAssistSuccessTitle": "Tin nhắn được cải thiện",
-        "aiAssistSuccessDescription": "AI đã cập nhật tin nhắn của bạn.",
-        "aiAssistErrorTitle": "Đã xảy ra lỗi",
-        "aiAssistErrorDescription": "Không thể nhận hỗ trợ từ AI. Vui lòng thử lại.",
-        "submitSuccessTitle": "Đã gửi biểu mẫu",
-        "submitSuccessDescription": "Cảm ơn bạn đã liên hệ! Chúng tôi sẽ sớm liên hệ lại với bạn."
-      }
-    },
-    "footer": {
-      "address": "Tầng 16, Toà nhà TNR, 54A<br/> Nguyễn Chí Thanh, Hà Nội",
-      "phone": "+84 96 343-22-07",
-      "email": "alex.d@siriussemi.vn",
-      "navigation": "Điều hướng",
-      "about": "Về chúng tôi",
-      "productsServices": "Sản phẩm & Dịch vụ",
-      "industries": "Các ngành",
-      "team": "Đội ngũ",
-      "careers": "Tuyển dụng",
-      "legal": "Pháp lý",
-      "terms": "Điều khoản dịch vụ",
-      "privacy": "Chính sách bảo mật",
-      "cookies": "Chính sách cookie",
-      "copyright": "© {{year}} Sirius Semiconductors. Đã đăng ký bản quyền."
-    },
-    "copyright": "© {{year}} Sirius Semiconductors. Đã đăng ký bản quyền."
+    "van": {
+      "name": "Van Nguyen",
+      "bio": "Kỹ sư phần mềm chính với chuyên môn về hệ thống nhúng và AI. Từng làm việc tại Vinfast và FPT Software."
+    }
+  },
+  "join": {
+    "headline": "Bạn muốn tham gia nhóm?",
+    "text": "Bạn có đam mê vi điện tử và muốn tạo ra sự khác biệt? Chúng tôi luôn tìm kiếm những người tài năng để tham gia vào đội ngũ của mình. Hãy xem các vị trí đang tuyển và ứng tuyển ngay.",
+    "button": "Liên hệ chúng tôi"
+  },
+  "contact": {
+    "title": "Liên lạc",
+    "office": "Văn phòng chính",
+    "address": "Tòa nhà Sirius, Quận 7,<br/> Thành phố Hồ Chí Minh, Việt Nam",
+    "call": "Gọi cho chúng tôi",
+    "phone": "+84 123 456 789",
+    "email": "Gửi email cho chúng tôi",
+    "emailAddress": "info@siriussemi.com",
+    "form": {
+      "name": "Tên của bạn",
+      "nameError": "Tên phải có ít nhất 2 ký tự.",
+      "email": "Địa chỉ email của bạn",
+      "emailError": "Vui lòng nhập một email hợp lệ.",
+      "message": "Tin nhắn",
+      "messageError": "Tin nhắn phải có ít nhất 10 ký tự.",
+      "send": "Gửi",
+      "aiAssistTooShortTitle": "Tin nhắn quá ngắn",
+      "aiAssistTooShortDescription": "Vui lòng nhập ít nhất 10 ký tự để AI có thể hỗ trợ bạn.",
+      "aiAssistSuccessTitle": "Tin nhắn đã được cải thiện!",
+      "aiAssistSuccessDescription": "Tin nhắn của bạn đã được cập nhật với các đề xuất của AI.",
+      "aiAssistErrorTitle": "Lỗi trợ lý AI",
+      "aiAssistErrorDescription": "Không thể nhận được đề xuất từ AI. Vui lòng thử lại.",
+      "submitSuccessTitle": "Tin nhắn đã được gửi!",
+      "submitSuccessDescription": "Cảm ơn bạn đã liên hệ với chúng tôi. Chúng tôi sẽ sớm liên hệ lại với bạn."
+    }
+  },
+  "footer": {
+    "address": "Tòa nhà Sirius, Quận 7,<br/> Thành phố Hồ Chí Minh, Việt Nam",
+    "phone": "+84 123 456 789",
+    "email": "info@siriussemi.com",
+    "navigation": "Điều hướng",
+    "about": "Về chúng tôi",
+    "productsServices": "Sản phẩm & Dịch vụ",
+    "industries": "Các ngành công nghiệp",
+    "team": "Đội ngũ",
+    "careers": "Tuyển dụng",
+    "legal": "Pháp lý",
+    "terms": "Điều khoản dịch vụ",
+    "privacy": "Chính sách bảo mật",
+    "cookies": "Chính sách cookie",
+    "copyright": "© {{year}} Sirius Semiconductors. Mọi quyền được bảo lưu."
   }
 }

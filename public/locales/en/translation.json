@@ -1,167 +1,166 @@
 {
-    "header": {
-        "about": "About",
-        "productsServices": "Products & Services",
-        "team": "Team",
-        "careers": "Careers",
-        "english": "English",
-        "vietnamese": "Vietnamese"
+  "header": {
+    "about": "About",
+    "productsServices": "Products & Services",
+    "team": "Team",
+    "careers": "Careers",
+    "english": "English",
+    "vietnamese": "Tiếng Việt"
+  },
+  "copyright": "© {{year}} Sirius Semiconductors. All rights reserved.",
+  "hero": {
+    "title": "Micro-electronics<br />Technological Hub",
+    "subtitle": "We are <1>all about microelectronics.</1> <2/> With time-2-market & price-2-quality competitive advantages for our customers",
+    "contactSales": "Contact Sales"
+  },
+  "products": {
+    "turnkey": {
+      "title": "Turnkey ASIC development",
+      "description": "Full cycle of ASIC development: from an idea to a final product in a box",
+      "details": ""
     },
-    "hero": {
-        "title": "Micro-electronics<br/>Technological Hub",
-        "subtitle": "We are <1>all about microelectronics.</1> <br/>With time-2-market & price-2-quality competitive advantages for our customers",
-        "contactSales": "Contact Sales"
+    "customization": {
+      "title": "SoC/ASIC customization",
+      "description": "We take an existing SoC/ASIC and customize it to suit your needs",
+      "details": ""
     },
-    "products": {
-        "turnkey": {
-            "title": "TURNKEY SOLUTIONS",
-            "description": "Ready-made IP blocks and IC blueprints",
-            "details": "Leverage our portfolio of pre-verified, silicon-proven IP cores to accelerate your design cycle. Our turnkey solutions reduce risk and time-to-market for complex SoCs."
-        },
-        "customization": {
-            "title": "CUSTOMIZATION",
-            "description": "Proven remedies adjusted to your application",
-            "details": "We adapt our robust, field-tested semiconductor solutions to meet your unique application requirements, ensuring optimal performance and seamless integration."
-        },
-        "rd": {
-            "title": "R&D",
-            "description": "Unique keys based on years of experience",
-            "details": "Partner with us for cutting-edge Research and Development. Our experienced team pioneers novel solutions in digital, analog, and RF design to solve tomorrow's challenges."
-        }
+    "rd": {
+      "title": "R&D as a service",
+      "description": "We can act as your outsourced R&D center, covering all aspects of microelectronics development",
+      "details": ""
+    }
+  },
+  "mission": {
+    "title": "Mission",
+    "text1": "Sirius Semiconductors was established <1>to reach an ambitious target</1> to turn Vietnam into a technological powerhouse.",
+    "text2": "We are here <1>to provide expertise, technologies, service and products in microelectronics</1> for partners in a Vietnamese market and way beyond"
+  },
+  "services": {
+    "title": "Our Services",
+    "icDesign": {
+      "title": "IC Design Services",
+      "content": "Full-cycle IC design services, from specification to GDSII. We offer both digital and analog design, verification, and physical design services. Our expertise spans across various technology nodes, from mature 180nm to cutting-edge 28nm and below."
     },
-    "mission": {
-        "title": "Mission",
-        "text1": "Sirius Semiconductors was established <1>to reach an ambitious target</1> to turn Vietnam into a technological powerhouse.",
-        "text2": "We are here <1>to provide expertise, technologies, service and products in microelectronics</1> for partners in a Vietnamese market and way beyond"
+    "ipBlocks": {
+      "title": "IP-blocks and interconnects",
+      "riscV": {
+        "title": "RISC-V CPU cores:",
+        "description": "a range of 32-bit and 64-bit cores for different applications"
+      },
+      "dma": {
+        "title": "DMA controllers:",
+        "description": "high-performance, configurable DMA for various use-cases"
+      },
+      "sram": {
+        "title": "SRAM/DRAM controllers:",
+        "description": "efficient memory controllers for on-chip and off-chip memory"
+      },
+      "gpio": {
+        "title": "GPIO:",
+        "description": "general-purpose I/O blocks"
+      },
+      "axi": {
+        "title": "AMBA AXI interconnect:",
+        "description": "configurable, high-performance interconnect"
+      },
+      "spi": {
+        "title": "SPI:",
+        "description": "master and slave SPI controllers"
+      },
+      "i2c": {
+        "title": "I2C:",
+        "description": "master and slave I2C controllers"
+      },
+      "uart": {
+        "title": "UART:",
+        "description": "universal asynchronous receiver-transmitter"
+      },
+      "gpt": {
+        "title": "General-purpose timers",
+        "description": ""
+      },
+      "analogPll": {
+        "title": "Analog PLL",
+        "description": ""
+      },
+      "lvdsRx": {
+        "title": "LVDS RX/TX",
+        "description": ""
+      }
     },
-    "services": {
-        "title": "Products & Services",
-        "icDesign": {
-            "title": "IC Design",
-            "content": "We provide a full stack of Semiconductors Design & Programming <br /> services for FPGAs, ASIC. Structures ASIC solutions for Digital, <br /> Analogue, Radio Frequency (RF) & Photonic applications."
-        },
-        "ipBlocks": {
-            "title": "IP-Blocks",
-            "riscV": {
-                "title": "RISC-V core.",
-                "description": "Open standard instruction set architecture with full dev toolkit and debug printed circuit"
-            },
-            "dma": {
-                "title": "DMA-controller.",
-                "description": "AMBA APB interface for control/ status register access and 2 AXI4 master interfaces"
-            },
-            "sram": {
-                "title": "SRAM.",
-                "description": "AXI4 to memory bridge with SECDEC and exclusive access support"
-            },
-            "gpio": {
-                "title": "GPIO with APB/AXI interface.",
-                "description": "GPIO controller with AXI4/ APB interfaces"
-            },
-            "axi": {
-                "title": "AXI interconnect.",
-                "description": "System Interconnect with support of AXI3/ AXI4/ AHB/ APB interfaces"
-            },
-            "spi": {
-                "title": "SPI master interface.",
-                "description": "SPI master controller with AXI4 interface"
-            },
-            "i2c": {
-                "title": "I2C master interface.",
-                "description": "I2C master controller with AXI4 interface"
-            },
-            "uart": {
-                "title": "UART interface.",
-                "description": "UART controller with AXI4/APB interfaces"
-            },
-            "gpt": {
-                "title": "GPT.",
-                "description": "General purpose timer with AXI4/ APB interfaces"
-            },
-            "analogPll": {
-                "title": "Analog PLL.",
-                "description": "PLL with frequency up to 5 GHz (TSMC 28 HPC+)"
-            },
-            "lvdsRx": {
-                "title": "LVDS RX.",
-                "description": "LVDS RX up to 600MT/s (TSMC 28 HPC+)"
-            }
-        },
-        "software": {
-            "title": "Software & Technologies",
-            "content": "Sirius also develops a stack of Microelectronics design <br /> technologies, including <strong>Electronics Design Automation (EDA)</strong> <br /> software which secures time-2-market & price-2-quality competitive advantages."
-        }
+    "software": {
+      "title": "Software development",
+      "content": "<0>Firmware and drivers:</0> we develop low-level software for our SoCs, including bootloaders, firmware, and drivers for various operating systems (Linux, RTOS). <1>SDK and BSP:</1> we provide comprehensive Software Development Kits (SDKs) and Board Support Packages (BSPs) to enable our customers to start developing their applications right away. <2>AI/ML software:</2> we have expertise in developing and optimizing AI/ML software for our AI-accelerated SoCs, including model porting, quantization, and performance tuning."
+    }
+  },
+  "industries": {
+    "title": "Industries",
+    "telecom": "Telecom",
+    "cloud": "Cloud-service",
+    "ai": "AI",
+    "engineering": "Engineering",
+    "robotics": "Robotics",
+    "blockchain": "Blockchain",
+    "iot": "IoT",
+    "security": "Security systems"
+  },
+  "team": {
+    "subheading": "Team",
+    "headline": "Lead by the ones who <1>got something to brag on.</1><2/> But they don't.",
+    "alex": {
+      "name": "Alex Drozdov",
+      "bio": "Expert in IC design with 20+ years of experience in the industry. Previously worked at Intel, Synopsis, and Samsung."
     },
-    "industries": {
-        "title": "Industries",
-        "telecom": "Telecom",
-        "cloud": "Cloud-service",
-        "ai": "AI",
-        "engineering": "Engineering",
-        "robotics": "Robotics",
-        "blockchain": "Blockchain",
-        "iot": "IoT",
-        "security": "Security systems"
-    },
-    "team": {
-        "subheading": "Team",
-        "headline": "Lead by the ones who <1>got something to brag on.</1><br/> But they don't.",
-        "alex": {
-            "name": "ALEX DROZDOV",
-            "bio": "Former Executive of one of the Intel local RnD centers, ex-vice president of Soft Machines Ltd, PhD in computer science, previously launched the microelectronics technological companies in Russia"
-        },
-        "van": {
-            "name": "VAN NGUYEN",
-            "bio": "Famous Vietnamese tycoon with a long story of successfully built businesses such as .."
-        }
-    },
-    "join": {
-        "headline": "Wanna join the team?",
-        "text": "We are always looking for talented people who find their joy and inspiration in hi-tech. Feel free to reach us and tell your story.",
-        "button": "Contact Us"
-    },
-    "contact": {
-        "title": "Contact details",
-        "office": "Office address",
-        "address": "1456 Nguyen Van Linh, <br /> Mg Town 14th Ward, Tan Phong Ward, District 7, Ho Chi Minh City, Vietnam",
-        "call": "Call us",
-        "phone": "(+84) 0888 317 789",
-        "email": "Email us",
-        "emailAddress": "info@rise-hitech",
-        "form": {
-            "name": "Name",
-            "nameError": "Name must be at least 2 characters.",
-            "email": "Email",
-            "emailError": "Please enter a valid email address.",
-            "message": "Message",
-            "messageError": "Message must be at least 10 characters.",
-            "send": "Send",
-            "submitting": "Sending...",
-            "submitSuccessTitle": "Message Sent!",
-            "submitSuccessDescription": "Thanks for reaching out. We'll get back to you soon.",
-            "aiAssistTooShortTitle": "Message too short",
-            "aiAssistTooShortDescription": "Please write a message of at least 10 characters for the AI to assist.",
-            "aiAssistSuccessTitle": "Message Improved!",
-            "aiAssistSuccessDescription": "The AI has enhanced your message for clarity.",
-            "aiAssistErrorTitle": "AI Assistance Failed",
-            "aiAssistErrorDescription": "Could not improve the message at this time. Please try again."
-        }
-    },
-    "footer": {
-        "address": "1456 Nguyen Van Linh, <br /> Mg Town 14th Ward, Tan Phong Ward, District 7, Ho Chi Minh City, Vietnam",
-        "phone": "(+84) 0888 317 789",
-        "email": "info@rise-hitech",
-        "navigation": "Navigation",
-        "about": "About",
-        "productsServices": "Products & Services",
-        "industries": "Industries",
-        "team": "Team",
-        "careers": "Careers",
-        "legal": "Legal",
-        "terms": "Terms & Conditions",
-        "privacy": "Privacy Policy",
-        "cookies": "Cookies",
-        "copyright": "© {{year}} Sirius Semiconductors. All rights reserved."
-    },
+    "van": {
+      "name": "Van Nguyen",
+      "bio": "Lead software engineer with a focus on embedded systems and AI. Previously at Vinfast and FPT Software."
+    }
+  },
+  "join": {
+    "headline": "Wanna join the team?",
+    "text": "Are you passionate about microelectronics and want to make a difference? We are always looking for talented people to join our team. Check out our open positions and apply now.",
+    "button": "Contact us"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "office": "Main Office",
+    "address": "Sirius Building, District 7,<br/> Ho Chi Minh City, Vietnam",
+    "call": "Call us",
+    "phone": "+84 123 456 789",
+    "email": "Email us",
+    "emailAddress": "info@siriussemi.com",
+    "form": {
+      "name": "Your Name",
+      "nameError": "Name must be at least 2 characters.",
+      "email": "Your email address",
+      "emailError": "Please enter a valid email.",
+      "message": "Message",
+      "messageError": "Message must be at least 10 characters.",
+      "send": "Send",
+      "aiAssistTooShortTitle": "Message is too short",
+      "aiAssistTooShortDescription": "Please enter at least 10 characters for the AI to assist you.",
+      "aiAssistSuccessTitle": "Message Improved!",
+      "aiAssistSuccessDescription": "Your message has been updated with AI suggestions.",
+      "aiAssistErrorTitle": "AI Assistant Error",
+      "aiAssistErrorDescription": "Could not get suggestions from AI. Please try again.",
+      "submitSuccessTitle": "Message Sent!",
+      "submitSuccessDescription": "Thank you for contacting us. We will get back to you shortly."
+    }
+  },
+  "footer": {
+    "address": "Sirius Building, District 7,<br/> Ho Chi Minh City, Vietnam",
+    "phone": "+84 123 456 789",
+    "email": "info@siriussemi.com",
+    "navigation": "Navigation",
+    "about": "About",
+    "productsServices": "Products & Services",
+    "industries": "Industries",
+    "team": "Team",
+    "careers": "Careers",
+    "legal": "Legal",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
     "copyright": "© {{year}} Sirius Semiconductors. All rights reserved."
+  }
 }
