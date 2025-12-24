@@ -58,7 +58,6 @@ export function IndustriesSection() {
     offset: ['start start', 'end end'],
   });
 
-  // Wider and staggered ranges for each badge to appear and stay
   const badges = [
     { id: 'telecom', className: 'absolute top-[20%] left-[15%]', ranges: [[0.1, 0.3], [0.1, 0.3]] as [number[], number[]] },
     { id: 'cloud', className: 'absolute top-[10%] right-[20%]', ranges: [[0.15, 0.35], [0.15, 0.35]] as [number[], number[]] },
@@ -70,7 +69,7 @@ export function IndustriesSection() {
     { id: 'security', className: 'absolute top-[65%] right-[40%]', ranges: [[0.45, 0.65], [0.45, 0.65]] as [number[], number[]] },
   ];
 
-  const titleOpacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
+  const titleOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
   const titleScale = useTransform(scrollYProgress, [0, 0.1], [0.9, 1]);
 
 
@@ -78,7 +77,7 @@ export function IndustriesSection() {
     <section
       id="industries"
       ref={containerRef}
-      className="relative bg-[#101823] text-center h-[400vh]" // Increased height for slower animation
+      className="relative bg-[#101823] text-center h-[400vh]"
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
