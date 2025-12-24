@@ -45,9 +45,10 @@ export function ProductCard({
             <h3 className="text-[20px] lg:text-[28px] mt-[34px] text-center leading-[1.2] font-bold font-headline text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
               {title}
             </h3>
-            <p className="mt-3 text-16px lg:text-[22px] text-center leading-[1.5] text-white/70">
-              {description}
-            </p>
+            <p
+              className="mt-3 text-[14px] lg:text-[20px] text-center leading-[1.5] text-white/70"
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
           </div>
         </div>
       </motion.div>

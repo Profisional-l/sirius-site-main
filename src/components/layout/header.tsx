@@ -83,7 +83,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
       <DropdownMenuTrigger asChild>
         {isMobile ? (
           <Button className="bg-transparent hover:bg-transparent hover:text-[#ffffff] text-[#ffffff] opacity-[.28] h-auto px-4 py-1.5 text-xl w-[150px] border-none justify-center">
-            {i18n.language === 'en' ? 'English' : 'Tiếng Việt'}
+            {i18n.language === 'en' ? 'English' : 'Vietnamese'}
             <Globe className="w-[20px] h-[20px] ml-auto" />
           </Button>
         ) : (

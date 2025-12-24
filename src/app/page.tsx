@@ -79,7 +79,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-[#F0F2F7] border-white/30 hover:opacity-50 hover:bg[#F0F2F7] text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-0 w-[186px] h-[55px] rounded-[9px] transition-opacity"
+                className="bg-[#F0F2F7] border-white/30 hover:bg-[#D1D5DE] text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-0 w-[186px] h-[55px] rounded-[9px] transition-opacity"
                 asChild
               >
                 <Link href="#contact">{t('hero.contactSales')}</Link>
@@ -163,7 +163,7 @@ export default function Home() {
                     <p className="text-[14px] md:text-[20px] text-[#B8BECF] opacity-70">{member.bio}</p>
                   </div>
                 </div>
-              ))}
+              ))}\
             </div>
           </div>
         </section>

@@ -90,11 +90,6 @@ export function Footer() {
                     {t('footer.privacy')}
                   </Link>
                 </li>
-                <li>
-                  <Link href="#" className="text-[18px] text-[#B8BECF] hover:text-white transition">
-                    {t('footer.cookies')}
-                  </Link>
-                </li>
               </ul>
             </div>
           </div>
