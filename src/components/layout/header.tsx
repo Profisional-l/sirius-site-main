@@ -88,7 +88,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
           key={link.href}
           href={link.href}
           onClick={(e) => handleLinkClick(e, link.href)}
-          className="text-lg text-white/80 transition-colors hover:text-white"
+          className="text-lg text-white transition-colors hover:text-white/80"
         >
           {link.label}
         </a>

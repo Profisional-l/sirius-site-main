@@ -14,21 +14,21 @@ import { ServicesAccordion } from "@/components/services-accordion";
 const products = [
   {
     title: "TURNKEY SOLUTIONS",
-    description: "Ready-made IP blocks and IC blueprints",
+    description: "Ready-made IP blocks <br/> and IC blueprints",
     details:
       "Leverage our portfolio of pre-verified, silicon-proven IP cores to accelerate your design cycle. Our turnkey solutions reduce risk and time-to-market for complex SoCs.",
     backgroundImage: "/icons/tripple-1.svg",
   },
   {
     title: "CUSTOMIZATION",
-    description: "Proven remedies adjusted to your application",
+    description: "Proven remedies adjusted <br/> to your application",
     details:
       "We adapt our robust, field-tested semiconductor solutions to meet your unique application requirements, ensuring optimal performance and seamless integration.",
     backgroundImage: "/icons/tripple-2.svg",
   },
   {
     title: "R&D",
-    description: "Unique keys based on years of experience",
+    description: "Unique keys based on many <br/> years of experience",
     details:
       "Partner with us for cutting-edge Research and Development. Our experienced team pioneers novel solutions in digital, analog, and RF design to solve tomorrow's challenges.",
     backgroundImage: "/icons/tripple-3.svg",
@@ -79,7 +79,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-[#F0F2F7] border-white/30 hover:opacity-50 hover:bg[#F0F2F7] text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-0 w-[186px] h-[55px] rounded-[9px] transition-opacity"
+                className="bg-[#F0F2F7] border-white/30 hover:bg-[#D1D5DE] text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-0 w-[186px] h-[55px] rounded-[9px] transition-opacity"
                 asChild
               >
                 <Link href="#contact">Contact Sales</Link>
@@ -157,7 +157,7 @@ export default function Home() {
                     <p className="text-[14px] md:text-[20px] text-[#B8BECF] opacity-70">{member.bio}</p>
                   </div>
                 </div>
-              ))}
+              ))}\
             </div>
           </div>
         </section>

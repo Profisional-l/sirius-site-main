@@ -19,6 +19,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { contactFormAssistance } from "@/ai/flows/contact-form-assistance";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -26,6 +27,9 @@ const formSchema = z.object({
   message: z
     .string()
     .min(10, { message: "Message must be at least 10 characters." }),
+  consent: z.boolean().refine((value) => value === true, {
+    message: "You must consent to the processing of your personal data.",
+  }),
 });
 
 export function ContactForm() {
@@ -39,6 +43,7 @@ export function ContactForm() {
       name: "",
       email: "",
       message: "",
+      consent: false,
     },
   });
 
@@ -84,7 +89,7 @@ export function ContactForm() {
 
     toast({
       title: "Message Sent!",
-      description: "Thanks for reaching out. We'll get back to you soon.",
+      description: "Thanks for reaching out. We\'ll get back to you soon.",
     });
     form.reset();
   }
@@ -101,7 +106,7 @@ export function ContactForm() {
               <FormControl>
                 <Input
                   {...field}
-                  className="bg-[#F3F3F4] border-[#0F141C1A] text-[#0F141C] text-lg settingsform"
+                  className="bg-[#FFFFFF] border-[#0F141C1A] text-[#0F141C] text-lg settingsform"
                 />
               </FormControl>
               <FormMessage />
@@ -119,7 +124,7 @@ export function ContactForm() {
               <FormControl>
                 <Input
                   {...field}
-                  className="bg-[#F3F3F4] border-[#0F141C1A] text-[#0F141C] text-lg settingsform"
+                  className="bg-[#FFFFFF] border-[#0F141C1A] text-[#0F141C] text-lg settingsform"
                 />
               </FormControl>
               <FormMessage />
@@ -137,12 +142,38 @@ export function ContactForm() {
               <div className="relative">
                 <FormControl>
                   <Textarea
-                    className="bg-[#F3F3F4] border-[#0F141C1A] text-[#0F141C] text-lg min-h-[113px] resize-none settingsform mb-[-8px]"
+                    className="bg-[#FFFFFF] border-[#0F141C1A] text-[#0F141C] text-lg min-h-[113px] resize-none settingsform mb-[-8px]"
                     {...field}
                   />
                 </FormControl>
               </div>
               <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="consent"
+          render={({ field }) => (
+            <FormItem className="flex flex-row items-start space-x-3 space-y-0 pt-2">
+              <FormControl>
+                <Checkbox
+                  checked={field.value}
+                  onCheckedChange={field.onChange}
+                  id="consent"
+                  className="border-[#0F141C96]"
+                />
+              </FormControl>
+              <div className="space-y-1 leading-none">
+                <FormLabel
+                  htmlFor="consent"
+                  className="text-sm font-normal text-[#0F141C99]"
+                >
+                  By clicking the send button, I consent to the processing <br/> of
+                  the sent personal data.
+                </FormLabel>
+                <FormMessage />
+              </div>
             </FormItem>
           )}
         />
