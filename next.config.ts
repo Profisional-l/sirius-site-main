@@ -26,8 +26,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Увеличиваем лимит времени для генерации статических страниц (в секундах)
-  staticGenerationTimeout: 220,
 };
 
 export default nextConfig;
