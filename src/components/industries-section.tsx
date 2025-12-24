@@ -24,11 +24,11 @@ function AnimatedBadge({
   children,
   className,
 }: AnimatedBadgeProps) {
+  // Broader ranges for smoother transitions
+  const scale = useTransform(scrollYProgress, ranges[0], [0.5, 1]);
+  const blur = useTransform(scrollYProgress, ranges[0], [40, 0]);
   const opacity = useTransform(scrollYProgress, ranges[0], [0, 1]);
-  const blur = useTransform(scrollYProgress, ranges[0], [20, 0]);
-  const scale = useTransform(scrollYProgress, ranges[1], [0.8, 1]);
   const y = useTransform(scrollYProgress, ranges[1], ['10%', '0%']);
-
 
   const filter = useMotionTemplate`blur(${blur}px)`;
 
@@ -57,19 +57,20 @@ export function IndustriesSection() {
     target: containerRef,
     offset: ['start start', 'end end'],
   });
-  
+
+  // Wider and staggered ranges for each badge to appear and stay
   const badges = [
-    { id: 'telecom', className: 'absolute top-[20%] left-[15%]', ranges: [[0.05, 0.15], [0.05, 0.15]] as [number[], number[]] },
-    { id: 'cloud', className: 'absolute top-[10%] right-[20%]', ranges: [[0.15, 0.25], [0.15, 0.25]] as [number[], number[]] },
-    { id: 'ai', className: 'absolute top-[40%] right-[10%]', ranges: [[0.25, 0.35], [0.25, 0.35]] as [number[], number[]] },
-    { id: 'engineering', className: 'absolute top-[55%] left-[25%]', ranges: [[0.35, 0.45], [0.35, 0.45]] as [number[], number[]] },
-    { id: 'robotics', className: 'absolute top-[70%] left-[10%]', ranges: [[0.45, 0.55], [0.45, 0.55]] as [number[], number[]] },
-    { id: 'blockchain', className: 'absolute top-[80%] right-[25%]', ranges: [[0.55, 0.65], [0.55, 0.65]] as [number[], number[]] },
-    { id: 'iot', className: 'absolute top-[35%] left-[45%]', ranges: [[0.65, 0.75], [0.65, 0.75]] as [number[], number[]] },
-    { id: 'security', className: 'absolute top-[65%] right-[40%]', ranges: [[0.75, 0.85], [0.75, 0.85]] as [number[], number[]] },
+    { id: 'telecom', className: 'absolute top-[20%] left-[15%]', ranges: [[0.1, 0.3], [0.1, 0.3]] as [number[], number[]] },
+    { id: 'cloud', className: 'absolute top-[10%] right-[20%]', ranges: [[0.15, 0.35], [0.15, 0.35]] as [number[], number[]] },
+    { id: 'ai', className: 'absolute top-[40%] right-[10%]', ranges: [[0.2, 0.4], [0.2, 0.4]] as [number[], number[]] },
+    { id: 'engineering', className: 'absolute top-[55%] left-[25%]', ranges: [[0.25, 0.45], [0.25, 0.45]] as [number[], number[]] },
+    { id: 'robotics', className: 'absolute top-[70%] left-[10%]', ranges: [[0.3, 0.5], [0.3, 0.5]] as [number[], number[]] },
+    { id: 'blockchain', className: 'absolute top-[80%] right-[25%]', ranges: [[0.35, 0.55], [0.35, 0.55]] as [number[], number[]] },
+    { id: 'iot', className: 'absolute top-[35%] left-[45%]', ranges: [[0.4, 0.6], [0.4, 0.6]] as [number[], number[]] },
+    { id: 'security', className: 'absolute top-[65%] right-[40%]', ranges: [[0.45, 0.65], [0.45, 0.65]] as [number[], number[]] },
   ];
 
-  const titleOpacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1.0], [0, 1, 1, 1]);
+  const titleOpacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
   const titleScale = useTransform(scrollYProgress, [0, 0.1], [0.9, 1]);
 
 
@@ -77,7 +78,7 @@ export function IndustriesSection() {
     <section
       id="industries"
       ref={containerRef}
-      className="relative bg-[#101823] text-center h-[300vh]"
+      className="relative bg-[#101823] text-center h-[400vh]" // Increased height for slower animation
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
