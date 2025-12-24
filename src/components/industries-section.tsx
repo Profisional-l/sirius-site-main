@@ -7,7 +7,7 @@ import {
   useTransform,
   HTMLMotionProps,
 } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
@@ -74,7 +74,13 @@ export function IndustriesSection() {
         
         <div className="relative flex justify-center items-center h-[600px] sm:h-[400px]">
           <h2 className="absolute font-mono text-[42px] md:text-[68px] font-bold text-white uppercase">
-            {t('industries.title')}
+            <Trans
+              i18nKey="industries.title"
+              components={{
+                blue: <span className="bg-gradient-to-r from-[#0075EB] to-[#35A4FF] bg-clip-text text-transparent" />,
+                br: <br />,
+              }}
+             />
           </h2>
 
           <div className="absolute w-full h-full">

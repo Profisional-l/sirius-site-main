@@ -97,7 +97,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
           </Button>
         )}
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="bg-background border-border">
+      <DropdownMenuContent className="bg-black/50 backdrop-blur-lg border-border">
         <DropdownMenuItem onClick={() => changeLanguage("en")}>
           {t('header.english')}
         </DropdownMenuItem>
@@ -113,7 +113,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
       <header
         className={cn(
           "fixed top-0 py-1 left-0 right-0 z-50 transition-all duration-300",
-          scrolled || isOpen ? "bg-black/50 backdrop-blur-lg border-none" : "bg-transparent",
+          scrolled || isOpen ? "backdrop-blur-lg border-none" : "bg-transparent",
           !isVisible && !isOpen ? "-translate-y-full" : "translate-y-0"
         )}
       >

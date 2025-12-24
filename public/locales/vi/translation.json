@@ -9,7 +9,7 @@
   },
   "copyright": "© {{year}} Sirius Semiconductors.",
   "hero": {
-    "title": "Trung tâm công nghệ vi điện tử",
+    "title": "Trung tâm công <br/> nghệ vi điện tử",
     "subtitle": "Chúng ta đều nói về vi điện tử. Với lợi thế cạnh tranh về thời gian tiếp thị và giá cả so với chất lượng cho khách hàng của chúng tôi",
     "contactSales": "Liên hệ bán hàng"
   },
@@ -94,7 +94,7 @@
     }
   },
   "industries": {
-    "title": "Các ngành công nghiệp",
+    "title": "Các ngành <br/> công nghiệp",
     "telecom": "Viễn thông",
     "cloud": "Dịch vụ đám mây",
     "ai": "AI",
@@ -106,7 +106,7 @@
   },
   "team": {
     "subheading": "Đội ngũ",
-    "headline": "Dẫn đầu bởi những người có <blue>một cái gì đó để khoe khoang. </blue>",
+    "headline": "Dẫn đầu bởi những người có <blue>một cái gì đó để khoe khoang. </blue> Nhưng họ không có.",
     "alex": {
       "name": "Alex Drozdov",
       "bio": "Cựu giám đốc điều hành của một trong những trung tâm RnD địa phương của Intel, cựu phó chủ tịch của Soft Machines Ltd, tiến sĩ khoa học máy tính, trước đây đã ra mắt các công ty công nghệ vi điện tử ở Nga."
