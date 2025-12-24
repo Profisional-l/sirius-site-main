@@ -1,167 +1,169 @@
 {
-    "header": {
-        "about": "Về chúng tôi",
-        "productsServices": "Sản phẩm & Dịch vụ",
-        "team": "Đội ngũ",
-        "careers": "Tuyển dụng",
-        "english": "English",
-        "vietnamese": "Tiếng Việt"
+  "header": {
+    "about": "Về chúng tôi",
+    "productsServices": "Sản phẩm & Dịch vụ",
+    "team": "Đội ngũ",
+    "careers": "Tuyển dụng",
+    "english": "English",
+    "vietnamese": "Tiếng Việt"
+  },
+  "hero": {
+    "title": "Trung tâm Công nghệ<br/>Vi điện tử",
+    "subtitle": "Chúng tôi <1>hoàn toàn tập trung vào vi điện tử.</1> <3/>Với lợi thế cạnh tranh về thời gian đưa ra thị trường và chất lượng so với giá cả cho khách hàng của chúng tôi",
+    "contactSales": "Liên hệ Kinh doanh"
+  },
+  "products": {
+    "turnkey": {
+      "title": "Giải pháp chìa khóa trao tay",
+      "description": "Chip tùy chỉnh của riêng bạn được thiết kế và sản xuất bởi Sirius",
+      "details": "Chúng tôi xử lý mọi thứ từ đầu đến cuối."
     },
-    "hero": {
-        "title": "Trung tâm Công nghệ<br/>Vi điện tử",
-        "subtitle": "Chúng tôi là <1>tất cả về vi điện tử.</1> <br/>Với lợi thế cạnh tranh về thời gian đưa ra thị trường và chất lượng so với giá cả cho khách hàng của chúng tôi",
-        "contactSales": "Liên hệ Kinh doanh"
+    "customization": {
+      "title": "Tùy chỉnh & Tích hợp IP",
+      "description": "Các khối IP sẵn sàng sử dụng được cấp phép và tích hợp vào SoC của bạn",
+      "details": "Tăng tốc quá trình phát triển của bạn."
     },
-    "products": {
-        "turnkey": {
-            "title": "GIẢI PHÁP CHÌA KHÓA TRAO TAY",
-            "description": "Các khối IP và bản thiết kế IC có sẵn",
-            "details": "Tận dụng danh mục các lõi IP đã được xác minh trước, đã được chứng minh bằng silicon của chúng tôi để tăng tốc chu kỳ thiết kế của bạn. Các giải pháp chìa khóa trao tay của chúng tôi giúp giảm thiểu rủi ro và thời gian đưa ra thị trường cho các SoC phức tạp."
-        },
-        "customization": {
-            "title": "TÙY CHỈNH",
-            "description": "Các biện pháp đã được chứng minh được điều chỉnh cho ứng dụng của bạn",
-            "details": "Chúng tôi điều chỉnh các giải pháp bán dẫn mạnh mẽ, đã được thử nghiệm thực địa của mình để đáp ứng các yêu cầu ứng dụng độc đáo của bạn, đảm bảo hiệu suất tối ưu và tích hợp liền mạch."
-        },
-        "rd": {
-            "title": "R&D",
-            "description": "Các phím độc đáo dựa trên nhiều năm kinh nghiệm",
-            "details": "Hợp tác với chúng tôi để Nghiên cứu và Phát triển tiên tiến. Đội ngũ giàu kinh nghiệm của chúng tôi tiên phong trong các giải pháp mới trong thiết kế kỹ thuật số, analog và RF để giải quyết các thách thức của ngày mai."
-        }
+    "rd": {
+      "title": "R&D dưới dạng Dịch vụ",
+      "description": "Chúng tôi thực hiện R&D theo yêu cầu của bạn",
+      "details": "Giải quyết những thách thức khó khăn nhất của bạn."
+    }
+  },
+  "mission": {
+    "title": "Sứ mệnh",
+    "text1": "Sirius Semiconductors được thành lập <1>nhằm đạt được mục tiêu đầy tham vọng là</1> biến Việt Nam thành một cường quốc công nghệ.",
+    "text2": "Chúng tôi ở đây để <1>cung cấp chuyên môn, công nghệ, dịch vụ và sản phẩm trong vi điện tử</1> cho các đối tác trong một thị trường Việt Nam và cách xa hơn nữa"
+  },
+  "services": {
+    "title": "Dịch vụ của chúng tôi",
+    "icDesign": {
+      "title": "Thiết kế và xác minh vi mạch",
+      "content": "Chúng tôi cung cấp các dịch vụ thiết kế và xác minh vi mạch kỹ thuật số và tương tự hỗn hợp tiên tiến cho nhiều ứng dụng khác nhau. Các kỹ sư giàu kinh nghiệm của chúng tôi có thể xử lý toàn bộ quy trình thiết kế, từ đặc tả đến GDSII, đảm bảo các thiết kế chất lượng cao, hiệu quả và đáng tin cậy. Chúng tôi có chuyên môn về:<br/><br/>- Thiết kế vi mạch tương tự, RF, tín hiệu hỗn hợp<br/>- Thiết kế RTL và xác minh<br/>- Thiết kế vật lý<br/>- DFT"
     },
-    "mission": {
-        "title": "Sứ mệnh",
-        "text1": "Sirius Semiconductors được thành lập <1>để đạt được một mục tiêu đầy tham vọng</1> là biến Việt Nam thành một cường quốc công nghệ.",
-        "text2": "Chúng tôi ở đây <1>để cung cấp chuyên môn, công nghệ, dịch vụ và sản phẩm trong lĩnh vực vi điện tử</1> cho các đối tác tại thị trường Việt Nam và xa hơn nữa"
+    "ipBlocks": {
+      "title": "Các khối IP có thể cấp phép",
+      "riscV": {
+        "title": "Lõi CPU RISC-V 32-bit",
+        "description": ""
+      },
+      "dma": {
+        "title": "Bộ điều khiển DMA",
+        "description": ""
+      },
+      "sram": {
+        "title": "Bộ nhớ SRAM",
+        "description": ""
+      },
+      "gpio": {
+        "title": "GPIO",
+        "description": ""
+      },
+      "axi": {
+        "title": "Bus AXI",
+        "description": ""
+      },
+      "spi": {
+        "title": "Giao diện SPI",
+        "description": ""
+      },
+      "i2c": {
+        "title": "Giao diện I2C",
+        "description": ""
+      },
+      "uart": {
+        "title": "Giao diện UART",
+        "description": ""
+
+      },
+      "gpt": {
+        "title": "Bộ định thời đa năng",
+        "description": ""
+      },
+      "analogPll": {
+        "title": "PLL tương tự",
+        "description": ""
+      },
+      "lvdsRx": {
+        "title": "Bộ thu LVDS",
+        "description": ""
+      }
     },
-    "services": {
-        "title": "Sản phẩm & Dịch vụ",
-        "icDesign": {
-            "title": "Thiết kế IC",
-            "content": "Chúng tôi cung cấp đầy đủ các dịch vụ Thiết kế & Lập trình Bán dẫn <br /> cho FPGA, ASIC. Các giải pháp ASIC có cấu trúc cho các ứng dụng Kỹ thuật số, <br /> Tương tự, Tần số vô tuyến (RF) & Quang tử."
-        },
-        "ipBlocks": {
-            "title": "Khối IP",
-            "riscV": {
-                "title": "Lõi RISC-V.",
-                "description": "Kiến trúc tập lệnh tiêu chuẩn mở với bộ công cụ phát triển đầy đủ và mạch in gỡ lỗi"
-            },
-            "dma": {
-                "title": "Bộ điều khiển DMA.",
-                "description": "Giao diện AMBA APB để truy cập thanh ghi điều khiển/trạng thái và 2 giao diện chính AXI4"
-            },
-            "sram": {
-                "title": "SRAM.",
-                "description": "Cầu nối AXI4 với bộ nhớ có hỗ trợ SECDEC và truy cập độc quyền"
-            },
-            "gpio": {
-                "title": "GPIO với giao diện APB/AXI.",
-                "description": "Bộ điều khiển GPIO với giao diện AXI4/APB"
-            },
-            "axi": {
-                "title": "Kết nối AXI.",
-                "description": "Kết nối hệ thống với sự hỗ trợ của các giao diện AXI3/AXI4/AHB/APB"
-            },
-            "spi": {
-                "title": "Giao diện chính SPI.",
-                "description": "Bộ điều khiển chính SPI với giao diện AXI4"
-            },
-            "i2c": {
-                "title": "Giao diện chính I2C.",
-                "description": "Bộ điều khiển chính I2C với giao diện AXI4"
-            },
-            "uart": {
-                "title": "Giao diện UART.",
-                "description": "Bộ điều khiển UART với giao diện AXI4/APB"
-            },
-            "gpt": {
-                "title": "GPT.",
-                "description": "Bộ định thời đa năng với giao diện AXI4/APB"
-            },
-            "analogPll": {
-                "title": "PLL tương tự.",
-                "description": "PLL với tần số lên đến 5 GHz (TSMC 28 HPC+)"
-            },
-            "lvdsRx": {
-                "title": "LVDS RX.",
-                "description": "LVDS RX lên đến 600MT/s (TSMC 28 HPC+)"
-            }
-        },
-        "software": {
-            "title": "Phần mềm & Công nghệ",
-            "content": "Sirius cũng phát triển một loạt các công nghệ thiết kế Vi điện tử, <br /> bao gồm phần mềm <strong>Tự động hóa Thiết kế Điện tử (EDA)</strong> <br /> giúp đảm bảo lợi thế cạnh tranh về thời gian đưa ra thị trường và chất lượng so với giá cả."
-        }
+    "software": {
+      "title": "Phát triển phần mềm",
+      "content": "Chúng tôi cung cấp các dịch vụ phát triển phần mềm toàn diện để bổ sung cho các giải pháp phần cứng của mình. Đội ngũ của chúng tôi có thể phát triển phần mềm cơ sở, trình điều khiển, BSP và API để đảm bảo tích hợp liền mạch và hiệu suất tối ưu cho các thiết kế của bạn. Chúng tôi chuyên về:<br/><br/>- Phát triển phần mềm cơ sở và trình điều khiển<br/>- Phát triển Linux nhúng<br/>- Phát triển ứng dụng"
+    }
+  },
+  "industries": {
+    "title": "Các ngành",
+    "telecom": "Viễn thông",
+    "cloud": "Dịch vụ đám mây",
+    "ai": "Trí tuệ nhân tạo",
+    "engineering": "Kỹ thuật",
+    "robotics": "Người máy",
+    "blockchain": "Chuỗi khối",
+    "iot": "Internet vạn vật",
+    "security": "Hệ thống an ninh"
+  },
+  "team": {
+    "subheading": "Đội ngũ",
+    "headline": "Dẫn đầu bởi những người <1>có điều gì đó để khoe khoang.</1><3/> Nhưng họ không làm vậy.",
+    "alex": {
+      "name": "Alex Drozdov",
+      "bio": "Giám đốc điều hành & Đồng sáng lập. Chuyên gia về vi điện tử tương tự & tín hiệu hỗn hợp."
     },
-    "industries": {
-        "title": "Các ngành công nghiệp",
-        "telecom": "Viễn thông",
-        "cloud": "Dịch vụ đám mây",
-        "ai": "AI",
-        "engineering": "Kỹ thuật",
-        "robotics": "Người máy",
-        "blockchain": "Blockchain",
-        "iot": "IoT",
-        "security": "Hệ thống an ninh"
-    },
-    "team": {
-        "subheading": "Đội ngũ",
-        "headline": "Được dẫn dắt bởi những người <1>có điều gì đó để khoe khoang.</1><br/> Nhưng họ không làm vậy.",
-        "alex": {
-            "name": "ALEX DROZDOV",
-            "bio": "Cựu Giám đốc điều hành của một trong những trung tâm RnD địa phương của Intel, cựu phó chủ tịch của Soft Machines Ltd, Tiến sĩ khoa học máy tính, trước đây đã thành lập các công ty công nghệ vi điện tử tại Nga"
-        },
-        "van": {
-            "name": "VAN NGUYEN",
-            "bio": "Ông trùm nổi tiếng Việt Nam với một câu chuyện dài về các doanh nghiệp được xây dựng thành công như .."
-        }
-    },
-    "join": {
-        "headline": "Muốn tham gia nhóm?",
-        "text": "Chúng tôi luôn tìm kiếm những người tài năng tìm thấy niềm vui và cảm hứng trong công nghệ cao. Hãy liên hệ với chúng tôi và kể câu chuyện của bạn.",
-        "button": "Liên hệ chúng tôi"
-    },
-    "contact": {
-        "title": "Chi tiết liên hệ",
-        "office": "Địa chỉ văn phòng",
-        "address": "1456 Nguyễn Văn Linh, <br /> Phường Tân Phong, Quận 7, Thành phố Hồ Chí Minh, Việt Nam",
-        "call": "Gọi cho chúng tôi",
-        "phone": "(+84) 0888 317 789",
-        "email": "Email cho chúng tôi",
-        "emailAddress": "info@rise-hitech",
-        "form": {
-            "name": "Tên",
-            "nameError": "Tên phải có ít nhất 2 ký tự.",
-            "email": "Email",
-            "emailError": "Vui lòng nhập một địa chỉ email hợp lệ.",
-            "message": "Tin nhắn",
-            "messageError": "Tin nhắn phải có ít nhất 10 ký tự.",
-            "send": "Gửi",
-            "submitting": "Đang gửi...",
-            "submitSuccessTitle": "Đã gửi tin nhắn!",
-            "submitSuccessDescription": "Cảm ơn đã liên hệ. Chúng tôi sẽ sớm liên lạc lại với bạn.",
-            "aiAssistTooShortTitle": "Tin nhắn quá ngắn",
-            "aiAssistTooShortDescription": "Vui lòng viết một tin nhắn ít nhất 10 ký tự để AI hỗ trợ.",
-            "aiAssistSuccessTitle": "Tin nhắn đã được cải thiện!",
-            "aiAssistSuccessDescription": "AI đã cải thiện tin nhắn của bạn để rõ ràng hơn.",
-            "aiAssistErrorTitle": "Hỗ trợ AI không thành công",
-            "aiAssistErrorDescription": "Không thể cải thiện tin nhắn vào lúc này. Vui lòng thử lại."
-        }
-    },
-    "footer": {
-        "address": "1456 Nguyễn Văn Linh, <br /> Phường Tân Phong, Quận 7, Thành phố Hồ Chí Minh, Việt Nam",
-        "phone": "(+84) 0888 317 789",
-        "email": "info@rise-hitech",
-        "navigation": "Điều hướng",
-        "about": "Về chúng tôi",
-        "productsServices": "Sản phẩm & Dịch vụ",
-        "industries": "Các ngành công nghiệp",
-        "team": "Đội ngũ",
-        "careers": "Tuyển dụng",
-        "legal": "Pháp lý",
-        "terms": "Điều khoản & Điều kiện",
-        "privacy": "Chính sách bảo mật",
-        "cookies": "Cookies",
-        "copyright": "© {{year}} Sirius Semiconductors. Mọi quyền được bảo lưu."
-    },
-    "copyright": "© {{year}} Sirius Semiconductors. Mọi quyền được bảo lưu."
+    "van": {
+      "name": "Van Nguyen",
+      "bio": "CTO & Đồng sáng lập. Chuyên gia về thiết kế & xác minh vi mạch kỹ thuật số."
+    }
+  },
+  "join": {
+    "headline": "Bạn muốn tham gia nhóm?",
+    "text": "Chúng tôi luôn tìm kiếm những cá nhân tài năng để tham gia vào đội ngũ của mình. Nếu bạn đam mê vi điện tử và muốn tạo ra tác động, chúng tôi rất mong nhận được phản hồi từ bạn.",
+    "button": "Liên hệ"
+  },
+  "contact": {
+    "title": "Liên hệ với chúng tôi",
+    "office": "Văn phòng",
+    "address": "Tầng 2, Tòa nhà Sảnh Vườn,<br/>29-31-33 Đ. Phan Khiêm Ích, Tân Phong,<br/>Quận 7, Thành phố Hồ Chí Minh,<br/>Việt Nam",
+    "call": "Gọi cho chúng tôi",
+    "phone": "+84 90 304 9022",
+    "email": "Gửi email cho chúng tôi",
+    "emailAddress": "info@sirius-semi.com",
+    "form": {
+      "name": "Tên",
+      "email": "Email",
+      "message": "Tin nhắn",
+      "send": "Gửi",
+      "nameError": "Tên phải có ít nhất 2 ký tự.",
+      "emailError": "Địa chỉ email không hợp lệ.",
+      "messageError": "Tin nhắn phải có ít nhất 10 ký tự.",
+      "aiAssistTooShortTitle": "Tin nhắn quá ngắn",
+      "aiAssistTooShortDescription": "Vui lòng nhập ít nhất 10 ký tự để sử dụng trợ lý AI.",
+      "aiAssistSuccessTitle": "Tin nhắn được cải thiện!",
+      "aiAssistSuccessDescription": "Trợ lý AI của chúng tôi đã cập nhật tin nhắn của bạn.",
+      "aiAssistErrorTitle": "Đã xảy ra lỗi",
+      "aiAssistErrorDescription": "Không thể nhận hỗ trợ từ AI. Vui lòng thử lại sau.",
+      "submitSuccessTitle": "Tin nhắn đã được gửi!",
+      "submitSuccessDescription": "Cảm ơn bạn đã liên hệ. Chúng tôi sẽ sớm liên hệ lại với bạn."
+    }
+  },
+  "footer": {
+    "address": "Tầng 2, Tòa nhà Sảnh Vườn,<br/>29-31-33 Đ. Phan Khiêm Ích, Tân Phong,<br/>Quận 7, Thành phố Hồ Chí Minh, Việt Nam",
+    "phone": "+84 90 304 9022",
+    "email": "info@sirius-semi.com",
+    "navigation": "Điều hướng",
+    "about": "Về chúng tôi",
+    "productsServices": "Sản phẩm & Dịch vụ",
+    "industries": "Các ngành",
+    "team": "Đội ngũ",
+    "careers": "Tuyển dụng",
+    "legal": "Pháp lý",
+    "terms": "Điều khoản và Điều kiện",
+    "privacy": "Chính sách Bảo mật",
+    "cookies": "Chính sách Cookie",
+    "copyright": "© {{year}} Sirius Semiconductors. Bảo lưu mọi quyền."
+  },
+  "copyright": "© {{year}} Sirius Semiconductors. Bảo lưu mọi quyền."
 }
+
+    

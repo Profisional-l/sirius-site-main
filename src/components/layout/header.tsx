@@ -126,7 +126,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
               style={{ willChange: "opacity" }}
             >
               <Image
-                src="/siriuslogo-white.svg"
+                src="/siriuslogo.svg"
                 alt="Sirius Logo"
                 fill
                 priority
