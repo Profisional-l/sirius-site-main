@@ -24,14 +24,10 @@ function AnimatedBadge({
   children,
   className,
 }: AnimatedBadgeProps) {
-  // Each range array defines start/end points for different properties
-  // ranges[0] for opacity and blur
-  // ranges[1] for scale
-  // ranges[2] for y-transform (parallax)
-  const opacity = useTransform(scrollYProgress, ranges[0], [0, 1, 1, 0]);
-  const blur = useTransform(scrollYProgress, ranges[0], [20, 0, 0, 20]);
-  const scale = useTransform(scrollYProgress, ranges[1], [0.8, 1, 1, 0.8]);
-  const y = useTransform(scrollYProgress, ranges[2], ['10%', '0%', '0%', '-10%']);
+  const opacity = useTransform(scrollYProgress, ranges[0], [0, 1]);
+  const blur = useTransform(scrollYProgress, ranges[0], [20, 0]);
+  const scale = useTransform(scrollYProgress, ranges[1], [0.8, 1]);
+  const y = useTransform(scrollYProgress, ranges[1], ['10%', '0%']);
 
 
   const filter = useMotionTemplate`blur(${blur}px)`;
@@ -62,20 +58,19 @@ export function IndustriesSection() {
     offset: ['start start', 'end end'],
   });
   
-  // Staggered and properly sequenced ranges for each badge
   const badges = [
-    { id: 'telecom', className: 'absolute top-[20%] left-[15%]', ranges: [[0.05, 0.15, 0.25, 0.35], [0.05, 0.15, 0.25, 0.35], [0.05, 0.15, 0.25, 0.35]] as [number[], number[], number[]] },
-    { id: 'cloud', className: 'absolute top-[10%] right-[20%]', ranges: [[0.1, 0.2, 0.3, 0.4], [0.1, 0.2, 0.3, 0.4], [0.1, 0.2, 0.3, 0.4]] as [number[], number[], number[]] },
-    { id: 'ai', className: 'absolute top-[40%] right-[10%]', ranges: [[0.2, 0.3, 0.4, 0.5], [0.2, 0.3, 0.4, 0.5], [0.2, 0.3, 0.4, 0.5]] as [number[], number[], number[]] },
-    { id: 'engineering', className: 'absolute top-[55%] left-[25%]', ranges: [[0.3, 0.4, 0.5, 0.6], [0.3, 0.4, 0.5, 0.6], [0.3, 0.4, 0.5, 0.6]] as [number[], number[], number[]] },
-    { id: 'robotics', className: 'absolute top-[70%] left-[10%]', ranges: [[0.4, 0.5, 0.6, 0.7], [0.4, 0.5, 0.6, 0.7], [0.4, 0.5, 0.6, 0.7]] as [number[], number[], number[]] },
-    { id: 'blockchain', className: 'absolute top-[80%] right-[25%]', ranges: [[0.5, 0.6, 0.7, 0.8], [0.5, 0.6, 0.7, 0.8], [0.5, 0.6, 0.7, 0.8]] as [number[], number[], number[]] },
-    { id: 'iot', className: 'absolute top-[35%] left-[45%]', ranges: [[0.6, 0.7, 0.8, 0.9], [0.6, 0.7, 0.8, 0.9], [0.6, 0.7, 0.8, 0.9]] as [number[], number[], number[]] },
-    { id: 'security', className: 'absolute top-[65%] right-[40%]', ranges: [[0.65, 0.75, 0.85, 0.95], [0.65, 0.75, 0.85, 0.95], [0.65, 0.75, 0.85, 0.95]] as [number[], number[], number[]] },
+    { id: 'telecom', className: 'absolute top-[20%] left-[15%]', ranges: [[0.05, 0.15], [0.05, 0.15]] as [number[], number[]] },
+    { id: 'cloud', className: 'absolute top-[10%] right-[20%]', ranges: [[0.15, 0.25], [0.15, 0.25]] as [number[], number[]] },
+    { id: 'ai', className: 'absolute top-[40%] right-[10%]', ranges: [[0.25, 0.35], [0.25, 0.35]] as [number[], number[]] },
+    { id: 'engineering', className: 'absolute top-[55%] left-[25%]', ranges: [[0.35, 0.45], [0.35, 0.45]] as [number[], number[]] },
+    { id: 'robotics', className: 'absolute top-[70%] left-[10%]', ranges: [[0.45, 0.55], [0.45, 0.55]] as [number[], number[]] },
+    { id: 'blockchain', className: 'absolute top-[80%] right-[25%]', ranges: [[0.55, 0.65], [0.55, 0.65]] as [number[], number[]] },
+    { id: 'iot', className: 'absolute top-[35%] left-[45%]', ranges: [[0.65, 0.75], [0.65, 0.75]] as [number[], number[]] },
+    { id: 'security', className: 'absolute top-[65%] right-[40%]', ranges: [[0.75, 0.85], [0.75, 0.85]] as [number[], number[]] },
   ];
 
-  const titleOpacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1.0], [0, 1, 1, 0]);
-  const titleScale = useTransform(scrollYProgress, [0, 0.1, 0.9, 1.0], [0.9, 1, 1, 0.9]);
+  const titleOpacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1.0], [0, 1, 1, 1]);
+  const titleScale = useTransform(scrollYProgress, [0, 0.1], [0.9, 1]);
 
 
   return (
