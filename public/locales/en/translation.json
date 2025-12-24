@@ -1,0 +1,167 @@
+{
+  "header": {
+    "about": "About",
+    "productsServices": "Products & Services",
+    "team": "Team",
+    "careers": "Careers",
+    "english": "English",
+    "vietnamese": "Vietnamese"
+  },
+  "copyright": "© {{year}} Sirius Semiconductors.",
+  "hero": {
+    "title": "Micro-electronics<br />Technological Hub",
+    "subtitle": "We are <blue>all about microelectronics.</blue> <br/>With time-2-market & price-2-quality competitive advantages for our customers",
+    "contactSales": "Contact sales"
+  },
+  "products": {
+    "turnkey": {
+      "title": "TURNKEY SOLUTIONS",
+      "description": "Ready-made IP blocks and IC blueprints",
+      "details": "Turnkey IC Design Projects: Full cycle of IC development from specification to qualified silicon prototypes. We assemble a dedicated team for a project with an option of team transfer upon the project completion"
+    },
+    "customization": {
+      "title": "CUSTOMIZATION",
+      "description": "Proven remedies adjusted to your application",
+      "details": "Customization of own IPs and 3rd party IPs: We customize our own IPs and third-party IPs under the client's needs. We also provide support and maintenance for the customized IPs"
+    },
+    "rd": {
+      "title": "R&D",
+      "description": "Unique keys based on many years of experience",
+      "details": "R&D center setup assistance: We help our clients to setup their own R&D centers in Vietnam. We provide consultations, help with hiring and training of engineers"
+    }
+  },
+  "mission": {
+    "title": "Mission",
+    "text1": "Sirius Semiconductors was established <blue>to <br/>reach an ambitious target</blue> to turn Vietnam into a technological powerhouse.",
+    "text2": "We are here <blue>to provide expertise, technologies, service and products in microelectronics</blue> for partners in a Vietnamese market and way beyond"
+  },
+  "services": {
+    "title": "Products & Services",
+    "icDesign": {
+      "title": "IC Design",
+      "content": "We provide a full stack of Semiconductors Design & Programming services for FPGA, ASIC, Structures ASIC solutions for Digital, Analogue, Radio Frequency (RF) & Photonic applications."
+    },
+    "ipBlocks": {
+      "title": "IP-blocks",
+      "riscV": {
+        "title": "RISC-V core.",
+        "description": "Open standard instruction set architecture with full dev toolkit and debug printed circuit"
+      },
+      "dma": {
+        "title": "DMA-controller.",
+        "description": "AMBA APB interface for control/ status register access and 2 AXI4 master interfaces: for data transfers and for scatter gather tasks access "
+      },
+      "sram": {
+        "title": "SRAM.",
+        "description": "AXI4 to memory bridge with SECDEC and exclusive access support"
+      },
+      "gpio": {
+        "title": "GPIO with APB/AXI interface. ",
+        "description": "GPIO controller with AXI4/ APB interfaces"
+      },
+      "axi": {
+        "title": "AXI interconnect.",
+        "description": "System Interconnect with support of AXI3/ AXI4/ AHB/ APB interfaces"
+      },
+      "spi": {
+        "title": "SPI master interface.",
+        "description": "SPI master controller with AXI4 interface"
+      },
+      "i2c": {
+        "title": "I2C master interface. ",
+        "description": "I2C master controller with AXI4 interface"
+      },
+      "uart": {
+        "title": "UART interface. ",
+        "description": "UART controller with AXI4/APB interfaces"
+      },
+      "gpt": {
+        "title": "GPT.",
+        "description": "General purpose timer with AXI4/ APB interfaces"
+      },
+      "analogPll": {
+        "title": "Analog PLL.",
+        "description": "PLL with frequency up to 5 GHz (TSMC 28 HPC+)"
+      },
+      "lvdsRx": {
+        "title": "LVDS RX. ",
+        "description": "LVDS RX up to 600MT/s (TSMC 28 HPC+)"
+      }
+    },
+    "software": {
+      "title": "Software & Technologies",
+      "content": "Sirius also develops a stack of Microelectronics design technologies, including Electronics Design Automation (EDA) software which secures time-2-market & price-2-quality competitive advantages for its customers."
+    }
+  },
+  "industries": {
+    "title": "Industries",
+    "telecom": "Telecom",
+    "cloud": "Cloud-service",
+    "ai": "AI",
+    "engineering": "Engineering",
+    "robotics": "Robotics",
+    "blockchain": "Blockchain",
+    "iot": "IoT",
+    "security": "Security systems"
+  },
+  "team": {
+    "subheading": "Team",
+    "headline": "Lead by the ones who <blue>got something to brag on.</blue><br/> But they don't.",
+    "alex": {
+      "name": "Alex Drozdov",
+      "bio": "Former Executive of one of the Intel local RnD centers, ex-vice president of Soft Machines Ltd, PhD in computer science, previously launched the microelectronics technological companies in Russia"
+    },
+    "van": {
+      "name": "Van Nguyen",
+      "bio": "Famous Vietnamese tycoon with a long story of successfully building prosperous businesses all over his home country."
+    }
+  },
+  "join": {
+    "headline": "Wanna join the team?",
+    "text": "We are always looking for talented people to join our team. If you are passionate about microelectronics and want to make a difference, we would love to hear from you.",
+    "button": "Contact Us"
+  },
+  "contact": {
+    "title": "Contact details",
+    "office": "Office address",
+    "address": "1455 Nguyen Van Linh, My Toan 1-H3 Ward, Tan Phong Ward, District 7, Ho Chi Minh City, Vietnam",
+    "call": "Call us",
+    "phone": "(+84) 0868 317 799",
+    "email": "Email us",
+    "emailAddress": "info@rise-hi.tech",
+    "form": {
+      "name": "Name",
+      "nameError": "Name must be at least 2 characters.",
+      "email": "Email",
+      "emailError": "Invalid email address.",
+      "message": "Message",
+      "messageError": "Message must be at least 10 characters.",
+      "aiAssistTooShortTitle": "Message is too short",
+      "aiAssistTooShortDescription": "Please enter a message of at least 10 characters to use AI assistance.",
+      "aiAssistSuccessTitle": "Message Improved!",
+      "aiAssistSuccessDescription": "Your message has been updated with AI suggestions.",
+      "aiAssistErrorTitle": "AI Assistance Failed",
+      "aiAssistErrorDescription": "Could not get AI suggestions. Please try again.",
+      "send": "Send",
+      "submitSuccessTitle": "Your message has been sent!",
+      "submitSuccessDescription": "We'll get back to you as soon as possible."
+    }
+  },
+  "footer": {
+    "address": "1455 Nguyen Van Linh,  My Toan 1-H3 Ward, Tan Phong Ward, District 7, Ho Chi Minh City, Vietnam",
+    "phone": "(+84) 0868 317 799",
+    "email": "info@rise-hi.tech",
+    "navigation": "Navigation",
+    "about": "About",
+    "productsServices": "Products & Services",
+    "industries": "Industries",
+    "team": "Team",
+    "careers": "Careers",
+    "legal": "Legal",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "copyright": "© {{year}} Sirius Semiconductors. All rights reserved."
+  }
+}
+    

@@ -1,10 +1,12 @@
+import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk, Source_Code_Pro } from 'next/font/google';
+import { Suspense } from 'react';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
-import './globals.css';
+import { I18nProvider } from '@/components/i18n-provider';
 
 const fontBody = Inter({
   subsets: ['latin'],
@@ -37,10 +39,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           fontCode.variable
         )}
       >
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <Toaster />
+        <I18nProvider>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+            <Toaster />
+          </Suspense>
+        </I18nProvider>
       </body>
     </html>
   );

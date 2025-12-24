@@ -1,0 +1,167 @@
+{
+  "header": {
+    "about": "Về chúng tôi",
+    "productsServices": "Sản phẩm & Dịch vụ",
+    "team": "Đội ngũ",
+    "careers": "Tuyển dụng",
+    "english": "English",
+    "vietnamese": "Vietnamese"
+  },
+  "copyright": "© {{year}} Sirius Semiconductors.",
+  "hero": {
+    "title": "Trung tâm công nghệ vi điện tử",
+    "subtitle": "Chúng ta đều nói về vi điện tử. Với lợi thế cạnh tranh về thời gian tiếp thị và giá cả so với chất lượng cho khách hàng của chúng tôi",
+    "contactSales": "Liên hệ bán hàng"
+  },
+  "products": {
+    "turnkey": {
+      "title": "GIẢI PHÁP CHÌA KHÓA TRAO TAY",
+      "description": "Khối IP đã sẵn sàng và bản thiết kế IC",
+      "details": "Dự án Thiết kế IC Chìa khóa trao tay: Chu kỳ phát triển IC đầy đủ từ thông số kỹ thuật đến nguyên mẫu silicon đủ tiêu chuẩn. Chúng tôi tập hợp một đội ngũ chuyên trách cho một dự án với tùy chọn chuyển giao đội ngũ sau khi hoàn thành dự án"
+    },
+    "customization": {
+      "title": "TÙY CHỈNH",
+      "description": "Các biện pháp khắc phục đã được chứng minh được điều chỉnh cho phù hợp với đơn đăng ký của bạn",
+      "details": "Tùy chỉnh IP riêng và IP của bên thứ ba: Chúng tôi tùy chỉnh IP của riêng mình và IP của bên thứ ba theo nhu cầu của khách hàng. Chúng tôi cũng cung cấp hỗ trợ và bảo trì cho các IP tùy chỉnh"
+    },
+    "rd": {
+      "title": "R&D",
+      "description": "Các phím độc đáo dựa trên nhiều năm kinh nghiệm",
+      "details": "Hỗ trợ thiết lập trung tâm R&D: Chúng tôi giúp khách hàng của mình thiết lập các trung tâm R&D của riêng họ tại Việt Nam. Chúng tôi cung cấp tư vấn, giúp đỡ tuyển dụng và đào tạo kỹ sư"
+    }
+  },
+  "mission": {
+    "title": "Sứ mệnh",
+    "text1": "Sirius Semiconductors được thành lập <blue>nhằm đạt được mục tiêu đầy tham vọng là </blue>biến Việt Nam thành một cường quốc công ngh",
+    "text2": "Chúng tôi ở đây để <blue>cung cấp chuyên môn, công nghệ, dịch vụ và sản phẩm trong vi điện tử</blue> cho các đối tác trong một thị trường Việt Nam và cách xa hơn nữa"
+  },
+  "services": {
+    "title": "Sản phẩm & Dịch vụ",
+    "icDesign": {
+      "title": "Thiết kế IC",
+      "content": "Chúng tôi cung cấp đầy đủ các dịch vụ Lập trình và Thiết kế Chất bán dẫnr FPGA, ASIC, Cấu trúc ASIC giải pháp cho các ứng dụng kỹ thuật số, tương tự, tần số vô tuyến và quang tử."
+    },
+    "ipBlocks": {
+      "title": "Khối IP",
+      "riscV": {
+        "title": "Lõi RISC-V. ",
+        "description": "Kiến trúc tập lệnh tiêu chuẩn mở với bộ công cụ dev đầy đủ và mạch in gỡ lỗi."
+      },
+      "dma": {
+        "title": "Bộ điều khiển DMA. ",
+        "description": "Giao diện APB AMBA để truy cập đăng ký điều khiển / trạng thái và 2 giao diện chính của AXI4: để truyền dữ liệu và để phân tán thu thập các tác vụ truy cập"
+      },
+      "sram": {
+        "title": "SRAM.",
+        "description": "AXI4 đến cầu bộ nhớ với SECDEC và hỗ trợ truy cập độc quyền"
+      },
+      "gpio": {
+        "title": "GPIO với giao diện APB / AXI.",
+        "description": " Bộ điều khiển GPIO với giao diện AXI4 / APB"
+      },
+      "axi": {
+        "title": "Giao diện UART. ",
+        "description": "Bộ điều khiển UART với giao diện AXI4 / APB"
+      },
+      "spi": {
+        "title": "Giao diện chủ SPI. ",
+        "description": "Bộ điều khiển chính SPI với giao diện AXI4"
+      },
+      "i2c": {
+        "title": "Giao diện chính I2C. ",
+        "description": "Bộ điều khiển chính I2C với giao diện AXI4"
+      },
+      "uart": {
+        "title": "Giao diện UART.",
+        "description": "Bộ điều khiển UART với giao diện AXI4 / APB"
+      },
+      "gpt": {
+        "title": "GPT. ",
+        "description": "Hẹn giờ mục đích chung với giao diện AXI4 / APB"
+      },
+      "analogPll": {
+        "title": "Tương tự PLL. ",
+        "description": "PLL với tần số lên tới 5 GHz (TSMC 28 HPC +)"
+      },
+      "lvdsRx": {
+        "title": "LVDS RX. ",
+        "description": "LVDS RX lên tới 600 megatransfer mỗi giây (TSMC 28 HPC +)"
+      }
+    },
+    "software": {
+      "title": "Phần mềm và công nghệ",
+      "content": "Sirius cũng phát triển một loạt các công nghệ thiết kế Vi điện tử, bao gồm phần mềm Tự động hóa Thiết kế Điện tử (EDA), đảm bảo lợi thế cạnh tranh chất lượng thời gian 2 thị trường và giá cả 2 cho khách hàng của mình."
+    }
+  },
+  "industries": {
+    "title": "Các ngành công nghiệp",
+    "telecom": "Viễn thông",
+    "cloud": "Dịch vụ đám mây",
+    "ai": "AI",
+    "engineering": "Kỹ thuật",
+    "robotics": "Người máy",
+    "blockchain": "Blockchain",
+    "iot": "IoT",
+    "security": "Hệ thống an ninh"
+  },
+  "team": {
+    "subheading": "Đội ngũ",
+    "headline": "Dẫn đầu bởi những người có <blue>một cái gì đó để khoe khoang. </blue>",
+    "alex": {
+      "name": "Alex Drozdov",
+      "bio": "Cựu giám đốc điều hành của một trong những trung tâm RnD địa phương của Intel, cựu phó chủ tịch của Soft Machines Ltd, tiến sĩ khoa học máy tính, trước đây đã ra mắt các công ty công nghệ vi điện tử ở Nga."
+    },
+    "van": {
+      "name": "Van Nguyen",
+      "bio": "Ông trùm nổi tiếng của Việt Nam với một câu chuyện dài về việc xây dựng thành công các doanh nghiệp thịnh vượng trên khắp đất nước của mình."
+    }
+  },
+  "join": {
+    "headline": "Bạn muốn tham gia nhóm?",
+    "text": "Chúng tôi luôn tìm kiếm những người tài năng tìm thấy niềm vui và cảm hứng của họ trong công nghệ cao. Hãy tiếp cận chúng tôi và kể câu chuyện của bạn.",
+    "button": "Liên hệ bán hàng"
+  },
+  "contact": {
+    "title": "Chi tiết liên lạc",
+    "office": "Office address",
+    "address": "1455 Nguyen Van Linh, <br>My Toan 1-H3 Ward, Tan Phong Ward, <br>District 7, Ho Chi Minh City, Vietnam",
+    "call": "Call us",
+    "phone": "(+84) 0868 317 799",
+    "email": "Email us",
+    "emailAddress": "info@rise-hi.tech",
+    "form": {
+      "name": "Tên",
+      "nameError": "Tên phải có ít nhất 2 ký tự.",
+      "email": "Email",
+      "emailError": "Địa chỉ email không hợp lệ.",
+      "message": "Tin nhắn",
+      "messageError": "Tin nhắn phải có ít nhất 10 ký tự.",
+      "aiAssistTooShortTitle": "Tin nhắn quá ngắn",
+      "aiAssistTooShortDescription": "Vui lòng nhập tin nhắn có ít nhất 10 ký tự để sử dụng hỗ trợ AI.",
+      "aiAssistSuccessTitle": "Tin nhắn đã được cải thiện!",
+      "aiAssistSuccessDescription": "Tin nhắn của bạn đã được cập nhật với các đề xuất của AI.",
+      "aiAssistErrorTitle": "Hỗ trợ AI không thành công",
+      "aiAssistErrorDescription": "Không thể nhận được đề xuất của AI. Vui lòng thử lại.",
+      "send": "Gửi",
+      "submitSuccessTitle": "Tin nhắn của bạn đã được gửi!",
+      "submitSuccessDescription": "Chúng tôi sẽ liên hệ lại với bạn sớm nhất có thể."
+    }
+  },
+  "footer": {
+    "address": "1455 Nguyen Van Linh, My Toan 1-H3 Ward, Tan Phong Ward, District 7, Ho Chi Minh City, Vietnam",
+    "phone": "(+84) 0868 317 799",
+    "email": "info@rise-hi.tech",
+    "navigation": "Điều hướng",
+    "about": "Về chúng tôi",
+    "productsServices": "Sản phẩm & Dịch vụ",
+    "industries": "Các ngành công nghiệp",
+    "team": "Đội ngũ",
+    "careers": "Tuyển dụng",
+    "legal": "LEGAL",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "cookies": "Chính sách cookie",
+    "copyright": "© {{year}} Sirius Semiconductors. All Rights Reserved."
+  }
+}
+    
