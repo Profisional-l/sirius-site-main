@@ -5,9 +5,9 @@
     "team": "Team",
     "careers": "Careers",
     "english": "English",
-    "vietnamese": "Tiếng Việt"
+    "vietnamese": "Vietnamese"
   },
-  "copyright": "© {{year}} Sirius Semiconductors. All rights reserved.",
+  "copyright": "© {{year}} Sirius Semiconductors.",
   "hero": {
     "title": "Micro-electronics<br />Technological Hub",
     "subtitle": "We are <blue>all about microelectronics.</blue> <br/>With time-2-market & price-2-quality competitive advantages for our customers",
@@ -15,18 +15,18 @@
   },
   "products": {
     "turnkey": {
-      "title": "Turnkey IC Design Projects",
-      "description": "Full cycle of IC development from specification to qualified silicon prototypes. We assemble a dedicated team for a project with an option of team transfer upon the project completion",
+      "title": "TURNKEY SOLUTIONS",
+      "description": "Ready-made IP blocks and IC blueprints",
       "details": "Turnkey IC Design Projects: Full cycle of IC development from specification to qualified silicon prototypes. We assemble a dedicated team for a project with an option of team transfer upon the project completion"
     },
     "customization": {
-      "title": "Customization of own IPs and 3rd party IPs",
-      "description": "We customize our own IPs and third-party IPs under the client's needs. We also provide support and maintenance for the customized IPs",
+      "title": "CUSTOMIZATION",
+      "description": "Proven remedies adjusted to your application",
       "details": "Customization of own IPs and 3rd party IPs: We customize our own IPs and third-party IPs under the client's needs. We also provide support and maintenance for the customized IPs"
     },
     "rd": {
-      "title": "R&D center setup assistance",
-      "description": "We help our clients to setup their own R&D centers in Vietnam. We provide consultations, help with hiring and training of engineers",
+      "title": "R&D",
+      "description": "Unique keys based on many years of experience",
       "details": "R&D center setup assistance: We help our clients to setup their own R&D centers in Vietnam. We provide consultations, help with hiring and training of engineers"
     }
   },
@@ -39,58 +39,58 @@
     "title": "Products & Services",
     "icDesign": {
       "title": "IC Design",
-      "content": "Sirius Semiconductors IC design team consists of world-class engineers with a proven track record of delivering complex ICs for a variety of applications. We have a wide range of expertise in analog, digital and mixed-signal design. We also have an experience of working with a variety of technologies from 180nm to 28nm."
+      "content": "We provide a full stack of Semiconductors Design & Programming services for FPGA, ASIC, Structures ASIC solutions for Digital, Analogue, Radio Frequency (RF) & Photonic applications."
     },
     "ipBlocks": {
       "title": "IP-blocks",
       "riscV": {
-        "title": "RISC-V based MCUs -",
-        "description": "32-bit and 64-bit MCUs with a variety of peripherals"
+        "title": "RISC-V core.",
+        "description": "Open standard instruction set architecture with full dev toolkit and debug printed circuit"
       },
       "dma": {
-        "title": "DMA controller -",
-        "description": "up to 32 channels with a variety of transfer modes"
+        "title": "DMA-controller.",
+        "description": "AMBA APB interface for control/ status register access and 2 AXI4 master interfaces: for data transfers and for scatter gather tasks access "
       },
       "sram": {
-        "title": "SRAM controller -",
-        "description": "up to 1MB of SRAM with a variety of access modes"
+        "title": "SRAM.",
+        "description": "AXI4 to memory bridge with SECDEC and exclusive access support"
       },
       "gpio": {
-        "title": "GPIO -",
-        "description": "up to 32 configurable I/O pins"
+        "title": "GPIO with APB/AXI interface. ",
+        "description": "GPIO controller with AXI4/ APB interfaces"
       },
       "axi": {
-        "title": "AXI-to-AHB bridge -",
-        "description": "with a variety of configurable parameters"
+        "title": "AXI interconnect.",
+        "description": "System Interconnect with support of AXI3/ AXI4/ AHB/ APB interfaces"
       },
       "spi": {
-        "title": "SPI controller -",
-        "description": "with a variety of configurable parameters"
+        "title": "SPI master interface.",
+        "description": "SPI master controller with AXI4 interface"
       },
       "i2c": {
-        "title": "I2C controller -",
-        "description": "with a variety of configurable parameters"
+        "title": "I2C master interface. ",
+        "description": "I2C master controller with AXI4 interface"
       },
       "uart": {
-        "title": "UART controller -",
-        "description": "with a variety of configurable parameters"
+        "title": "UART interface. ",
+        "description": "UART controller with AXI4/APB interfaces"
       },
       "gpt": {
-        "title": "General purpose timers -",
-        "description": "up to 4 timers with a variety of modes"
+        "title": "GPT.",
+        "description": "General purpose timer with AXI4/ APB interfaces"
       },
       "analogPll": {
-        "title": "Analog PLL -",
-        "description": "with a variety of configurable parameters"
+        "title": "Analog PLL.",
+        "description": "PLL with frequency up to 5 GHz (TSMC 28 HPC+)"
       },
       "lvdsRx": {
-        "title": "LVDS RX/TX -",
-        "description": "with a variety of configurable parameters"
+        "title": "LVDS RX. ",
+        "description": "LVDS RX up to 600MT/s (TSMC 28 HPC+)"
       }
     },
     "software": {
-      "title": "Software Development",
-      "content": "We provide a full cycle of software development from scratch to a market-ready solution. Our team consists of experienced engineers with a wide range of expertise in different technologies and platforms. <strong>We have a strong background in embedded software development, but we are not limited to it.</strong> We also have experience in web and mobile development, as well as in creating complex cloud solutions."
+      "title": "Software & Technologies",
+      "content": "Sirius also develops a stack of Microelectronics design technologies, including Electronics Design Automation (EDA) software which secures time-2-market & price-2-quality competitive advantages for its customers."
     }
   },
   "industries": {
@@ -109,30 +109,30 @@
     "headline": "Lead by the ones who <blue>got something to brag on.</blue><br/> But they don't.",
     "alex": {
       "name": "Alex Drozdov",
-      "bio": "Expert in IC design with 20 years of experience in the industry. Managed a number of successful projects for major international companies. Author of 10+ patents and 20+ publications."
+      "bio": "Former Executive of one of the Intel local RnD centers, ex-vice president of Soft Machines Ltd, PhD in computer science, previously launched the microelectronics technological companies in Russia"
     },
     "van": {
       "name": "Van Nguyen",
-      "bio": "PhD in CS from the University of Tokyo. Expert in AI and machine learning. Co-founder of a number of successful startups. Author of 5 patents and 10+ publications."
+      "bio": "Famous Vietnamese tycoon with a long story of successfully building prosperous businesses all over his home country."
     }
   },
   "join": {
     "headline": "Wanna join the team?",
     "text": "We are always looking for talented people to join our team. If you are passionate about microelectronics and want to make a difference, we would love to hear from you.",
-    "button": "Join us"
+    "button": "Contact Us"
   },
   "contact": {
-    "title": "Leave a request",
-    "office": "Our office",
-    "address": "Sirius Microelectronics, Saritasa bld, <br>6th floor, 244-246, Luu Huu Phuoc, <br>My Dinh 1, Nam Tu Liem, Hanoi, Vietnam",
+    "title": "Contact details",
+    "office": "Office address",
+    "address": "1455 Nguyen Van Linh, My Toan 1-H3 Ward, Tan Phong Ward, District 7, Ho Chi Minh City, Vietnam",
     "call": "Call us",
-    "phone": "+84 96 333 4689",
+    "phone": "(+84) 0868 317 799",
     "email": "Email us",
-    "emailAddress": "sales@sirius-semi.com",
+    "emailAddress": "info@rise-hi.tech",
     "form": {
       "name": "Name",
       "nameError": "Name must be at least 2 characters.",
-      "email": "Email address",
+      "email": "Email",
       "emailError": "Invalid email address.",
       "message": "Message",
       "messageError": "Message must be at least 10 characters.",
@@ -148,9 +148,9 @@
     }
   },
   "footer": {
-    "address": "Sirius Microelectronics, Saritasa bld, 6th floor, 244-246, Luu Huu Phuoc, My Dinh 1, Nam Tu Liem, Hanoi, Vietnam",
-    "phone": "+84 96 333 4689",
-    "email": "sales@sirius-semi.com",
+    "address": "1455 Nguyen Van Linh,  My Toan 1-H3 Ward, Tan Phong Ward, District 7, Ho Chi Minh City, Vietnam",
+    "phone": "(+84) 0868 317 799",
+    "email": "info@rise-hi.tech",
     "navigation": "Navigation",
     "about": "About",
     "productsServices": "Products & Services",
