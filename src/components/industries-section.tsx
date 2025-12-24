@@ -76,9 +76,9 @@ export function IndustriesSection() {
     <section
       id="industries"
       ref={containerRef}
-      className="relative bg-[#101823] text-center h-[300vh] overflow-hidden"
+      className="relative bg-[#101823] text-center h-[300vh]"
     >
-      <div className="sticky top-0 h-screen w-full">
+      <div className="sticky top-0 h-screen w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="dots-pattern"></div>
         </div>
