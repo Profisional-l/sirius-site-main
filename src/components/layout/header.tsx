@@ -82,22 +82,22 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         {isMobile ? (
-          <Button className="bg-transparent hover:bg-transparent hover:text-[#ffffff] text-[#ffffff] opacity-[.28] h-auto px-4 py-1.5 text-xl w-[150px] border-none justify-center">
+          <Button className="langBut bg-transparent hover:bg-transparent hover:text-[#ffffff] text-[#ffffff] opacity-[.28] hover:opacity-70 transition-opacity-[0.33s] h-auto px-4 py-1.5 text-xl w-[150px] border-none justify-center">
             {i18n.language === 'en' ? 'English' : 'Vietnamese'}
-            <Globe className="w-[20px] h-[20px] ml-auto" />
+            <Globe className="w-[20px] h-[20px]" />
           </Button>
         ) : (
           <Button
             variant="outline"
             size="sm"
-            className="bg-transparent hover:bg-white/10 text-white/80 border-white/30 h-auto px-4 py-1.5 text-lg"
+            className="bg-transparent hover:bg-white text-white/80 hover:text-black border-white/30 h-auto px-4 py-1.5 text-lg"
           >
             {i18n.language === 'en' ? t('header.english') : t('header.vietnamese')}
             <Globe className="w-4 h-4" />
           </Button>
         )}
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="bg-black/50 backdrop-blur-lg border-border">
+      <DropdownMenuContent className="bg-black/40 backdrop-blur-lg border-none">
         <DropdownMenuItem onClick={() => changeLanguage("en")}>
           {t('header.english')}
         </DropdownMenuItem>
