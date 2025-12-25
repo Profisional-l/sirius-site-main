@@ -127,7 +127,7 @@ export function IndustriesSection() {
     {
       id: "engineering",
       className:
-        "absolute top-[34%] left-[60%] sm:top-[45%] sm:right-[15%] sm:left-auto md:right-[-10%]",
+        "absolute top-[34%] left-[50%] sm:top-[45%] sm:right-[15%] sm:left-auto md:right-[-10%]",
       ranges: [
         [0.25, 0.45],
         [0.25, 0.45],
@@ -145,7 +145,7 @@ export function IndustriesSection() {
     {
       id: "blockchain",
       className:
-        "absolute top-[65%] left-[65%] sm:top-[70%] sm:left-[20%] sm:right-auto md:left-[20%]",
+        "absolute top-[65%] left-[60%] sm:top-[70%] sm:left-[20%] sm:right-auto md:left-[20%]",
       ranges: [
         [0.35, 0.55],
         [0.35, 0.55],
@@ -154,7 +154,7 @@ export function IndustriesSection() {
     {
       id: "iot",
       className:
-        "absolute top-[70%] left-[22%] sm:top-[65%] sm:right-[20%] sm:left-auto md:right-[0%]",
+        "absolute top-[70%] left-[20%] sm:top-[65%] sm:right-[20%] sm:left-auto md:right-[0%]",
       ranges: [
         [0.4, 0.6],
         [0.4, 0.6],
@@ -163,7 +163,7 @@ export function IndustriesSection() {
     {
       id: "security",
       className:
-        "absolute top-[80%] left-[50%] -translate-x-1/2 sm:top-[70%] sm:left-[58%] sm:translate-x-0 md:left-[55%]",
+        "absolute top-[83%] left-[45%] -translate-x-1/2 sm:top-[70%] sm:left-[58%] sm:translate-x-0 md:left-[55%]",
       ranges: [
         [0.45, 0.65],
         [0.45, 0.65],
