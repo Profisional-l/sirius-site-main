@@ -1,33 +1,29 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
+import { I18nextProvider } from "react-i18next";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import HttpBackend from "i18next-http-backend";
-import LanguageDetector from "i18next-browser-languagedetector";
 
-export function I18nProvider({ children }: { children: React.ReactNode }) {
-  useEffect(() => {
-    // Инициализируем i18next только в браузере, чтобы избежать SSR/SSG подвисаний
-    if (typeof window === "undefined") return;
-    if (!i18n.isInitialized) {
-      i18n
-        .use(HttpBackend)
-        .use(LanguageDetector)
-        .use(initReactI18next)
-        .init({
-          fallbackLng: "en",
-          supportedLngs: ["en", "vi"],
-          debug: false,
-          interpolation: {
-            escapeValue: false,
-          },
-          backend: {
-            loadPath: "/locales/{{lng}}/translation.json",
-          },
-        });
-    }
-  }, []);
+export function I18nProvider({
+  children,
+  resources,
+}: {
+  children: React.ReactNode;
+  resources: any;
+}) {
+  if (!i18n.isInitialized) {
+    i18n.use(initReactI18next).init({
+      resources,
+      lng: "en",
+      fallbackLng: "en",
+      supportedLngs: ["en", "vi"],
+      debug: false,
+      interpolation: {
+        escapeValue: false,
+      },
+    });
+  }
 
-  return <>{children}</>;
+  return <I18nextProvider i18n={i18n}>{children}</I18nextProvider>;
 }

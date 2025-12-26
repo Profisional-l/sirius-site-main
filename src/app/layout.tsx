@@ -7,6 +7,17 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import { I18nProvider } from '@/components/i18n-provider';
+import en from '@/../public/locales/en/translation.json';
+import vi from '@/../public/locales/vi/translation.json';
+
+const resources = {
+  en: {
+    translation: en,
+  },
+  vi: {
+    translation: vi,
+  },
+};
 
 const fontBody = Inter({
   subsets: ['latin'],
@@ -39,7 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           fontCode.variable
         )}
       >
-        <I18nProvider>
+        <I18nProvider resources={resources}>
           <Suspense fallback={<div>Loading...</div>}>
             <Header />
             <main>{children}</main>
