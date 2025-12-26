@@ -81,12 +81,12 @@ export function Footer() {
               </h3>
               <ul className="mt-2 space-y-0">
                 <li>
-                  <Link href="#" className="text-[18px] text-[#B8BECF] hover:text-white transition">
+                  <Link href="/terms" className="text-[18px] text-[#B8BECF] hover:text-white transition">
                     {t('footer.terms')}
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-[18px] text-[#B8BECF] hover:text-white transition">
+                  <Link href="/privacy-policy" className="text-[18px] text-[#B8BECF] hover:text-white transition">
                     {t('footer.privacy')}
                   </Link>
                 </li>
