@@ -35,16 +35,16 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
   };
 
   const navLinks = [
-    { href: "#about", label: "header.about" },
-    { href: "#products", label: "header.productsServices" },
-    { href: "#team", label: "header.team" },
-    { href: "#contact", label: "header.careers" },
+    { href: "/#about", label: "header.about" },
+    { href: "/#products", label: "header.productsServices" },
+    { href: "/#team", label: "header.team" },
+    { href: "/#contact", label: "header.careers" },
   ];
 
   const desktopNavLinks = [
-    { href: "#about", label: "header.about" },
-    { href: "#products", label: "header.productsServices" },
-    { href: "#team", label: "header.team" },
+    { href: "/#about", label: "header.about" },
+    { href: "/#products", label: "header.productsServices" },
+    { href: "/#team", label: "header.team" },
   ];
 
   useEffect(() => {
@@ -75,10 +75,12 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (isHomePage) {
       e.preventDefault();
-      const targetElement = document.querySelector(href);
+      const targetElement = document.querySelector(href.substring(1));
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: "smooth" });
       }
+    } else {
+      window.location.href = href;
     }
     setIsOpen(false);
   };
@@ -95,7 +97,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
           <Button
             variant="outline"
             size="sm"
-            className="bg-transparent hover:bg-white text-white/80 hover:text-black border-white/30 h-auto px-4 py-1.5 text-lg"
+            className="bg-transparent hover:bg-white text-white hover:text-black border-white/30 h-auto px-4 py-1.5 text-lg"
           >
             {hasMounted && (i18n.language === 'en' ? t('header.english') : t('header.vietnamese'))}
             <Globe className="w-4 h-4" />
@@ -164,7 +166,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
                       key={link.href}
                       href={link.href}
                       onClick={(e) => handleLinkClick(e, link.href)}
-                      className="text-lg text-white/80 transition-colors hover:text-white"
+                      className="text-lg text-white transition-colors hover:text-white/80"
                     >
                       {t(link.label)}
                     </a>

@@ -58,19 +58,19 @@ export function Footer() {
               </h3>
               <ul className="mt-2 space-y-1 text-[18px] text-[#FFFFFF] opacity-80 md:opacity-100 md:text-[#B8BECF] transition navigateList">
                 <li>
-                  <Link href="#about">{t('footer.about')}</Link>
+                  <Link href="/#about">{t('footer.about')}</Link>
                 </li>
                 <li>
-                  <Link href="#products">{t('footer.productsServices')}</Link>
+                  <Link href="/#products">{t('footer.productsServices')}</Link>
                 </li>
                 <li>
-                  <Link href="#industries">{t('footer.industries')}</Link>
+                  <Link href="/#industries">{t('footer.industries')}</Link>
                 </li>
                 <li>
-                  <Link href="#team">{t('footer.team')}</Link>
+                  <Link href="/#team">{t('footer.team')}</Link>
                 </li>
                 <li>
-                  <Link href="#contact">{t('footer.careers')}</Link>
+                  <Link href="/#contact">{t('footer.careers')}</Link>
                 </li>
               </ul>
             </div>
