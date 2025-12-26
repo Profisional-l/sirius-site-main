@@ -182,7 +182,7 @@ export default function Home() {
               {t('join.text')}
             </p>
             <div className="mt-10">
-              <Button size="lg" className="bg-[#F0F2F7] border-white/30 hover:bg-white/20 text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-5 min-w-[186px] h-[55px] rounded-[9px]"><Link href="#contact" >{t('join.button')}</Link></Button>
+              <Button size="lg" className="bg-[#F0F2F7] border-white/30 hover:bg-[#F0F2F7] hover:opacity-70 transition-opacity-[.33s] text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-5 min-w-[186px] h-[55px] rounded-[9px]"><Link href="#contact" >{t('join.button')}</Link></Button>
             </div>
           </div>
            <span id="contact" ></span>
