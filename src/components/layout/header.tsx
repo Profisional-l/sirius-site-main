@@ -22,24 +22,29 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [hasMounted, setHasMounted] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
   };
 
   const navLinks = [
-    { href: "#about", label: t("header.about") },
-    { href: "#products", label: t("header.productsServices") },
-    { href: "#team", label: t("header.team") },
-    { href: "#contact", label: t("header.careers") },
+    { href: "#about", label: "header.about" },
+    { href: "#products", label: "header.productsServices" },
+    { href: "#team", label: "header.team" },
+    { href: "#contact", label: "header.careers" },
   ];
 
   const desktopNavLinks = [
-    { href: "#about", label: t("header.about") },
-    { href: "#products", label: t("header.productsServices") },
-    { href: "#team", label: t("header.team") },
+    { href: "#about", label: "header.about" },
+    { href: "#products", label: "header.productsServices" },
+    { href: "#team", label: "header.team" },
   ];
 
   useEffect(() => {
@@ -83,7 +88,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
       <DropdownMenuTrigger asChild>
         {isMobile ? (
           <Button className="bg-transparent hover:bg-transparent hover:text-[#ffffff] text-[#ffffff] opacity-[.28] h-auto px-4 py-1.5 text-xl w-[150px] border-none justify-center">
-            {i18n.language === 'en' ? 'English' : 'Vietnamese'}
+            {hasMounted && (i18n.language === 'en' ? 'English' : 'Vietnamese')}
             <Globe className="w-[20px] h-[20px] ml-auto" />
           </Button>
         ) : (
@@ -92,21 +97,25 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
             size="sm"
             className="bg-transparent hover:bg-white/10 text-white/80 border-white/30 h-auto px-4 py-1.5 text-lg"
           >
-            {i18n.language === 'en' ? t('header.english') : t('header.vietnamese')}
+            {hasMounted && (i18n.language === 'en' ? t('header.english') : t('header.vietnamese'))}
             <Globe className="w-4 h-4" />
           </Button>
         )}
       </DropdownMenuTrigger>
       <DropdownMenuContent className="bg-black/50 backdrop-blur-lg border-border">
         <DropdownMenuItem onClick={() => changeLanguage("en")}>
-          {t('header.english')}
+          {hasMounted && t('header.english')}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => changeLanguage("vi")}>
-          {t('header.vietnamese')}
+          {hasMounted && t('header.vietnamese')}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
+
+  if (!hasMounted) {
+    return null;
+  }
 
   return (
     <>
@@ -157,7 +166,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
                       onClick={(e) => handleLinkClick(e, link.href)}
                       className="text-lg text-white/80 transition-colors hover:text-white"
                     >
-                      {link.label}
+                      {t(link.label)}
                     </a>
                   ))}
                   <LanguageSwitcher />
@@ -208,7 +217,7 @@ export function Header({ showNav = true }: { showNav?: boolean }) {
                   opacity: 0,
                 }}
               >
-                {link.label}
+                {t(link.label)}
               </a>
             ))}
           </nav>
