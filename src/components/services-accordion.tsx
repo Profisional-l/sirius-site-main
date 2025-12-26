@@ -7,6 +7,7 @@ import {
   useTransform,
 } from 'framer-motion';
 import { useTranslation, Trans } from 'react-i18next';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const ContentPanel = ({ service }: { service: Service }) => (
     <div className="w-full">
@@ -26,8 +27,33 @@ interface Service {
     content: ReactNode;
 }
 
+// --- Animation Configuration ---
+const accordionAnimationConfig = {
+    // These ranges define when each tab's animation (height and opacity) occurs 
+    // within the total scroll progress (0.0 to 1.0).
+    ranges: [
+        { // Service 1: IC Design
+            // The title becomes fully opaque very early in its animation.
+            opacity: [0.0, 0.1], 
+            // The content panel expands during the first 20% of the scroll.
+            maxHeight: [0.0, 0.2], 
+        },
+        { // Service 2: IP Blocks (the large one)
+            // Starts opening after a delay for scrolling through the first tab.
+            opacity: [0.4, 0.5],
+            maxHeight: [0.4, 0.7], // Has a longer duration to account for its size.
+        },
+        { // Service 3: Software
+            // Starts opening after a long delay for scrolling through the second tab.
+            opacity: [0.9, 0.95],
+            maxHeight: [0.9, 1.0],
+        }
+    ]
+};
+
 export function ServicesAccordion() {
   const { t } = useTranslation();
+  const isMobile = useIsMobile();
 
   const ipBlocks = [
     { title: t('services.ipBlocks.riscV.title'), description: t('services.ipBlocks.riscV.description') },
@@ -87,12 +113,14 @@ export function ServicesAccordion() {
     offset: ['start start', 'end end'],
   });
 
+  const containerHeight = isMobile ? 'h-[500vh]' : 'h-[300vh]';
+  const animRanges = accordionAnimationConfig.ranges;
 
   return (
     <section
       ref={containerRef}
       id="products"
-      className="relative bg-[#090D12] h-[300vh]"
+      className={`relative bg-[#090D12] ${containerHeight}`}
     >
       <div className="sticky top-0 overflow-hidden py-24 pb-0">
         <div className="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8 mb-12">
@@ -103,12 +131,18 @@ export function ServicesAccordion() {
 
         <div className="w-full flex flex-col">
           {services.map((service, index) => {
-            const numServices = services.length;
-            const rangeStart = index / numServices;
-            const rangeEnd = (index + 1) / numServices;
+            const { opacity: opacityRange, maxHeight: maxHeightRange } = animRanges[index];
+
+            const opacity = useTransform(scrollYProgress, opacityRange, [0.3, 1]);
+
+            let maxHeightValue;
+            if (isMobile) {
+                maxHeightValue = service.id === 'ip-blocks' ? 2200 : 500;
+            } else {
+                maxHeightValue = 800;
+            }
             
-            const opacity = useTransform(scrollYProgress, [rangeStart, rangeEnd], [0.3, 1]);
-            const maxHeight = useTransform(scrollYProgress, [rangeStart, rangeEnd], [0, 800]);
+            const maxHeight = useTransform(scrollYProgress, maxHeightRange, [0, maxHeightValue]);
 
             return (
               <div
