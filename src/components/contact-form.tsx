@@ -167,7 +167,7 @@ export function ContactForm() {
                   htmlFor="consent"
                   className="text-sm font-normal text-[#0F141C99]"
                 >
-                  By clicking the send button, I consent to the processing <br/> of
+                  By clicking the send button, I consent to the processing of
                   the sent personal data.
                 </FormLabel>
                 <FormMessage />
