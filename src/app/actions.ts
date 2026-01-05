@@ -3,7 +3,7 @@
 import nodemailer from "nodemailer";
 import { OAuth2Client } from 'google-auth-library';
 import type { z } from "zod";
-import type { contactFormSchema } from "@/components/contact-form";
+import { contactFormSchema } from "@/lib/schemas";
 
 type ContactFormInputs = z.infer<typeof contactFormSchema>;
 
@@ -26,7 +26,6 @@ export async function sendContactMessage(
   const senderEmail = "MnOadmin@sirius-sc.vn";
   const recipientEmail = "infor@sirius-sc.vn";
 
-  // Проверка обязательных полей
   if (!name || !email || !message) {
     return {
       success: false,
@@ -34,12 +33,11 @@ export async function sendContactMessage(
     };
   }
 
-  // Проверка переменных окружения
   if (!OAUTH_CLIENT_ID || !OAUTH_CLIENT_SECRET || !OAUTH_REFRESH_TOKEN) {
-    console.error("Ошибка сервера: не настроены учетные данные OAuth2 для отправки почты.");
+    console.error("Server Error: OAuth2 credentials are not configured for sending email.");
     return {
       success: false,
-      message: "Ошибка сервера: не удалось отправить сообщение.",
+      message: "Server Error: Failed to send message.",
     };
   }
 
@@ -56,7 +54,7 @@ export async function sendContactMessage(
     const { token } = await oauth2Client.getAccessToken();
 
     if (!token) {
-        throw new Error("Не удалось получить токен доступа.");
+        throw new Error("Failed to get access token.");
     }
 
     const transporter = nodemailer.createTransport({
@@ -94,7 +92,7 @@ export async function sendContactMessage(
     };
 
   } catch (error) {
-    console.error("Ошибка при отправке сообщения:", error);
+    console.error("Error sending message:", error);
     return {
       success: false,
       message: "Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте еще раз.",

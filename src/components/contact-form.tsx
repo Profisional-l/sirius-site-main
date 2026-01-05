@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -21,35 +21,27 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Checkbox } from "@/components/ui/checkbox";
 import { sendContactMessage } from "@/app/actions";
-
-// Экспортируем схему для использования в серверном действии
-export const contactFormSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
-  consent: z.boolean().refine(value => value === true, {
-    message: "You must agree to the processing of personal data.",
-  }),
-});
+import { contactFormSchema as baseContactFormSchema } from "@/lib/schemas";
 
 export function ContactForm() {
   const { t } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  // Создаем динамическую схему внутри компонента
-  const formSchema = contactFormSchema.extend({
+  const contactFormSchema = useMemo(() => {
+    return baseContactFormSchema.extend({
       name: z.string().min(2, { message: t('contact.form.nameError') }),
       email: z.string().email({ message: t('contact.form.emailError') }),
       message: z.string().min(10, { message: t('contact.form.messageError') }),
       consent: z.boolean().refine(value => value === true, {
         message: t('contact.form.consentError'),
       }),
-  });
+    });
+  }, [t]);
 
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof contactFormSchema>>({
+    resolver: zodResolver(contactFormSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -58,7 +50,7 @@ export function ContactForm() {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof contactFormSchema>) {
     setIsSubmitting(true);
     
     const result = await sendContactMessage(values);
