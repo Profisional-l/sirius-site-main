@@ -24,12 +24,12 @@ export async function sendContactMessage(
   } = process.env;
 
   const senderEmail = "MnOadmin@sirius-sc.vn";
-  const recipientEmail = "infor@sirius-sc.vn";
+  const recipientEmail = "vanjasavsjuk@gmail.com";
 
   if (!name || !email || !message) {
     return {
       success: false,
-      message: "Все поля обязательны для заполнения.",
+      message: "All fields are required.",
     };
   }
 
@@ -73,29 +73,30 @@ export async function sendContactMessage(
       from: `"${name}" <${senderEmail}>`,
       to: recipientEmail,
       replyTo: email,
-      subject: `Новая заявка с сайта от ${name}`,
-      text: `Имя: ${name}\nEmail: ${email}\nСообщение: ${message}`,
+      subject: `New Inquiry from the Sirius Website - ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       html: `
-        <h2>Новая заявка с сайта Sirius Semiconductors</h2>
-        <p><strong>Имя:</strong> ${name}</p>
+        <h2>New Inquiry from Sirius Website</h2>
+        <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-        <p><strong>Сообщение:</strong></p>
+        <p><strong>Message:</strong></p>
         <p>${message.replace(/\n/g, '<br>')}</p>
       `
     };
+    
 
     await transporter.sendMail(mailOptions);
 
     return {
       success: true,
-      message: "Ваше сообщение успешно отправлено!",
+      message: "Your message has been sent successfully!",
     };
 
   } catch (error) {
     console.error("Error sending message:", error);
     return {
       success: false,
-      message: "Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте еще раз.",
+      message: "There was an error sending your message. Please try again.",
     };
   }
 }

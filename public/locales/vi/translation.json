@@ -128,7 +128,7 @@
     "call": "Call us",
     "phone": "(+84) 0868 317 799",
     "email": "Email us",
-    "emailAddress": "info@rise-hi.tech",
+    "emailAddress": "infor@sirius-sc.vn",
     "form": {
       "name": "Tên",
       "nameError": "Tên phải có ít nhất 2 ký tự.",
@@ -144,13 +144,15 @@
       "aiAssistErrorDescription": "Không thể nhận được đề xuất của AI. Vui lòng thử lại.",
       "send": "Gửi",
       "submitSuccessTitle": "Tin nhắn của bạn đã được gửi!",
-      "submitSuccessDescription": "Chúng tôi sẽ liên hệ lại với bạn sớm nhất có thể."
+      "submitSuccessDescription": "Chúng tôi sẽ liên hệ lại với bạn sớm nhất có thể.",
+      "consent": "Bằng cách nhấp vào nút gửi, tôi đồng ý xử lý dữ liệu cá nhân đã gửi.",
+      "consentError": "Cần có sự đồng ý."
     }
   },
   "footer": {
     "address": "1455 Nguyen Van Linh, My Toan 1-H3 Ward, Tan Phong Ward, District 7, Ho Chi Minh City, Vietnam",
     "phone": "(+84) 0868 317 799",
-    "email": "info@rise-hi.tech",
+    "email": "infor@sirius-sc.vn",
     "navigation": "Điều hướng",
     "about": "Về chúng tôi",
     "productsServices": "Sản phẩm & Dịch vụ",
