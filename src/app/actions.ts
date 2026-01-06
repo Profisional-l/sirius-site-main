@@ -24,7 +24,7 @@ export async function sendContactMessage(
   } = process.env;
 
   const senderEmail = "MnOadmin@sirius-sc.vn";
-  const recipientEmail = "vanjasavsjuk@gmail.com";
+  const recipientEmail = "infor@sirius-sc.vn";
 
   if (!name || !email || !message) {
     return {
