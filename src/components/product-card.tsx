@@ -21,7 +21,7 @@ export function ProductCard({
         className="relative w-[80vw] h-[407px] md:h-[377px] lg:h-[407px] max-w-[313px] md:max-w-[388px] md:w-[30%] xl:w-[388px] xl:h-[503px] cursor-pointer flex-shrink-0"
       >
         {/* Обёртка карточки */}
-        <div className="relative h-full flex flex-col justify-end overflow-hidden rounded-[14px] md:rounded-[18px] border border-white/10 bg-[#101823] shadow-[0_10px_40px_rgba(0,0,0,0.45),0_0_25px_rgba(0,170,255,0.2),inset_0px_0px_35.5px_0px_rgba(255,255,255,0.25),inset_0px_0px_162.1px_0px_rgba(4,117,208,0.6)] backdrop-blur-[4px] transition-all duration-300">
+        <div className="relative h-full flex flex-col justify-end overflow-hidden rounded-[14px] md:rounded-[18px] border border-white/10 bg-[#101823] shadow-[0_10px_40px_rgba(0,0,0,0.45),inset_0px_0px_35.5px_0px_rgba(255,255,255,0.25),inset_0px_0px_162.1px_0px_rgba(4,117,208,0.6)] backdrop-blur-[4px] transition-all duration-300">
 
           {/* Фон / изображение */}
           {backgroundImage && (

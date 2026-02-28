@@ -89,8 +89,8 @@ export default function Home() {
         </div>
       </section>
       {/* Products & Services */}
-      <section id="prodCards" className="py-12 sm:py-[98px] bg-[#090D12]">
-        <div className="mx-auto max-w-[1280px] px-0 lg:px-8">
+      <section id="prodCards" className="py-12 sm:py-[98px] bg-[#090D12] min-h-screen">
+        <div className="mx-auto max-w-[1280px] px-0 lg:px-8 min-h-[calc(100vh-6rem)] sm:min-h-[calc(100vh-12.25rem)] flex items-center">
           <div className="flex overflow-x-auto gap-2 lg:gap-5 px-4 md:px-0 md:justify-center">
             {products.map((product, index) => (
               <ProductCard key={index} {...product} />

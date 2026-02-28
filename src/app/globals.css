@@ -183,7 +183,7 @@
 }
 
 .mainsection {
-  background-image: url("../../public/mainbackground.png");
+  background-image: url("../../public/mainbackground.svg");
   background-size: cover;
 }
 
@@ -253,7 +253,7 @@ footer {
   transition: color .33s;
 }
 .missionSection {
-  background-image: url("../../public/icons/mission-background.svg");
+  background-image: url("../../public/fullmissionbg.svg");
   background-position: center center; /* Центрируем */
   background-repeat: no-repeat; /* Запрещаем повторение */
   background-size: cover; /* Растягиваем на весь экран */
@@ -296,4 +296,11 @@ footer {
 
 .service-content-scroll::-webkit-scrollbar-thumb:hover {
   background: #0075EB;
+}
+
+
+#ic-design {
+  background-image: url("../../public/card1bg.svg");
+  background-size: cover;
+  background-position: center;
 }

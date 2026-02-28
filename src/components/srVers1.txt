@@ -1,0 +1,235 @@
+'use client';
+
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useTranslation, Trans } from 'react-i18next';
+
+interface Service {
+  title: string;
+  id: string;
+  bgColor: string;
+  content: ReactNode;
+}
+
+export function ServicesAccordion() {
+  const CARD_MIN_HEIGHT_VH = 100;
+  const SECOND_CARD_START_PX = 400;
+  const SECOND_CARD_END_PX = 1200;
+  const THIRD_CARD_END_PX = 2000;
+  const CARD_PIN_HOLD_PX = 220;
+  const THIRD_CARD_DELAY_AFTER_SECOND_PX = 120;
+  const STAGE_EXIT_BUFFER_PX = 600;
+
+  const { t } = useTranslation();
+  const sectionRef = useRef<HTMLElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [sectionStartY, setSectionStartY] = useState(0);
+  const [sectionHeightPx, setSectionHeightPx] = useState(THIRD_CARD_END_PX + STAGE_EXIT_BUFFER_PX);
+  const [viewportHeightPx, setViewportHeightPx] = useState(0);
+  const [cardHeightsPx, setCardHeightsPx] = useState<number[]>([0, 0, 0]);
+  const { scrollY } = useScroll();
+
+  useEffect(() => {
+    const updateLayout = () => {
+      if (!sectionRef.current) return;
+
+      const rect = sectionRef.current.getBoundingClientRect();
+      setSectionStartY(window.scrollY + rect.top);
+
+      const nextViewportHeight = window.innerHeight;
+      setViewportHeightPx(nextViewportHeight);
+
+      const cardMinHeightPx = (nextViewportHeight * CARD_MIN_HEIGHT_VH) / 100;
+      const measuredCardHeights = cardRefs.current.map((card) => Math.max(card?.offsetHeight ?? 0, cardMinHeightPx));
+      setCardHeightsPx(measuredCardHeights);
+
+      const maxTravelPx = Math.max(
+        ...measuredCardHeights.map((height) => Math.max(0, height - nextViewportHeight)),
+        0
+      );
+      const secondCardTravelPx = Math.max(0, (measuredCardHeights[1] ?? cardMinHeightPx) - nextViewportHeight);
+      const thirdCardStartPx = SECOND_CARD_END_PX + CARD_PIN_HOLD_PX + secondCardTravelPx + THIRD_CARD_DELAY_AFTER_SECOND_PX;
+      const thirdCardDurationPx = THIRD_CARD_END_PX - SECOND_CARD_END_PX;
+      const thirdCardEndPx = thirdCardStartPx + thirdCardDurationPx;
+
+      setSectionHeightPx(thirdCardEndPx + CARD_PIN_HOLD_PX + maxTravelPx + STAGE_EXIT_BUFFER_PX);
+    };
+
+    updateLayout();
+    const raf = window.requestAnimationFrame(updateLayout);
+    window.addEventListener('resize', updateLayout);
+
+    return () => {
+      window.cancelAnimationFrame(raf);
+      window.removeEventListener('resize', updateLayout);
+    };
+  }, []);
+
+  /* ---------- DATA ---------- */
+
+  const ipBlocks = [
+    { title: t('services.ipBlocks.riscV.title'), description: t('services.ipBlocks.riscV.description') },
+    { title: t('services.ipBlocks.dma.title'), description: t('services.ipBlocks.dma.description') },
+    { title: t('services.ipBlocks.sram.title'), description: t('services.ipBlocks.sram.description') },
+    { title: t('services.ipBlocks.gpio.title'), description: t('services.ipBlocks.gpio.description') },
+    { title: t('services.ipBlocks.axi.title'), description: t('services.ipBlocks.axi.description') },
+    { title: t('services.ipBlocks.spi.title'), description: t('services.ipBlocks.spi.description') },
+    { title: t('services.ipBlocks.i2c.title'), description: t('services.ipBlocks.i2c.description') },
+    { title: t('services.ipBlocks.uart.title'), description: t('services.ipBlocks.uart.description') },
+    { title: t('services.ipBlocks.gpt.title'), description: t('services.ipBlocks.gpt.description') },
+    { title: t('services.ipBlocks.analogPll.title'), description: t('services.ipBlocks.analogPll.description') },
+    { title: t('services.ipBlocks.lvdsRx.title'), description: t('services.ipBlocks.lvdsRx.description') },
+  ];
+
+  const services: Service[] = [
+    {
+      title: t('services.icDesign.title'),
+      id: 'ic-design',
+      bgColor: 'bg-[#24364E]',
+      content: <div dangerouslySetInnerHTML={{ __html: t('services.icDesign.content') }} />,
+    },
+    {
+      title: t('services.ipBlocks.title'),
+      id: 'ip-blocks',
+      bgColor: 'bg-[#182434]',
+      content: (
+        <div className="rounded-[17px] border border-white/[.15] text-[20px] text-[#B8BECF]">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {ipBlocks.map((block, index) => (
+              <div
+                key={index}
+                className={`p-4 min-h-[117px] flex items-center
+                ${index % 2 === 0 ? 'md:border-r' : ''}
+                ${index < ipBlocks.length - (ipBlocks.length % 2 === 0 ? 2 : 1) ? 'border-b' : ''}
+                border-white/[.15]`}
+              >
+                <p>
+                  <strong className="text-white">{block.title}</strong> {block.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: t('services.software.title'),
+      id: 'software',
+      bgColor: 'bg-[#101823]',
+      content: (
+        <p>
+          <Trans i18nKey="services.software.content" components={{ strong: <strong /> }} />
+        </p>
+      ),
+    },
+  ];
+
+  const initialOffsetPx = viewportHeightPx || 1000;
+  const firstCardTravelPx = viewportHeightPx > 0 ? Math.max(0, (cardHeightsPx[0] ?? 0) - viewportHeightPx) : 0;
+  const secondCardTravelPx = viewportHeightPx > 0 ? Math.max(0, (cardHeightsPx[1] ?? 0) - viewportHeightPx) : 0;
+  const thirdCardTravelPx = viewportHeightPx > 0 ? Math.max(0, (cardHeightsPx[2] ?? 0) - viewportHeightPx) : 0;
+
+  const firstCardY = useTransform(
+    scrollY,
+    [
+      sectionStartY,
+      sectionStartY + SECOND_CARD_START_PX,
+      sectionStartY + SECOND_CARD_START_PX + CARD_PIN_HOLD_PX + firstCardTravelPx,
+    ],
+    [0, 0, -firstCardTravelPx],
+    { clamp: true }
+  );
+
+  const secondCardY = useTransform(
+    scrollY,
+    [
+      sectionStartY + SECOND_CARD_START_PX,
+      sectionStartY + SECOND_CARD_END_PX,
+      sectionStartY + SECOND_CARD_END_PX + CARD_PIN_HOLD_PX + secondCardTravelPx,
+    ],
+    [initialOffsetPx, 0, -secondCardTravelPx],
+    { clamp: true }
+  );
+
+  const thirdCardStartPx = SECOND_CARD_END_PX + CARD_PIN_HOLD_PX + secondCardTravelPx + THIRD_CARD_DELAY_AFTER_SECOND_PX;
+  const thirdCardDurationPx = THIRD_CARD_END_PX - SECOND_CARD_END_PX;
+  const thirdCardRevealEndPx = thirdCardStartPx + thirdCardDurationPx;
+
+  const thirdCardY = useTransform(
+    scrollY,
+    [
+      sectionStartY + thirdCardStartPx,
+      sectionStartY + thirdCardRevealEndPx,
+      sectionStartY + thirdCardRevealEndPx + CARD_PIN_HOLD_PX + thirdCardTravelPx,
+    ],
+    [initialOffsetPx, 0, -thirdCardTravelPx],
+    { clamp: true }
+  );
+
+  return (
+    <section
+      ref={sectionRef}
+      id="products"
+      className="relative bg-[#090D12]"
+      style={{
+        height: `${sectionHeightPx}px`,
+        ['--services-card-min-height' as string]: `${CARD_MIN_HEIGHT_VH}vh`,
+      }}
+    >
+      <div className="top-0 z-40 bg-[#090D12] py-6">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-lg uppercase text-white/60 tracking-wider">
+            {t('services.title')}
+          </h2>
+        </div>
+      </div>
+
+      <div className="sticky top-0 h-screen overflow-visible">
+          <motion.div
+            ref={(element) => {
+              cardRefs.current[0] = element;
+            }}
+            style={{ y: firstCardY, zIndex: 10 }}
+            className={`${services[0].bgColor} absolute left-0 right-0 top-0 min-h-[var(--services-card-min-height)] flex flex-col rounded-[17px] border border-white/[.15] shadow-lg`}
+          >
+            <div className="max-w-[1280px] mx-auto w-full px-4 sm:px-6 lg:px-8 pt-20">
+              <h3 className="text-3xl text-white mb-8">{services[0].title}</h3>
+            </div>
+            <div className="max-w-[1280px] mx-auto w-full px-4 sm:px-6 lg:px-8 pb-24 text-lg text-white/70 leading-relaxed">
+              {services[0].content}
+            </div>
+          </motion.div>
+
+          <motion.div
+            ref={(element) => {
+              cardRefs.current[1] = element;
+            }}
+            style={{ y: secondCardY, zIndex: 20 }}
+            className={`${services[1].bgColor} absolute left-0 right-0 top-0 min-h-[var(--services-card-min-height)] flex flex-col rounded-[17px] border border-white/[.15] shadow-lg`}
+          >
+            <div className="max-w-[1280px] mx-auto w-full px-4 sm:px-6 lg:px-8 pt-20">
+              <h3 className="text-3xl text-white mb-8">{services[1].title}</h3>
+            </div>
+            <div className="max-w-[1280px] mx-auto w-full px-4 sm:px-6 lg:px-8 pb-24 text-lg text-white/70 leading-relaxed">
+              {services[1].content}
+            </div>
+          </motion.div>
+
+          <motion.div
+            ref={(element) => {
+              cardRefs.current[2] = element;
+            }}
+            style={{ y: thirdCardY, zIndex: 30 }}
+            className={`${services[2].bgColor} absolute left-0 right-0 top-0 min-h-[var(--services-card-min-height)] flex flex-col rounded-[17px] border border-white/[.15] shadow-lg`}
+          >
+            <div className="max-w-[1280px] mx-auto w-full px-4 sm:px-6 lg:px-8 pt-20">
+              <h3 className="text-3xl text-white mb-8">{services[2].title}</h3>
+            </div>
+            <div className="max-w-[1280px] mx-auto w-full px-4 sm:px-6 lg:px-8 pb-24 text-lg text-white/70 leading-relaxed">
+              {services[2].content}
+            </div>
+          </motion.div>
+      </div>
+    </section>
+  );
+}

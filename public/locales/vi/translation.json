@@ -39,7 +39,41 @@
     "title": "Sản phẩm & Dịch vụ",
     "icDesign": {
       "title": "Thiết kế IC",
-      "content": "Chúng tôi cung cấp đầy đủ các dịch vụ Lập trình và Thiết kế Chất bán dẫnr FPGA, ASIC, Cấu trúc ASIC giải pháp cho các ứng dụng kỹ thuật số, tương tự, tần số vô tuyến và quang tử."
+      "content": "Chúng tôi cung cấp đầy đủ các dịch vụ Lập trình và Thiết kế Chất bán dẫnr FPGA, ASIC, Cấu trúc ASIC giải pháp cho các ứng dụng kỹ thuật số, tương tự, tần số vô tuyến và quang tử.",
+      "cardsSectionTitle": "Dải dịch vụ đầy đủ cho dữ liệu đầu vào ở mọi mức độ phức tạp.",
+      "cards": {
+        "asic": {
+          "title": "Thiết kế ASIC",
+          "intro": "Chúng tôi hỗ trợ dự án ở nhiều mức độ trưởng thành thiết kế khác nhau.",
+          "specification": "Khách hàng cung cấp đặc tả thiết kế. Chúng tôi thực hiện toàn bộ quy trình thiết kế đến mẫu ASIC.",
+          "rtl": "Khách hàng cung cấp RTL có thể tổng hợp và các ràng buộc. Chúng tôi triển khai từ RTL đến GDSII và bàn giao mẫu.",
+          "netlist": "Khách hàng cung cấp netlist mức cổng đã được xác minh. Chúng tôi hoàn tất triển khai vật lý và sản xuất.",
+          "summary": "Mô hình hợp tác linh hoạt này giúp phối hợp hiệu quả, đồng thời duy trì kiểm soát thiết kế chặt chẽ và đảm bảo chất lượng xuyên suốt dự án."
+        },
+        "fpga": {
+          "title": "Thiết kế FPGA",
+          "intro": "Bằng cách tận dụng nền tảng FPGA, chúng tôi giảm rủi ro kỹ thuật, xác thực hành vi hệ thống sớm và đẩy nhanh tiến độ phát triển tổng thể.",
+          "capabilitiesTitle": "Năng lực của chúng tôi gồm:",
+          "capabilities": [
+            "Thiết kế FPGA tùy chỉnh",
+            "Tạo mẫu ASIC và xác minh chức năng",
+            "Mô phỏng bằng FPGA cho kiến trúc SoC phức tạp",
+            "Chuyển đổi thiết kế từ FPGA sang ASIC",
+            "Phát triển sản phẩm FPGA độc lập"
+          ]
+        },
+        "ip": {
+          "title": "Dịch vụ IP",
+          "intro": "Chúng tôi cung cấp hỗ trợ toàn vòng đời IP để đảm bảo tính toàn vẹn và hiệu năng của hệ thống.",
+          "servicesTitle": "Dịch vụ IP của chúng tôi gồm:",
+          "services": [
+            "Phát triển để tạo ra các thành phần phù hợp",
+            "Xác minh để xác nhận tính phù hợp",
+            "Tích hợp để đồng bộ các điều kiện"
+          ],
+          "summary": "Chúng tôi bảo đảm mỗi phần tử IP phù hợp với các ràng buộc kiến trúc và yêu cầu hệ thống."
+        }
+      }
     },
     "ipBlocks": {
       "title": "Khối IP",
@@ -164,4 +198,3 @@
     "copyright": "© {{year}} Sirius Semiconductors. All Rights Reserved."
   }
 }
-    

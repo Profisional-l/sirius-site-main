@@ -39,7 +39,41 @@
     "title": "Products & Services",
     "icDesign": {
       "title": "IC Design",
-      "content": "We provide a full stack of Semiconductors Design & Programming services for FPGA, ASIC, Structures ASIC solutions for Digital, Analogue, Radio Frequency (RF) & Photonic applications."
+      "content": "We provide a full stack of Semiconductors Design & Programming services for FPGA, ASIC, Structures ASIC solutions for Digital, Analogue, Radio Frequency (RF) & Photonic applications.",
+      "cardsSectionTitle": "A full range of services for input data of any complexity.",
+      "cards": {
+        "asic": {
+          "title": "ASIC Design",
+          "intro": "We support projects starting from different levels of design maturity.",
+          "specification": "The customer provides the design specification. We handle the full design flow through ASIC samples.",
+          "rtl": "Customer provides synthesizable RTL and constraints. We implement from RTL to GDSII and deliver samples.",
+          "netlist": "Customer provides a verified gate-level netlist. We complete physical implementation and production.",
+          "summary": "This flexible engagement model enables efficient collaboration while maintaining strict design control and quality assurance throughout the process."
+        },
+        "fpga": {
+          "title": "FPGA Design",
+          "intro": "By leveraging FPGA platforms, we reduce technical risks, validate system behavior early, and accelerate overall development timelines.",
+          "capabilitiesTitle": "Our capabilities include:",
+          "capabilities": [
+            "Custom FPGA design",
+            "ASIC prototyping and functional verification",
+            "FPGA-based emulation of complex SoC architectures",
+            "FPGA-to-ASIC design conversion",
+            "Standalone FPGA product development"
+          ]
+        },
+        "ip": {
+          "title": "IP Services",
+          "intro": "We provide comprehensive IP lifecycle support to ensure system integrity and performance.",
+          "servicesTitle": "Our IP services include:",
+          "services": [
+            "Development to create proper elements",
+            "Verification to confirm suitability",
+            "Integration to align conditions"
+          ],
+          "summary": "We ensure that each IP element aligns with architectural constraints and system requirements."
+        }
+      }
     },
     "ipBlocks": {
       "title": "IP-blocks",
@@ -164,4 +198,3 @@
     "copyright": "© {{year}} Sirius Semiconductors. All rights reserved."
   }
 }
-    
