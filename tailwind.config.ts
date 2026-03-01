@@ -8,6 +8,9 @@ export default {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      '3xl': '1920px',
+    },
     container: {
       center: true,
       padding: '2rem',
