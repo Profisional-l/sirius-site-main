@@ -124,7 +124,45 @@
     },
     "software": {
       "title": "Phần mềm và công nghệ",
-      "content": "Sirius cũng phát triển một loạt các công nghệ thiết kế Vi điện tử, bao gồm phần mềm Tự động hóa Thiết kế Điện tử (EDA), đảm bảo lợi thế cạnh tranh chất lượng thời gian 2 thị trường và giá cả 2 cho khách hàng của mình."
+      "intro": "Sirius Semiconductors phát triển phần mềm và công cụ ở cấp độ hệ thống, giúp nâng cao hiệu quả phần cứng và đẩy nhanh quá trình phát triển SoC/ASIC/FPGA.",
+      "left": {
+        "areasTitle": "Lĩnh vực chuyên môn",
+        "areas": [
+          "Thiết kế SoC ở cấp độ hệ thống",
+          "Phát triển phần mềm nhúng",
+          "Toolchain, công cụ EDA, phần mềm hệ thống"
+        ],
+        "additionalServicesTitle": "Dịch vụ bổ sung",
+        "additionalServices": [
+          "Porting OS (Linux, RTOS) và phát triển driver",
+          "Phát triển toolchain & SDK",
+          "Tối ưu phần mềm",
+          "Thiết kế hệ thống nhúng/IoT trọn vòng đời",
+          "Thuật toán xử lý ảnh và đồ hoạ"
+        ]
+      },
+      "right": {
+        "tools": [
+          {
+            "title": "UTL — Universal Translation Library.",
+            "descriptionBefore": "Thư viện tối ưu hoá đa nền tảng dùng trong các bộ chuyển đổi dựa trên GNU, LLVM, QEMU và các trình biên dịch JIT thương mại. Với UTL, chúng tôi mang lại ",
+            "highlight": "hiệu năng cao hơn tới 50%",
+            "descriptionAfter": "."
+          },
+          {
+            "title": "C2FPGA Translator.",
+            "descriptionBefore": "",
+            "highlight": "Công cụ giúp cắt giảm thời gian và chi phí phát triển",
+            "descriptionAfter": " nhờ hỗ trợ virtual-SoC, tối ưu theo diện tích và tần số, cùng khả năng debug tích hợp."
+          },
+          {
+            "title": "PPDL — Processor/Platform Description Language.",
+            "descriptionBefore": "Ngôn ngữ kiến trúc dựa trên nguyên tắc «một mô tả → nhiều triển khai» để sinh RTL, emulator, công cụ assembler/disassembler và giao diện GDB, ",
+            "highlight": "giảm chi phí phát triển lõi xử lý xuống nhiều lần",
+            "descriptionAfter": "."
+          }
+        ]
+      }
     }
   },
   "industries": {

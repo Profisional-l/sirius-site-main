@@ -2,13 +2,20 @@
 
 import React, { ReactNode, useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 interface Service {
   title: string;
   id: string;
   bgColor: string;
   content: ReactNode;
+}
+
+interface SoftwareTool {
+  title: string;
+  descriptionBefore: string;
+  highlight: string;
+  descriptionAfter?: string;
 }
 
 export function ServicesAccordion() {
@@ -18,7 +25,7 @@ export function ServicesAccordion() {
   const SECOND_CARD_PEEK_PX = 190;
   const THIRD_CARD_PEEK_PX = 95;
   const CARD_BG_TAIL_HEIGHT_VH = 320;
-  const STAGE_EXIT_BUFFER_PX = 180;
+  const STAGE_EXIT_BUFFER_PX = 580;
 
   const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
@@ -149,6 +156,18 @@ export function ServicesAccordion() {
   const ipServices = t("services.icDesign.cards.ip.services", {
     returnObjects: true,
   }) as string[];
+  const softwareAreas = t("services.software.left.areas", {
+    returnObjects: true,
+  }) as string[];
+  const softwareAdditionalServices = t(
+    "services.software.left.additionalServices",
+    {
+      returnObjects: true,
+    },
+  ) as string[];
+  const softwareTools = t("services.software.right.tools", {
+    returnObjects: true,
+  }) as SoftwareTool[];
 
   const services: Service[] = [
     {
@@ -170,15 +189,21 @@ export function ServicesAccordion() {
               </p>
               <hr className="-mx-6 my-6 w-[calc(100%+3rem)] border-0 border-t border-white/[.31]" />
               <p className="mt-4 text-[12px] font-[100] max-w-[315px]">
-                <strong className="text-white/[.75] font-[700]">Specification Signoff.</strong>{" "}
+                <strong className="text-white/[.75] font-[700]">
+                  Specification Signoff.
+                </strong>{" "}
                 {t("services.icDesign.cards.asic.specification")}
               </p>
               <p className="mt-4 text-[12px] font-[100] max-w-[315px]">
-                <strong className="text-white/[.75] font-[700]">RTL Signoff.</strong>{" "}
+                <strong className="text-white/[.75] font-[700]">
+                  RTL Signoff.
+                </strong>{" "}
                 {t("services.icDesign.cards.asic.rtl")}
               </p>
               <p className="mt-4 text-[12px] font-[100] max-w-[315px]">
-                <strong className="text-white/[.75] font-[700]">Netlist Signoff.</strong>{" "}
+                <strong className="text-white/[.75] font-[700]">
+                  Netlist Signoff.
+                </strong>{" "}
                 {t("services.icDesign.cards.asic.netlist")}
               </p>
               <hr className="-mx-6 my-6 w-[calc(100%+3rem)] border-0 border-t border-white/[.31]" />
@@ -191,7 +216,7 @@ export function ServicesAccordion() {
               <h4 className="md:text-[39px] font-[500] text-white">
                 {t("services.icDesign.cards.fpga.title")}
               </h4>
-              <p className="md:text-[16px] mb-6 font-[400] text-white opacity-75 max-w-[300px]" >
+              <p className="md:text-[16px] mb-6 font-[400] text-white opacity-75 max-w-[300px]">
                 {t("services.icDesign.cards.fpga.intro")}
               </p>
               <hr className="-mx-6 my-4 w-[calc(100%+3rem)] border-0 border-t border-white/[.31]" />
@@ -221,7 +246,9 @@ export function ServicesAccordion() {
                   <li key={index}>{item}</li>
                 ))}
               </ol>
-              <br /><br /><br />
+              <br />
+              <br />
+              <br />
               <hr className="-mx-6 my-4 w-[calc(100%+3rem)] border-0 border-t border-white/[.31]" />
               <p className="mt-5">{t("services.icDesign.cards.ip.summary")}</p>
             </article>
@@ -232,7 +259,7 @@ export function ServicesAccordion() {
     {
       title: t("services.ipBlocks.title"),
       id: "ip-blocks",
-      bgColor: "bg-[#182434]",  
+      bgColor: "bg-[#182434]",
       content: (
         <div className="rounded-[17px] border border-white/[.15] text-[16px] font-[100] text-[#B8BECF]">
           <div className="grid grid-cols-1 md:grid-cols-2">
@@ -245,7 +272,9 @@ export function ServicesAccordion() {
                 border-white/[.15]`}
               >
                 <p>
-                  <strong className="text-white/75 font-[700]">{block.title}</strong>{" "}
+                  <strong className="text-white/75 font-[700]">
+                    {block.title}
+                  </strong>{" "}
                   {block.description}
                 </p>
               </div>
@@ -259,12 +288,53 @@ export function ServicesAccordion() {
       id: "software",
       bgColor: "bg-[#101823]",
       content: (
-        <p>
-          <Trans
-            i18nKey="services.software.content"
-            components={{ strong: <strong /> }}
-          />
-        </p>
+        <div className="space-y-6">
+          <p className="text-[20px] font-[400] text-[#B8BECF] leading-relaxed max-w-[573px]">
+            {t("services.software.intro")}
+          </p>
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <article className="rounded-[18px] border-[1px] border-white/[.20] bg-[#182434] p-6 text-[18px] text-[#B8BECF]">
+              <p className="md:text-[39px] font-[500] text-white">
+                {t("services.software.left.areasTitle")}
+              </p>
+              <ol className="mt-3 list-decimal space-y-1 pl-4 text-[14px] font-[300]">
+                {softwareAreas.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ol>
+              <hr className="-mx-6 my-4 w-[calc(100%+3rem)] border-0 border-t border-white/[.20]" />
+              <p className="md:text-[39px] font-[500] text-white">
+                {t("services.software.left.additionalServicesTitle")}
+              </p>
+              <ol className="mt-3 list-decimal space-y-1 pl-4 text-[14px] font-[300] max-w-[306px]">
+                {softwareAdditionalServices.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ol>
+            </article>
+
+            <article className="rounded-[18px] border-[1px] border-white/[.20] bg-[#182434] p-6 text-[18px] text-[#B8BECF]">
+              {softwareTools.map((tool, index) => (
+                <React.Fragment key={index}>
+                  <p className="text-[16px] font-[400] leading-relaxed max-w-[474px]">
+                    <strong className="text-white/65 font-[700] block mb-[7px]">
+                      {tool.title}
+                    </strong>
+                    {tool.descriptionBefore}
+                    <span className="bg-gradient-to-r from-[#0071E9] to-[#5EB7FF] bg-clip-text text-transparent">
+                      {tool.highlight}
+                    </span>
+                    {tool.descriptionAfter ?? ""}
+                  </p>
+
+                  {index < softwareTools.length - 1 && (
+                    <hr className="-mx-6 my-6 w-[calc(100%+3rem)] border-0 border-t border-white/[.20]" />
+                  )}
+                </React.Fragment>
+              ))}
+            </article>
+          </div>
+        </div>
       ),
     },
   ];

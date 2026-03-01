@@ -178,14 +178,14 @@ export function IndustriesSection() {
     <section
       id="industries"
       ref={containerRef}
-      className="relative bg-[#101823] text-center h-[400vh]"
+      className="relative bg-[#101823] text-center h-[400vh] "
     >
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      <div className="sticky top-0 h-screen w-full overflow-hidden  ">
+        <div className="absolute inset-0 z-0 h-screen w-full overflow-hidden">
           <div className="dots-pattern"></div>
         </div>
 
-        <div className="relative z-10 h-full flex justify-center items-center">
+        <div className="relative z-10 h-full flex justify-center items-center origin-center  xl:scale-[0.94] 2xl:scale-[1.4] 3xl:scale-[1.8]">
           <motion.h2
             style={{ opacity: titleOpacity, scale: titleScale }}
             className="absolute font-mono text-[42px] md:text-[68px] font-bold text-white uppercase"
@@ -201,7 +201,7 @@ export function IndustriesSection() {
             />
           </motion.h2>
 
-          <div className="w-full max-w-4xl h-full relative">
+          <div className="w-full max-w-4xl h-full relative origin-center">
             {badges.map((badge) => (
               <AnimatedBadge
                 key={badge.id}

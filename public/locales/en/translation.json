@@ -124,7 +124,45 @@
     },
     "software": {
       "title": "Software & Technologies",
-      "content": "Sirius also develops a stack of Microelectronics design technologies, including Electronics Design Automation (EDA) software which secures time-2-market & price-2-quality competitive advantages for its customers."
+      "intro": "Sirius Semiconductors develops system-level software and tools that improve hardware efficiency and accelerate SoC/ASIC/FPGA development.",
+      "left": {
+        "areasTitle": "Areas of Expertise",
+        "areas": [
+          "System-level SoC design",
+          "Embedded software development",
+          "Toolchains, EDA tools, system software"
+        ],
+        "additionalServicesTitle": "Additional Services",
+        "additionalServices": [
+          "OS porting (Linux, RTOS) and driver development",
+          "Toolchain & SDK development",
+          "Software optimization",
+          "Full-cycle embedded/IoT system design",
+          "Image processing and graphics algorithms"
+        ]
+      },
+      "right": {
+        "tools": [
+          {
+            "title": "UTL — Universal Translation Library.",
+            "descriptionBefore": "Portable optimization library used in GNU, LLVM, QEMU-based converters, and commercial JIT compilers. With UTL, we deliver up to ",
+            "highlight": "50% higher performance",
+            "descriptionAfter": "."
+          },
+          {
+            "title": "C2FPGA Translator.",
+            "descriptionBefore": "",
+            "highlight": "Tool to cut development time and cost",
+            "descriptionAfter": " thanks to virtual-SoC support, area- and frequency-oriented optimization, plus built-in debugging."
+          },
+          {
+            "title": "PPDL — Processor/Platform Description Language.",
+            "descriptionBefore": "Architectural language based on «single description → multiple implementations» principle to generate RTL, emulators, assembler/disassembler tools, and GDB interfaces, ",
+            "highlight": "cutting processor-core development costs by several times",
+            "descriptionAfter": "."
+          }
+        ]
+      }
     }
   },
   "industries": {
