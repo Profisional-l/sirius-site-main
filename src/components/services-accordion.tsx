@@ -23,8 +23,8 @@ export function ServicesAccordion() {
   const isMobile = useIsMobile();
   const CARD_REVEAL_DURATION_PX = isMobile ? 520 : 800;
   const SECOND_CARD_REVEAL_DURATION_PX = isMobile ? 360 : 500;
-  const SECOND_CARD_PEEK_PX = 190;
-  const THIRD_CARD_PEEK_PX = 95;
+  const SECOND_CARD_PEEK_PX = 180;
+  const THIRD_CARD_PEEK_PX = 90;
   const CARD_BG_TAIL_HEIGHT_VH = 320;
   const STAGE_EXIT_BUFFER_PX = isMobile ? 360 : 580;
 
@@ -52,13 +52,13 @@ export function ServicesAccordion() {
       setContentHeightsPx(measuredContentHeights);
 
       const firstCardScrollPx = Math.max(
-        120,
+        10,
         (measuredContentHeights[0] ?? 0) -
           nextViewportHeight +
           SECOND_CARD_PEEK_PX,
       );
       const secondCardScrollPx = Math.max(
-        120,
+        0,
         (measuredContentHeights[1] ?? 0) -
           nextViewportHeight +
           THIRD_CARD_PEEK_PX,
@@ -338,11 +338,11 @@ export function ServicesAccordion() {
 
   const initialOffsetPx = viewportHeightPx || 1000;
   const firstCardScrollPx = Math.max(
-    120,
+    0,
     (contentHeightsPx[0] ?? 0) - viewportHeightPx + SECOND_CARD_PEEK_PX,
   );
   const secondCardScrollPx = Math.max(
-    120,
+    0,
     (contentHeightsPx[1] ?? 0) - viewportHeightPx + THIRD_CARD_PEEK_PX,
   );
   const thirdCardScrollPx =
@@ -430,10 +430,10 @@ export function ServicesAccordion() {
             }}
             className="relative z-10"
           >
-            <div className="w-full px-4 sm:px-6 lg:px-8 pt-8">
-              <h3 className="text-3xl text-white mb-8">{services[0].title}</h3>
+            <div className="w-full px-4 sm:px-6 lg:px-8 pt-6">
+              <h3 className="text-[28px] text-white mb-8">{services[0].title}</h3>
             </div>
-            <div className="w-full px-4 sm:px-6 lg:px-8 pb-24 text-lg text-white/70 leading-relaxed break-words [&_img]:max-w-full [&_img]:h-auto [&_video]:max-w-full [&_iframe]:max-w-full [&_pre]:whitespace-pre-wrap [&_pre]:break-words [&_table]:w-full">
+            <div className="w-full px-4 sm:px-6 lg:px-8 pb-12 text-lg text-white/70 leading-relaxed break-words [&_img]:max-w-full [&_img]:h-auto [&_video]:max-w-full [&_iframe]:max-w-full [&_pre]:whitespace-pre-wrap [&_pre]:break-words [&_table]:w-full">
               {services[0].content}
             </div>
           </div>
@@ -454,10 +454,10 @@ export function ServicesAccordion() {
             }}
             className="relative z-10"
           >
-            <div className="w-full px-4 sm:px-6 lg:px-8 pt-8">
-              <h3 className="text-3xl text-white mb-8">{services[1].title}</h3>
+            <div className="w-full px-4 sm:px-6 lg:px-8 pt-6">
+              <h3 className="text-[28px] text-white mb-8">{services[1].title}</h3>
             </div>
-            <div className="w-full px-4 sm:px-6 lg:px-8 pb-24 text-lg text-white/70 leading-relaxed break-words [&_img]:max-w-full [&_img]:h-auto [&_video]:max-w-full [&_iframe]:max-w-full [&_pre]:whitespace-pre-wrap [&_pre]:break-words [&_table]:w-full">
+            <div className="w-full px-4 sm:px-6 lg:px-8 pb-12 text-lg text-white/70 leading-relaxed break-words [&_img]:max-w-full [&_img]:h-auto [&_video]:max-w-full [&_iframe]:max-w-full [&_pre]:whitespace-pre-wrap [&_pre]:break-words [&_table]:w-full">
               {services[1].content}
             </div>
           </div>
@@ -478,10 +478,10 @@ export function ServicesAccordion() {
             }}
             className="relative z-10"
           >
-            <div className="w-full px-4 sm:px-6 lg:px-8 pt-8">
-              <h3 className="text-3xl text-white mb-8">{services[2].title}</h3>
+            <div className="w-full px-4 sm:px-6 lg:px-8 pt-6">
+              <h3 className="text-[28px] text-white mb-8">{services[2].title}</h3>
             </div>
-            <div className="w-full px-4 sm:px-6 lg:px-8 pb-24 text-lg text-white/70 leading-relaxed break-words [&_img]:max-w-full [&_img]:h-auto [&_video]:max-w-full [&_iframe]:max-w-full [&_pre]:whitespace-pre-wrap [&_pre]:break-words [&_table]:w-full">
+            <div className="w-full px-4 sm:px-6 lg:px-8 pb-12 text-lg text-white/70 leading-relaxed break-words [&_img]:max-w-full [&_img]:h-auto [&_video]:max-w-full [&_iframe]:max-w-full [&_pre]:whitespace-pre-wrap [&_pre]:break-words [&_table]:w-full">
               {services[2].content}
             </div>
           </div>
