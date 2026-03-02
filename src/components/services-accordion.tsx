@@ -27,6 +27,10 @@ export function ServicesAccordion() {
   const THIRD_CARD_PEEK_PX = 90;
   const CARD_BG_TAIL_HEIGHT_VH = 320;
   const STAGE_EXIT_BUFFER_PX = isMobile ? 360 : 580;
+  const SECOND_CARD_START_EARLY_PX = isMobile ? 0 : 70;
+  const THIRD_CARD_START_EARLY_PX = isMobile ? 0 : 100;
+  const THIRD_CARD_SCROLL_TRIM_PX = isMobile ? 0 : 340;
+  const STICKY_EXIT_EXTRA_RATIO = isMobile ? 1 : 0.35;
 
   const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
@@ -52,35 +56,46 @@ export function ServicesAccordion() {
       setContentHeightsPx(measuredContentHeights);
 
       const firstCardScrollPx = Math.max(
-        10,
+        120,
         (measuredContentHeights[0] ?? 0) -
           nextViewportHeight +
           SECOND_CARD_PEEK_PX,
       );
       const secondCardScrollPx = Math.max(
-        0,
+        120,
         (measuredContentHeights[1] ?? 0) -
           nextViewportHeight +
           THIRD_CARD_PEEK_PX,
       );
       const thirdCardScrollPx = Math.max(
         0,
-        (measuredContentHeights[2] ?? 0) - nextViewportHeight,
+        (measuredContentHeights[2] ?? 0) -
+          nextViewportHeight -
+          THIRD_CARD_SCROLL_TRIM_PX,
       );
 
       const firstCardContentEndPx = firstCardScrollPx;
-      const secondCardRevealStartPx = firstCardContentEndPx;
+      const secondCardRevealStartPx = Math.max(
+        0,
+        firstCardContentEndPx - SECOND_CARD_START_EARLY_PX,
+      );
       const secondCardRevealEndPx =
         secondCardRevealStartPx + SECOND_CARD_REVEAL_DURATION_PX;
       const secondCardContentEndPx = secondCardRevealEndPx + secondCardScrollPx;
 
-      const thirdCardRevealStartPx = secondCardContentEndPx;
+      const thirdCardRevealStartPx = Math.max(
+        0,
+        secondCardContentEndPx - THIRD_CARD_START_EARLY_PX,
+      );
       const thirdCardRevealEndPx =
         thirdCardRevealStartPx + CARD_REVEAL_DURATION_PX;
       const thirdCardContentEndPx = thirdCardRevealEndPx + thirdCardScrollPx;
+      const stickyExitExtraPx = Math.round(
+        nextViewportHeight * STICKY_EXIT_EXTRA_RATIO,
+      );
 
       setSectionHeightPx(
-        thirdCardContentEndPx + nextViewportHeight + STAGE_EXIT_BUFFER_PX,
+        thirdCardContentEndPx + stickyExitExtraPx + STAGE_EXIT_BUFFER_PX,
       );
     };
 
@@ -95,6 +110,10 @@ export function ServicesAccordion() {
   }, [
     CARD_REVEAL_DURATION_PX,
     SECOND_CARD_REVEAL_DURATION_PX,
+    SECOND_CARD_START_EARLY_PX,
+    THIRD_CARD_START_EARLY_PX,
+    THIRD_CARD_SCROLL_TRIM_PX,
+    STICKY_EXIT_EXTRA_RATIO,
     STAGE_EXIT_BUFFER_PX,
   ]);
 
@@ -338,16 +357,19 @@ export function ServicesAccordion() {
 
   const initialOffsetPx = viewportHeightPx || 1000;
   const firstCardScrollPx = Math.max(
-    0,
+    120,
     (contentHeightsPx[0] ?? 0) - viewportHeightPx + SECOND_CARD_PEEK_PX,
   );
   const secondCardScrollPx = Math.max(
-    0,
+    120,
     (contentHeightsPx[1] ?? 0) - viewportHeightPx + THIRD_CARD_PEEK_PX,
   );
   const thirdCardScrollPx =
     viewportHeightPx > 0
-      ? Math.max(0, (contentHeightsPx[2] ?? 0) - viewportHeightPx)
+      ? Math.max(
+          0,
+          (contentHeightsPx[2] ?? 0) - viewportHeightPx - THIRD_CARD_SCROLL_TRIM_PX,
+        )
       : 0;
   const secondInitialOffsetPx = Math.max(
     0,
@@ -359,12 +381,18 @@ export function ServicesAccordion() {
   );
 
   const firstCardContentEndPx = firstCardScrollPx;
-  const secondCardRevealStartPx = firstCardContentEndPx;
+  const secondCardRevealStartPx = Math.max(
+    0,
+    firstCardContentEndPx - SECOND_CARD_START_EARLY_PX,
+  );
   const secondCardRevealEndPx =
     secondCardRevealStartPx + SECOND_CARD_REVEAL_DURATION_PX;
   const secondCardContentEndPx = secondCardRevealEndPx + secondCardScrollPx;
 
-  const thirdCardRevealStartPx = secondCardContentEndPx;
+  const thirdCardRevealStartPx = Math.max(
+    0,
+    secondCardContentEndPx - THIRD_CARD_START_EARLY_PX,
+  );
   const thirdCardRevealEndPx = thirdCardRevealStartPx + CARD_REVEAL_DURATION_PX;
   const thirdCardContentEndPx = thirdCardRevealEndPx + thirdCardScrollPx;
 
@@ -465,7 +493,7 @@ export function ServicesAccordion() {
 
         <motion.div
           style={{ y: thirdCardY, zIndex: 30 }}
-          className={`${services[2].bgColor} absolute left-0 right-0 top-0 mx-auto w-full max-w-[1280px] min-h-screen flex flex-col overflow-visible rounded-t-[17px] rounded-b-none transform-gpu will-change-transform ${isMobile ? "shadow-none" : "shadow-lg"}`}
+          className={`${services[2].bgColor} absolute left-0 right-0 top-0 mx-auto w-full max-w-[1280px] flex flex-col overflow-visible rounded-t-[17px] rounded-b-none transform-gpu will-change-transform ${isMobile ? "shadow-none" : "shadow-lg"}`}
         >
           <div
             aria-hidden="true"
