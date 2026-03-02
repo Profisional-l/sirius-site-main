@@ -166,6 +166,7 @@
   html.modal-open {
     overflow: hidden;
   }
+
   html {
     scroll-behavior: smooth;
   }
@@ -176,6 +177,7 @@
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -240,6 +242,7 @@
 .group:hover .inner-shadow {
   box-shadow: inset 0 0 10px rgba(25, 171, 255, 0.7);
 }
+
 .team {
   background-image: url("../../public/teambg.svg");
 }
@@ -252,21 +255,31 @@ footer {
   color: #ffffff99;
   transition: color .33s;
 }
+
 .missionSection {
   background-image: url("../../public/fullmissionbg.svg");
-  background-position: center center; /* Центрируем */
-  background-repeat: no-repeat; /* Запрещаем повторение */
-  background-size: cover; /* Растягиваем на весь экран */
-  background-attachment: fixed; /* Фиксируем фон при скролле */
+  background-position: center center;
+  /* Центрируем */
+  background-repeat: no-repeat;
+  /* Запрещаем повторение */
+  background-size: cover;
+  /* Растягиваем на весь экран */
+  background-attachment: scroll;
+  background-color: #090d12;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 /* Убираем медиа-запросы или адаптируем их */
 @media (min-width: 500px) {
   .missionSection {
-    background-size: cover; /* Всегда cover */
-    background-position: center center; /* Всегда по центру */
+    background-size: cover;
+    /* Всегда cover */
+    background-position: center center;
+    /* Всегда по центру */
   }
 }
+
 /* .missionSection {
   z-index: 0;
 }
@@ -275,8 +288,11 @@ footer {
 } */
 
 
-#about, #products, #services, #prodCards {
-    background-image: url("../../public/missionbg.svg");
+#about,
+#products,
+#services,
+#prodCards {
+  background-image: url("../../public/missionbg.svg");
 
 }
 

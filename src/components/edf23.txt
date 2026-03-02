@@ -1,0 +1,298 @@
+"use client";
+
+import React, { ReactNode, useLayoutEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { useIsMobile } from "@/hooks/use-mobile";
+
+/* ================= TYPES ================= */
+
+interface Service {
+  title: string;
+  id: string;
+  bgColor: string;
+  content: ReactNode;
+}
+
+/* ================= COMPONENT ================= */
+
+export function ServicesAccordion() {
+  const { t } = useTranslation();
+  const isMobile = useIsMobile();
+
+  const sectionRef = useRef<HTMLElement>(null);
+  const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const [sectionStart, setSectionStart] = useState(0);
+  const [sectionHeight, setSectionHeight] = useState(2000);
+  const [contentHeights, setContentHeights] = useState<number[]>([0, 0, 0]);
+
+  const { scrollY } = useScroll();
+
+  /* ================= LAYOUT CALC ================= */
+
+  useLayoutEffect(() => {
+    if (!sectionRef.current) return;
+
+    const rect = sectionRef.current.getBoundingClientRect();
+    const start = window.scrollY + rect.top;
+    setSectionStart(start);
+
+    const heights = contentRefs.current.map((el) => el?.offsetHeight ?? 0);
+    setContentHeights(heights);
+
+    // каждый блок скроллится ПОЛНОСТЬЮ
+    const total =
+      heights[0] +
+      heights[1] +
+      heights[2] +
+      window.innerHeight * 0.5;
+
+    setSectionHeight(total);
+  }, []);
+
+  /* ================= TIMELINE ================= */
+
+  const s1Start = 0;
+  const s1End = contentHeights[0];
+
+  const s2Start = s1End;
+  const s2End = s2Start + contentHeights[1];
+
+  const s3Start = s2End;
+  const s3End = s3Start + contentHeights[2];
+
+  const y1 = useTransform(
+    scrollY,
+    [sectionStart + s1Start, sectionStart + s1End],
+    [0, -contentHeights[0]],
+    { clamp: true }
+  );
+
+  const y2 = useTransform(
+    scrollY,
+    [sectionStart + s2Start, sectionStart + s2End],
+    [window.innerHeight, -contentHeights[1]],
+    { clamp: true }
+  );
+
+  const y3 = useTransform(
+    scrollY,
+    [sectionStart + s3Start, sectionStart + s3End],
+    [window.innerHeight, -contentHeights[2]],
+    { clamp: true }
+  );
+
+  /* ================= DATA ================= */
+
+  const services: Service[] = [
+    {
+      id: "ic-design",
+      title: t("services.icDesign.title"),
+      bgColor: "bg-[#24364E]",
+      content: (
+        <div className="space-y-6">
+          <h4 className="text-[20px] -mt-4 mb-10 text-[#B8BECF] font-[400]">
+            {t("services.icDesign.cardsSectionTitle")}
+          </h4>
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+            <article className="rounded-[18px] border-[1px] border-white/[.31] bg-[#324968] p-6 text-[18px] ">
+              <h4 className="md:text-[39px] font-[500] text-white">
+                {t("services.icDesign.cards.asic.title")}
+              </h4>
+              <p className="md:text-[16px] mb-6 font-[400] text-white opacity-75 max-w-[300px]">
+                {t("services.icDesign.cards.asic.intro")}
+              </p>
+              <hr className="-mx-6 my-6 w-[calc(100%+3rem)] border-0 border-t border-white/[.31]" />
+              <p className="mt-4 text-[12px] font-[100] max-w-[315px]">
+                <strong className="text-white/[.75] font-[700]">
+                  Specification Signoff.
+                </strong>{" "}
+                {t("services.icDesign.cards.asic.specification")}
+              </p>
+              <p className="mt-4 text-[12px] font-[100] max-w-[315px]">
+                <strong className="text-white/[.75] font-[700]">
+                  RTL Signoff.
+                </strong>{" "}
+                {t("services.icDesign.cards.asic.rtl")}
+              </p>
+              <p className="mt-4 text-[12px] font-[100] max-w-[315px]">
+                <strong className="text-white/[.75] font-[700]">
+                  Netlist Signoff.
+                </strong>{" "}
+                {t("services.icDesign.cards.asic.netlist")}
+              </p>
+              <hr className="-mx-6 my-6 w-[calc(100%+3rem)] border-0 border-t border-white/[.31]" />
+              <p className="mt-4 text-[16px] font-[400] ">
+                {t("services.icDesign.cards.asic.summary")}
+              </p>
+            </article>
+
+            <article className="rounded-[18px] border-[1px] border-white/[.31] bg-[#324968] p-6 text-[18px] text-[#B8BECF]">
+              <h4 className="md:text-[39px] font-[500] text-white">
+                {t("services.icDesign.cards.fpga.title")}
+              </h4>
+              <p className="md:text-[16px] mb-6 font-[400] text-white opacity-75 max-w-[300px]">
+                {t("services.icDesign.cards.fpga.intro")}
+              </p>
+              <hr className="-mx-6 my-4 w-[calc(100%+3rem)] border-0 border-t border-white/[.31]" />
+              <p className="mt-8 text-white/75 text-[21px] font-[400]">
+                {t("services.icDesign.cards.fpga.capabilitiesTitle")}
+              </p>
+              <ol className="mt-3 list-decimal space-y-1 pl-4 text-[14px] font-[300]">
+                {fpgaCapabilities.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ol>
+            </article>
+
+            <article className="rounded-[18px] border-[1px] border-white/[.31] bg-[#324968] p-6 text-[18px] text-[#B8BECF]">
+              <h4 className="md:text-[39px] font-[500] text-white">
+                {t("services.icDesign.cards.ip.title")}
+              </h4>
+              <p className="md:text-[16px] mb-6 font-[400] text-white opacity-75 max-w-[300px]">
+                {t("services.icDesign.cards.ip.intro")}
+              </p>
+              <hr className="-mx-6 my-4 w-[calc(100%+3rem)] border-0 border-t border-white/[.31]" />
+              <p className="mt-8 text-white/75 text-[21px] font-[400]">
+                {t("services.icDesign.cards.ip.servicesTitle")}
+              </p>
+              <ol className="mt-3 list-decimal space-y-1 pl-4 text-[14px] font-[300]">
+                {ipServices.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ol>
+              <br />
+              <br />
+              <br />
+              <hr className="-mx-6 my-4 w-[calc(100%+3rem)] border-0 border-t border-white/[.31]" />
+              <p className="mt-5">{t("services.icDesign.cards.ip.summary")}</p>
+            </article>
+          </div>
+        </div>
+      ),
+    },
+    {
+      id: "ip-blocks",
+      title: t("services.ipBlocks.title"),
+      bgColor: "bg-[#182434]",
+      content: (
+        <div className="rounded-[17px] border border-white/[.15] text-[16px] font-[100] text-[#B8BECF]">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {ipBlocks.map((block, index) => (
+              <div
+                key={index}
+                className={`p-8 px-10 min-h-[107px] flex items-center
+                ${index % 2 === 0 ? "md:border-r" : ""}
+                ${index < ipBlocks.length - (ipBlocks.length % 2 === 0 ? 2 : 1) ? "border-b" : ""}
+                border-white/[.15]`}
+              >
+                <p>
+                  <strong className="text-white/75 font-[700]">
+                    {block.title}
+                  </strong>{" "}
+                  {block.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+    {
+      id: "software",
+      title: t("services.software.title"),
+      bgColor: "bg-[#101823]",
+      content: (
+        <div className="space-y-6">
+          <p className="text-[20px] font-[400] text-[#B8BECF] leading-relaxed max-w-[573px]">
+            {t("services.software.intro")}
+          </p>
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <article className="rounded-[18px] border-[1px] border-white/[.20] bg-[#182434] p-6 text-[18px] text-[#B8BECF]">
+              <p className="md:text-[39px] font-[500] text-white">
+                {t("services.software.left.areasTitle")}
+              </p>
+              <ol className="mt-3 list-decimal space-y-1 pl-4 text-[14px] font-[300]">
+                {softwareAreas.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ol>
+              <hr className="-mx-6 my-4 w-[calc(100%+3rem)] border-0 border-t border-white/[.20]" />
+              <p className="md:text-[39px] font-[500] text-white">
+                {t("services.software.left.additionalServicesTitle")}
+              </p>
+              <ol className="mt-3 list-decimal space-y-1 pl-4 text-[14px] font-[300] max-w-[306px]">
+                {softwareAdditionalServices.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ol>
+            </article>
+
+            <article className="rounded-[18px] border-[1px] border-white/[.20] bg-[#182434] p-6 text-[18px] text-[#B8BECF]">
+              {softwareTools.map((tool, index) => (
+                <React.Fragment key={index}>
+                  <p className="text-[16px] font-[400] leading-relaxed max-w-[474px]">
+                    <strong className="text-white/65 font-[700] block mb-[7px]">
+                      {tool.title}
+                    </strong>
+                    {tool.descriptionBefore}
+                    <span className="bg-gradient-to-r from-[#0071E9] to-[#5EB7FF] bg-clip-text text-transparent">
+                      {tool.highlight}
+                    </span>
+                    {tool.descriptionAfter ?? ""}
+                  </p>
+
+                  {index < softwareTools.length - 1 && (
+                    <hr className="-mx-6 my-6 w-[calc(100%+3rem)] border-0 border-t border-white/[.20]" />
+                  )}
+                </React.Fragment>
+              ))}
+            </article>
+          </div>
+        </div>
+      ),
+    },
+  ];
+
+  /* ================= RENDER ================= */
+
+  return (
+    <section ref={sectionRef} className="relative bg-[#090D12]" style={{ height: sectionHeight }}>
+      
+      {/* ===== НОРМАЛЬНЫЙ ЗАГОЛОВОК ===== */}
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-lg uppercase text-white/60 tracking-wider">
+          {t("services.title")}
+        </h2>
+      </div>
+
+      {/* ===== STICKY СЦЕНА ===== */}
+      <div className="sticky top-0 h-screen overflow-hidden">
+
+        {[y1, y2, y3].map((y, index) => (
+          <motion.div
+            key={services[index].id}
+            style={{ y, zIndex: index + 1 }}
+            className={`${services[index].bgColor}
+              absolute inset-0 mx-auto max-w-[1280px]
+              min-h-screen rounded-t-[17px]
+              ${!isMobile ? "shadow-xl" : ""}
+            `}
+          >
+            <div
+              ref={(el) => (contentRefs.current[index] = el)}
+              className="relative px-4 sm:px-6 lg:px-8 pt-10 pb-32 text-white/70"
+            >
+              <h3 className="text-3xl text-white mb-10">
+                {services[index].title}
+              </h3>
+
+              {services[index].content}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+}
