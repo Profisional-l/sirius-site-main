@@ -52,6 +52,16 @@ export default function Home() {
     },
   ];
 
+  // history timeline data - 20 stays fixed, suffix and description scroll
+  const history = [
+    { suffix: "04", text: t('history.2004') },
+    { suffix: "07", text: t('history.2007') },
+    { suffix: "10", text: t('history.2010') },
+    { suffix: "17", text: t('history.2017') },
+    { suffix: "18", text: t('history.2018') },
+    { suffix: "25", text: t('history.2025') },
+  ];
+
   return (
     <>
       {/* Hero Section */}
@@ -65,7 +75,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="space-mono-bold text-[42px] md:text-[68px] tracking-tighter uppercase leading-[1.05] text-[#F0F2F7]"
-                dangerouslySetInnerHTML={{ __html: t('hero.title') }} />
+              dangerouslySetInnerHTML={{ __html: t('hero.title') }} />
             <p className="mt-6 max-w-3xl mx-auto text-[20px] md:text-[28px] text-[#F0F2F7] leading-relaxed">
               <Trans
                 i18nKey="hero.subtitle"
@@ -89,12 +99,46 @@ export default function Home() {
         </div>
       </section>
       {/* Products & Services */}
-      <section id="prodCards" className="py-12 sm:py-[98px] bg-[#090D12] min-h-screen">
-        <div className="mx-auto max-w-[1280px] px-0 lg:px-8 min-h-[calc(100vh-6rem)] sm:min-h-[calc(100vh-12.25rem)] flex items-center">
+      <section id="prodCards" className="py-6 sm:py-12 bg-[#090D12]">
+        <div className="mx-auto max-w-[1280px] px-0 lg:px-8 flex items-center">
           <div className="flex overflow-x-auto gap-2 lg:gap-5 px-4 md:px-0 md:justify-center">
             {products.map((product, index) => (
               <ProductCard key={index} {...product} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* History section – elements centered except the heading */}
+      <section id="history" className="relative bg-[#090D12] text-white">
+        {/* heading sticks to the left edge of the section and remains sticky
+              throughout the entire history section */}
+        <h2 className="space-mono-regular uppercase text-[#F0F2F7] opacity-40
+                         text-[clamp(14px,3vw,18px)] leading-[1.47] tracking-normal
+                         sticky top-[10rem] sm:top-[13rem] md:top-32
+                         md:translate-x-[70px] md:translate-y-[200px]">
+          HISTORY
+        </h2>
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 pt-20 sm:pt-32 pb-12 sm:pb-16 relative">
+
+          {/* grid centered within the parent wrapper */}
+          <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-y-6 mx-auto w-fit">
+            {/* left column: big decade number */}
+            <div className="sticky top-0 self-start pr-4 md:pr-0">
+              <span className="font-headline text-[clamp(80px,20vw,160px)] leading-[1.3] tracking-[-0.25rem] mt-20 md:mt-0">
+                20
+              </span>
+            </div>
+
+            {/* scrollable suffixes and descriptions */}
+            <div className="space-y-24 md:space-y-32">
+              {history.map((item, index) => (
+                <div key={index} className="relative z-10 flex flex-row items-center gap-4 flex-nowrap border-b border-gray-600/40 max-w-[620px] pl-[clamp(100px,25vw,200px)] md:pl-0">
+                  <span className="font-headline text-[clamp(80px,20vw,160px)] leading-[1.3] tracking-[-0.25rem]">{item.suffix}</span>
+                  <p className="self-end pb-[40px] text-[clamp(16px,4vw,20px)] text-[#F0F2F7] w-full md:max-w-[341px] leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -108,7 +152,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center missionSection"
         ></div>
-        
+
         {/* Контент поверх фона */}
         <div className="relative z-10 h-[400vh]"> {/* Такая же высота как у MissionAnimation */}
           <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 h-full">
@@ -116,7 +160,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       {/* Services Accordion */}
       <ServicesAccordion />
 
@@ -126,14 +170,14 @@ export default function Home() {
       {/* Team & Join CTA */}
       <div className="team bg-[#182434]">
         {/* Team Section */}
-        <section id="team" className="py-28 sm:py-26">
+        <section id="team" className="py-20 sm:py-16">
           <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div className="lg:max-w-md -mt-14">
               <h3 className="text-[14px] md:text-[18px] font-code uppercase  text-[#F0F2F7] opacity-40">
                 {t('team.subheading')}
               </h3>
               <h2 className="mt-8 font-headline text-[28px] md:text-[45px] font-medium leading-tight">
-                 <Trans
+                <Trans
                   i18nKey="team.headline"
                   components={{
                     blue: <span className="text-primary" />,
@@ -169,11 +213,11 @@ export default function Home() {
         </section>
 
         <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 -mt-16">
-            <Separator className="bg-[#FFFFFF12]"/>
+          <Separator className="bg-[#FFFFFF12]" />
         </div>
 
         {/* Join CTA */}
-        <section className="py-[75px] sm:py-20 text-center">
+        <section className="py-16 sm:py-12 text-center">
           <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
             <h2 className="font-headline text-[28px] md:text-[45px] font-medium">
               {t('join.headline')}
@@ -185,12 +229,12 @@ export default function Home() {
               <Button size="lg" className="bg-[#F0F2F7] border-white/30 hover:bg-[#F0F2F7] hover:opacity-70 transition-opacity-[.33s] text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-5 min-w-[186px] h-[55px] rounded-[9px]"><Link href="#contact" >{t('join.button')}</Link></Button>
             </div>
           </div>
-           <span id="contact" ></span>
+          <span id="contact" ></span>
         </section>
       </div>
 
       {/* Contact Section */}
-      <section className="py-10 sm:py-16 bg-[#FFFFFF]">
+      <section className="py-8 sm:py-12 bg-[#FFFFFF]">
         <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
           <h1 className="text-[28px] md:text-[45px] text-[#0F141C] font-[500]">{t('contact.title')}</h1>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -222,4 +266,3 @@ export default function Home() {
   );
 }
 
-    
