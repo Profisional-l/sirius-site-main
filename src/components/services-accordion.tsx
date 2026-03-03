@@ -403,6 +403,15 @@ export function ServicesAccordion() {
     { clamp: true },
   );
 
+  const titleShiftDistancePx = isMobile ? 56 : 84;
+  const titleShiftEndPx = Math.max(1, Math.min(firstCardContentEndPx, 220));
+  const titleY = useTransform(
+    scrollY,
+    [sectionStartY, sectionStartY + titleShiftEndPx],
+    [0, titleShiftDistancePx],
+    { clamp: true },
+  );
+
   const secondCardY = useTransform(
     scrollY,
     [
@@ -434,13 +443,13 @@ export function ServicesAccordion() {
         height: `${sectionHeightPx}px`,
       }}
     >
-      <div className="top-0 z-40 py-6">
+      <motion.div style={{ y: firstCardY }} className="relative z-40 py-6">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-lg uppercase text-white/60 tracking-wider">
             {t("services.title")}
           </h2>
         </div>
-      </div>
+      </motion.div>
 
       <div className="sticky top-0 h-screen overflow-visible">
         <motion.div
