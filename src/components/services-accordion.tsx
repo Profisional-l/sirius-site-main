@@ -27,8 +27,8 @@ export function ServicesAccordion() {
   const THIRD_CARD_PEEK_PX = 90;
   const CARD_BG_TAIL_HEIGHT_VH = 320;
   const STAGE_EXIT_BUFFER_PX = isMobile ? 360 : 580;
-  const SECOND_CARD_START_EARLY_PX = isMobile ? 0 : 70;
-  const THIRD_CARD_START_EARLY_PX = isMobile ? 0 : 100;
+  const SECOND_CARD_START_EARLY_PX = isMobile ? 0 : -170;
+  const THIRD_CARD_START_EARLY_PX = isMobile ? 0 : -100;
   const THIRD_CARD_SCROLL_TRIM_PX = isMobile ? 0 : 340;
   const STICKY_EXIT_EXTRA_RATIO = isMobile ? 1 : 0.35;
 
