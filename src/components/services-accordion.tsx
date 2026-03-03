@@ -70,8 +70,7 @@ export function ServicesAccordion() {
       const thirdCardScrollPx = Math.max(
         0,
         (measuredContentHeights[2] ?? 0) -
-          nextViewportHeight -
-          THIRD_CARD_SCROLL_TRIM_PX,
+          nextViewportHeight,
       );
 
       const firstCardContentEndPx = firstCardScrollPx;
@@ -368,7 +367,7 @@ export function ServicesAccordion() {
     viewportHeightPx > 0
       ? Math.max(
           0,
-          (contentHeightsPx[2] ?? 0) - viewportHeightPx - THIRD_CARD_SCROLL_TRIM_PX,
+          (contentHeightsPx[2] ?? 0) - viewportHeightPx,
         )
       : 0;
   const secondInitialOffsetPx = Math.max(
@@ -468,7 +467,9 @@ export function ServicesAccordion() {
             className="relative z-10"
           >
             <div className="w-full px-4 sm:px-6 lg:px-8 pt-6">
-              <h3 className="text-[28px] text-white mb-8">{services[0].title}</h3>
+              <h3 className="text-[28px] text-white mb-8">
+                {services[0].title}
+              </h3>
             </div>
             <div className="w-full px-4 sm:px-6 lg:px-8 pb-12 text-lg text-white/70 leading-relaxed break-words [&_img]:max-w-full [&_img]:h-auto [&_video]:max-w-full [&_iframe]:max-w-full [&_pre]:whitespace-pre-wrap [&_pre]:break-words [&_table]:w-full">
               {services[0].content}
@@ -492,7 +493,9 @@ export function ServicesAccordion() {
             className="relative z-10"
           >
             <div className="w-full px-4 sm:px-6 lg:px-8 pt-6">
-              <h3 className="text-[28px] text-white mb-8">{services[1].title}</h3>
+              <h3 className="text-[28px] text-white mb-8">
+                {services[1].title}
+              </h3>
             </div>
             <div className="w-full px-4 sm:px-6 lg:px-8 pb-12 text-lg text-white/70 leading-relaxed break-words [&_img]:max-w-full [&_img]:h-auto [&_video]:max-w-full [&_iframe]:max-w-full [&_pre]:whitespace-pre-wrap [&_pre]:break-words [&_table]:w-full">
               {services[1].content}
@@ -516,7 +519,9 @@ export function ServicesAccordion() {
             className="relative z-10"
           >
             <div className="w-full px-4 sm:px-6 lg:px-8 pt-6">
-              <h3 className="text-[28px] text-white mb-8">{services[2].title}</h3>
+              <h3 className="text-[28px] text-white mb-8">
+                {services[2].title}
+              </h3>
             </div>
             <div className="w-full px-4 sm:px-6 lg:px-8 pb-12 text-lg text-white/70 leading-relaxed break-words [&_img]:max-w-full [&_img]:h-auto [&_video]:max-w-full [&_iframe]:max-w-full [&_pre]:whitespace-pre-wrap [&_pre]:break-words [&_table]:w-full">
               {services[2].content}
