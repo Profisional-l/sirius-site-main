@@ -12,6 +12,7 @@ import { Separator } from "@/components/ui/separator";
 import { MissionAnimation } from "@/components/mission-animation";
 import { IndustriesSection } from "@/components/industries-section";
 import { ServicesAccordion } from "@/components/services-accordion";
+import { HistorySection } from "@/components/history-section";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -48,16 +49,6 @@ export default function Home() {
       bio: t("team.van.bio"),
       image: "/van-nguyen.png",
     },
-  ];
-
-  // history timeline data - 20 stays fixed, suffix and description scroll
-  const history = [
-    { suffix: "04", text: t('history.2004') },
-    { suffix: "07", text: t('history.2007') },
-    { suffix: "10", text: t('history.2010') },
-    { suffix: "17", text: t('history.2017') },
-    { suffix: "18", text: t('history.2018') },
-    { suffix: "25", text: t('history.2025') },
   ];
 
   return (
@@ -114,39 +105,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* History section – elements centered except the heading */}
-      <section id="history" className="relative bg-[#090D12] text-white">
-        {/* heading sticks to the left edge of the section and remains sticky
-              throughout the entire history section */}
-        <h2 className="space-mono-regular uppercase text-[#F0F2F7] opacity-40
-                         text-[clamp(14px,3vw,18px)] leading-[1.47] tracking-normal
-                         sticky top-[10rem] sm:top-[13rem] md:top-32
-                         md:translate-x-[70px]">
-          HISTORY
-        </h2>
-        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 pt-20 sm:pt-32 pb-12 sm:pb-16 relative">
-
-          {/* grid centered within the parent wrapper */}
-          <div className="grid grid-cols-[auto_1fr] md:grid-cols-[auto_1fr] gap-x-4 md:gap-y-6 mx-auto w-fit">
-            {/* left column: big decade number */}
-            <div className="sticky top-0 self-start pr-4 md:pr-0">
-              <span className="font-headline text-[clamp(80px,20vw,160px)] leading-[1.3] tracking-[-0.25rem] mt-0 md:mt-20">
-                20
-              </span>
-            </div>
-
-            {/* scrollable suffixes and descriptions */}
-            <div className="space-y-24 md:space-y-32">
-              {history.map((item, index) => (
-                <div key={index} className="relative z-10 flex flex-row items-center gap-4 flex-nowrap border-b border-gray-600/40 max-w-[620px] pl-0">
-                  <span className="font-headline text-[clamp(80px,20vw,160px)] leading-[1.3] tracking-[-0.25rem]">{item.suffix}</span>
-                  <p className="self-end pb-[40px] text-[clamp(16px,4vw,20px)] text-[#F0F2F7] w-full md:max-w-[341px] leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }} />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <HistorySection />
 
       {/* Mission Section */}
       <section id="about" className="bg-[#090D12] text-center relative">
