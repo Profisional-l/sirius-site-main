@@ -35,6 +35,14 @@
     "text1": "Sirius Semiconductors được thành lập <blue>nhằm đạt được mục tiêu đầy tham vọng là </blue>biến Việt Nam thành một cường quốc công ngh",
     "text2": "Chúng tôi ở đây để <blue>cung cấp chuyên môn, công nghệ, dịch vụ và sản phẩm trong vi điện tử</blue> cho các đối tác trong một thị trường Việt Nam và cách xa hơn nữa"
   },
+  "history": {
+    "2004": "Alex Drozdov studies compilers in the laboratories of Intel and the Moscow SPARC Center. A future team of Optimizing Technologies begins to form around him",
+    "2007": "Foundation of Optimizing Technologies",
+    "2010": "Optimizing Technologies joins the development of advanced microelectronics solutions in partnership with Soft Machines (later acquired by Intel)",
+    "2017": "Optimizing Technologies starts working with international clients and partners",
+    "2018": "Optimizing technologies launches its own semiconductor design and development division",
+    "2025": "Building on years of accumulated expertise, a new company is established in Vietnam — Sirius Semiconductors"
+  },
   "services": {
     "title": "Sản phẩm & Dịch vụ",
     "icDesign": {

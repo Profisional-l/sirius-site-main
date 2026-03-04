@@ -288,11 +288,8 @@ footer {
 } */
 
 
-#about,
-#products,
-#services,
-#prodCards {
-  background-image: url("../../public/missionbg.svg");
+#about, #products, #services, #prodCards, #history {
+    background-image: url("../../public/missionbg.svg");
 
 }
 
