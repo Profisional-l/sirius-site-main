@@ -69,8 +69,7 @@ export function ServicesAccordion() {
       );
       const thirdCardScrollPx = Math.max(
         0,
-        (measuredContentHeights[2] ?? 0) -
-          nextViewportHeight,
+        (measuredContentHeights[2] ?? 0) - nextViewportHeight,
       );
 
       const firstCardContentEndPx = firstCardScrollPx;
@@ -365,10 +364,7 @@ export function ServicesAccordion() {
   );
   const thirdCardScrollPx =
     viewportHeightPx > 0
-      ? Math.max(
-          0,
-          (contentHeightsPx[2] ?? 0) - viewportHeightPx,
-        )
+      ? Math.max(0, (contentHeightsPx[2] ?? 0) - viewportHeightPx)
       : 0;
   const secondInitialOffsetPx = Math.max(
     0,
