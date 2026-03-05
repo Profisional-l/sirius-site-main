@@ -106,7 +106,6 @@ export default function Home() {
       </section>
 
       <HistorySection />
-
       {/* Mission Section */}
       <section id="about" className="bg-[#090D12] text-center relative">
         {/* Стабильный фон для iOS/Safari через sticky-слой */}
