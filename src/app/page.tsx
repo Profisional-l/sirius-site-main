@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation, Trans } from "react-i18next";
@@ -11,11 +12,28 @@ import { MotionDiv } from "@/components/motion-div";
 import { Separator } from "@/components/ui/separator";
 import { MissionAnimation } from "@/components/mission-animation";
 import { IndustriesSection } from "@/components/industries-section";
-import { ServicesAccordion } from "@/components/services-accordion";
+import { ServicesAccordion } from "../components/services-accordion";
+import { ServicesAccordion as BigServicesAccordion } from "../components/big_services-according";
 import { HistorySection } from "@/components/history-section";
 
 export default function Home() {
   const { t } = useTranslation();
+  const [isBigServicesScreen, setIsBigServicesScreen] = useState(
+    typeof window !== "undefined" ? window.innerWidth > 2060 : false,
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsBigServicesScreen(window.innerWidth > 2060);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const products = [
     {
@@ -126,7 +144,7 @@ export default function Home() {
       </section>
 
       {/* Services Accordion */}
-      <ServicesAccordion />
+      {isBigServicesScreen ? <BigServicesAccordion /> : <ServicesAccordion />}
 
       {/* Industries Section */}
       <IndustriesSection />
@@ -134,14 +152,14 @@ export default function Home() {
       {/* Team & Join CTA */}
       <div className="team bg-[#182434]">
         {/* Team Section */}
-        <section id="team" className="py-20 sm:py-16">
+        <section id="team" className="py-28 sm:py-26">
           <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div className="lg:max-w-md -mt-14">
               <h3 className="text-[14px] md:text-[18px] font-code uppercase  text-[#F0F2F7] opacity-40">
-                {t("team.subheading")}
+                {t('team.subheading')}
               </h3>
               <h2 className="mt-8 font-headline text-[28px] md:text-[45px] font-medium leading-tight">
-                <Trans
+                 <Trans
                   i18nKey="team.headline"
                   components={{
                     blue: <span className="text-primary" />,
@@ -152,7 +170,10 @@ export default function Home() {
             </div>
             <div className="space-y-12 mw-[515px] pr-4">
               {teamMembers.map((member) => (
-                <div key={member.name} className="flex items-start gap-6">
+                <div
+                  key={member.name}
+                  className="flex items-start gap-6"
+                >
                   <Avatar className="w-[88px] md:w-[110px] h-[88px] md:h-[110px] border-2 border-white/20 shrink-0">
                     <AvatarImage
                       src={member.image}
@@ -165,9 +186,7 @@ export default function Home() {
                     <h3 className="font-headline text-[20px] md:text-[28px] font-bold uppercase text-[#F2F2F2]">
                       {member.name}
                     </h3>
-                    <p className="text-[14px] md:text-[20px] text-[#B8BECF] opacity-70">
-                      {member.bio}
-                    </p>
+                    <p className="text-[14px] md:text-[20px] text-[#B8BECF] opacity-70">{member.bio}</p>
                   </div>
                 </div>
               ))}
@@ -176,31 +195,26 @@ export default function Home() {
         </section>
 
         <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 -mt-16">
-          <Separator className="bg-[#FFFFFF12]" />
+            <Separator className="bg-[#FFFFFF12]"/>
         </div>
 
         {/* Join CTA */}
-        <section className="py-16 sm:py-12 text-center">
+        <section className="py-[75px] sm:py-20 text-center">
           <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
             <h2 className="font-headline text-[28px] md:text-[45px] font-medium">
-              {t("join.headline")}
+              {t('join.headline')}
             </h2>
             <p className="mt-6 max-w-[740px] mx-auto text-[16px] md:text-[22px] text-[#B8BECF] px-6 md:py-0">
-              {t("join.text")}
+              {t('join.text')}
             </p>
             <div className="mt-10">
-              <Button
-                size="lg"
-                className="bg-[#F0F2F7] border-white/30 hover:bg-[#F0F2F7] hover:opacity-70 transition-opacity-[.33s] text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-5 min-w-[186px] h-[55px] rounded-[9px]"
-              >
-                <Link href="#contact">{t("join.button")}</Link>
-              </Button>
+              <Button size="lg" className="bg-[#F0F2F7] border-white/30 hover:bg-[#F0F2F7] hover:opacity-70 transition-opacity-[.33s] text-[#1B232F] backdrop-blur-sm text-[22px] font-bold px-5 min-w-[186px] h-[55px] rounded-[9px]"><Link href="#contact" >{t('join.button')}</Link></Button>
             </div>
           </div>
-          <span id="contact"></span>
+           <span id="contact" ></span>
         </section>
       </div>
-
+      
       {/* Contact Section */}
       <section className="py-8 sm:py-12 bg-[#FFFFFF]">
         <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
