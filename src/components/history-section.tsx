@@ -28,7 +28,7 @@ export function HistorySection() {
 
           <div className="grid grid-cols-[auto_1fr] gap-x-0 sm:gap-x-0 md:gap-y-6 mx-auto w-full md:w-fit max-w-full">
             <div className="sticky top-24 sm:top-28 md:top-32 self-start pr-0 sm:pr-4 md:pr-0">
-              <span className="font-headline text-[clamp(80px,20vw,160px)] md:leading-[1.3] tracking-[-0.25rem]">
+              <span className="font-headline text-[clamp(80px,20vw,200px)] md:leading-[1.3] tracking-[-0.25rem]">
                 20
               </span>
             </div>
@@ -37,13 +37,13 @@ export function HistorySection() {
               {history.map((item, index) => (
                 <div
                   key={index}
-                  className={`relative z-10 flex flex-row md:items-end gap-3 sm:gap-16 max-w-[620px] min-w-0 ${index !== history.length - 1 ? "border-b border-gray-600/40" : ""}`}
+                  className={`relative z-10 flex flex-row md:items-end gap-3 sm:gap-16 max-w-[660px] min-w-0 ${index !== history.length - 1 ? "border-b border-gray-600/40" : ""}`}
                 >
-                  <span className="font-headline text-[clamp(80px,20vw,160px)] md:leading-[1.3] tracking-[-0.25rem] shrink-0">
+                  <span className="font-headline text-[clamp(80px,20vw,200px)] md:leading-[1.3] tracking-[-0.25rem] shrink-0">
                     {item.suffix}
                   </span>
                   <p
-                    className="self-end pb-8 sm:pb-[40px] text-[10px] md:text-[clamp(16px,4vw,20px)] text-[#F0F2F7] w-full md:max-w-[369px] leading-relaxed min-w-0"
+                    className="self-end pb-8 sm:pb-[50px] text-[10px] md:text-[clamp(16px,4vw,22px)] text-[#F0F2F7] w-full md:max-w-[369px] leading-[1.3] min-w-0 font-medium tracking-[-0.02em] opacity-75"
                     dangerouslySetInnerHTML={{ __html: item.text }}
                   />
                 </div>
