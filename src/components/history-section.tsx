@@ -12,7 +12,7 @@ export function HistorySection() {
     offset: ["start end", "end start"],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 0.9, 1], [0.4, 0.4, 0, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.7, 0.9], [0.4, 0.4, 0]);
 
 
   const history = [
