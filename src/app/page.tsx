@@ -18,9 +18,7 @@ import { HistorySection } from "@/components/history-section";
 
 export default function Home() {
   const { t } = useTranslation();
-  const [isBigServicesScreen, setIsBigServicesScreen] = useState(
-    typeof window !== "undefined" ? window.innerWidth > 2060 : false,
-  );
+  const [isBigServicesScreen, setIsBigServicesScreen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {

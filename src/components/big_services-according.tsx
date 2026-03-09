@@ -470,9 +470,15 @@ export function ServicesAccordion() {
     return (
       <section id="products" className="relative bg-[#090D12] py-6 lg:py-10">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-lg uppercase text-white/60 tracking-wider mb-6 lg:mb-8">
+          <motion.h2
+            className="text-lg uppercase text-white/60 tracking-wider mb-6 lg:mb-8"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             {t("services.title")}
-          </h2>
+          </motion.h2>
 
           <div>
             {services.map((service, index) => (
@@ -482,7 +488,7 @@ export function ServicesAccordion() {
                 style={{ zIndex: index + 1 }}
                 initial={{ opacity: 0, y: 36 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once: false, amount: 0.01 }}
                 transition={{
                   duration: 0.55,
                   ease: "easeOut",
@@ -516,9 +522,15 @@ export function ServicesAccordion() {
     >
       <motion.div style={{ y: firstCardY }} className="relative z-40 py-6">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-lg uppercase text-white/60 tracking-wider">
+          <motion.h2
+            className="text-lg uppercase text-white/60 tracking-wider"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             {t("services.title")}
-          </h2>
+          </motion.h2>
         </div>
       </motion.div>
 
