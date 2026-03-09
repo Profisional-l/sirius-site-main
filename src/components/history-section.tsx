@@ -1,9 +1,19 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export function HistorySection() {
   const { t } = useTranslation();
+  const targetRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 0.9, 1], [0.4, 0.4, 0, 0]);
+
 
   const history = [
     { suffix: "04", text: t("history.2004") },
@@ -16,15 +26,16 @@ export function HistorySection() {
 
   return (
     <section id="history" className="relative bg-[#090D12] text-white">
-      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 ">
+      <div ref={targetRef} className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 ">
         <div className="pt-0 pb-12 sm:pb-16 relative">
-          <h2
+          <motion.h2
+            style={{ opacity }}
             className="space-mono-regular uppercase text-[#F0F2F7] opacity-40
                        text-[clamp(14px,3vw,18px)] leading-[1.47] tracking-normal
                        md:sticky top-24 sm:top-28 md:top-32 z-20"
           >
             HISTORY
-          </h2>
+          </motion.h2>
 
           <div className="grid grid-cols-[auto_1fr] gap-x-0 sm:gap-x-0 md:gap-y-6 mx-auto w-full md:w-fit max-w-full">
             <div className="sticky top-24 sm:top-28 md:top-32 self-start pr-0 sm:pr-4 md:pr-0">
