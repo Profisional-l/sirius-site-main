@@ -1,12 +1,7 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import {
-  motion,
-  useMotionTemplate,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 export function HistorySection() {
@@ -18,9 +13,7 @@ export function HistorySection() {
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.7, 0.9], [0.4, 0.4, 0]);
-  const headingY = useTransform(scrollYProgress, [0, 0.16], [150, 0]);
-  const headingBlur = useTransform(scrollYProgress, [0, 0.84, 0.9], [0, 0, 14]);
-  const headingFilter = useMotionTemplate`blur(${headingBlur}px)`;
+
 
   const history = [
     { suffix: "04", text: t("history.2004") },
@@ -33,13 +26,10 @@ export function HistorySection() {
 
   return (
     <section id="history" className="relative bg-[#090D12] text-white">
-      <div
-        ref={targetRef}
-        className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 "
-      >
+      <div ref={targetRef} className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8 ">
         <div className="pt-0 pb-12 sm:pb-16 relative">
           <motion.h2
-            style={{ opacity, y: headingY, filter: headingFilter }}
+            style={{ opacity }}
             className="space-mono-regular uppercase text-[#F0F2F7] opacity-40
                        text-[clamp(14px,3vw,18px)] leading-[1.47] tracking-normal
                        md:sticky top-24 sm:top-28 md:top-32 z-20"
