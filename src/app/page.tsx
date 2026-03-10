@@ -22,7 +22,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsBigServicesScreen(window.innerWidth > 2060);
+      setIsBigServicesScreen(window.innerWidth > 1440);
     };
 
     handleResize();
