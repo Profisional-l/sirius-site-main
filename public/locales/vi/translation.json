@@ -16,7 +16,7 @@
   "products": {
     "turnkey": {
       "title": "GIẢI PHÁP CHÌA KHÓA TRAO TAY",
-      "description": "Khối IP đã sẵn sàng và bản thiết kế IC",
+      "description": "Khối IP làm sẵn, EDA & Trình biên dịch",
       "details": "Dự án Thiết kế IC Chìa khóa trao tay: Chu kỳ phát triển IC đầy đủ từ thông số kỹ thuật đến nguyên mẫu silicon đủ tiêu chuẩn. Chúng tôi tập hợp một đội ngũ chuyên trách cho một dự án với tùy chọn chuyển giao đội ngũ sau khi hoàn thành dự án"
     },
     "customization": {
@@ -35,13 +35,14 @@
     "text1": "Sirius Semiconductors được thành lập <blue>nhằm đạt được mục tiêu đầy tham vọng là </blue>biến Việt Nam thành một cường quốc công ngh",
     "text2": "Chúng tôi ở đây để <blue>cung cấp chuyên môn, công nghệ, dịch vụ và sản phẩm trong vi điện tử</blue> cho các đối tác trong một thị trường Việt Nam và cách xa hơn nữa"
   },
+
   "history": {
-    "2004": "Alex Drozdov studies compilers in the laboratories of Intel and the Moscow SPARC Center. A future team of Optimizing Technologies begins to form around him",
-    "2007": "Foundation of Optimizing Technologies",
-    "2010": "Optimizing Technologies joins the development of advanced microelectronics solutions in partnership with Soft Machines (later acquired by Intel)",
-    "2017": "Optimizing Technologies starts working with international clients and partners",
-    "2018": "Optimizing technologies launches its own semiconductor design and development division",
-    "2025": "Building on years of accumulated expertise, a new company is established in Vietnam — Sirius Semiconductors"
+    "2004": "Alex Drozdov phát triển các trình biên dịch trong các phòng thí nghiệm của Intel và Trung tâm SPARC Moscow. Một nhóm chuyên gia về Công nghệ Tối ưu hóa bắt đầu hình thành xung quanh anh ta",
+    "2007": "Năm 2007, Quỹ công nghệ tối ưu hóa được thành lập",
+    "2010": "Công ty Tối ưu hóa công nghệ tham gia phát triển các giải pháp vi điện tử tiên tiến hợp tác với Soft Machines (sau này được Intel mua lại)",
+    "2017": "Công ty Tối ưu hóa công nghệ bắt đầu làm việc với các khách hàng và đối tác quốc tế",
+    "2018": "Công ty Tối ưu hóa công nghệ ra mắt bộ phận thiết kế bán dẫn của riêng mình",
+    "2025": "Dựa trên nhiều năm tích lũy chuyên môn, một công ty mới đã được thành lập tại Việt Nam — Bán dẫn Sirius"
   },
   "services": {
     "title": "Sản phẩm & Dịch vụ",
