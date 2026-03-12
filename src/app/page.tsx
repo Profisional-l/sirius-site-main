@@ -119,11 +119,15 @@ export default function Home() {
             ))}
           </div>
         </div>
+        <div id="about"></div>
       </section>
 
-      <HistorySection />
+      <section >
+        <HistorySection />
+      </section>
+
       {/* Mission Section */}
-      <section id="about" className="bg-[#090D12] text-center relative">
+      <section className="bg-[#090D12] text-center relative">
         {/* Стабильный фон для iOS/Safari через sticky-слой */}
         <div
           aria-hidden="true"
