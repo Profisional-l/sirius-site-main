@@ -12,8 +12,7 @@ export function HistorySection() {
     offset: ["start end", "end start"],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.7, 0.9], [0.4, 0.4, 0]);
-
+  const opacity = useTransform(scrollYProgress, [0, 0.6, 0.8], [0.4, 0.4, 0]);
 
   const history = [
     { suffix: "04", text: t("history.2004") },
@@ -32,7 +31,7 @@ export function HistorySection() {
             style={{ opacity }}
             className="space-mono-regular uppercase text-[#F0F2F7] opacity-40
                        text-[clamp(14px,3vw,18px)] leading-[1.47] tracking-normal
-                       md:sticky top-24 sm:top-28 md:top-32 z-20"
+                       md:sticky top-24 sm:top-28 md:top-32 md:translate-y-[72px] z-20"
           >
             HISTORY
           </motion.h2>
